@@ -21,8 +21,7 @@ export default defineConfig({
       "link",
       {
         rel: "icon",
-        // TODO 更换头像
-        href: "https://oss.justin3go.com/justin3goAvatar.ico",
+        href: "/ava.ico",
       },
     ],
   ],
