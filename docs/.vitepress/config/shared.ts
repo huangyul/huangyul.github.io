@@ -4,7 +4,7 @@ import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
 import { TDesignResolver } from 'unplugin-vue-components/resolvers';
 
-import { createRssFileZH, createRssFileEN } from "../theme/utils/rss";
+import { createRssFileZH } from "../theme/utils/rss";
 import { handleHeadMeta } from "../theme/utils/handleHeadMeta";
 import { search as zhSearch } from './zh'
 
@@ -13,24 +13,15 @@ export default defineConfig({
   lastUpdated: true,
   cleanUrls: true,
   ignoreDeadLinks: true,
-  sitemap: {
-    hostname: 'https://justin3go.com'
-  },
+  // sitemap: {
+  //   hostname: ''
+  // },
   head: [
-		["script", { async: "", src: "https://www.googletagmanager.com/gtag/js?id=G-MB7XVBG1TQ" }],
-		[
-			"script",
-			{},
-			`window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-MB7XVBG1TQ');`,
-		],
-
     [
       "link",
       {
         rel: "icon",
+        // TODO 更换头像
         href: "https://oss.justin3go.com/justin3goAvatar.ico",
       },
     ],
@@ -41,7 +32,6 @@ export default defineConfig({
   },
   buildEnd: (config: SiteConfig) => {
     createRssFileZH(config);
-    createRssFileEN(config);
   },
 
   themeConfig: {
