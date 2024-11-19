@@ -12,7 +12,7 @@ const sideBar = path.startsWith('/en/') ? createSideBarEN() : createSideBarZH();
 
 const prefix = path.startsWith('/en/') ? '/en/notes/' : '/notes/';
 const firstItemLink = sideBar[prefix][0].items[0].link;
-debugger
+
 router.go(firstItemLink);
 </script>
 <style scoped></style>
