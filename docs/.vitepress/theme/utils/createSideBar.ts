@@ -1,6 +1,6 @@
 export function createSideBarZH() {
-  return {
-    "/notes/": [
+	return {
+		"/notes/": [
 			{
 				text: "Python基础",
 				collapsed: false,
@@ -26,6 +26,13 @@ export function createSideBarZH() {
 					{ text: "19元编程", link: "/notes/Python基础/19元编程" },
 				],
 			},
+			{
+				text: "Makefile基础",
+				collapsed: false,
+				items: [
+					{ text: "01基础知识", link: "/notes/Makefile基础/01基础知识" },
+				]
+			}
 		].map((item, i) => (!i ? item : { ...item, collapsed: true })),
-  }
+	}
 }
