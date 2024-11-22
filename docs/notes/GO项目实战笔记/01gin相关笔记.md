@@ -70,7 +70,7 @@ func init() {
 	}
 }
 
-func Translate(err error) string {
+func Translate(err error) string { // [!code highlight]
 
 	if err == nil {
 		return ""
@@ -85,15 +85,15 @@ func Translate(err error) string {
 	raw := typ.Translate(trans)
 
 	for _, v := range raw {
-		return convertToSnakeCase(v)
+		return convertToSnakeCase(v) // [!code highlight]
 	}
-	return ""
+	return "" // [!code highlight]
 }
 
-func pascalToSnake(s string) string { // [!code highlight]
+func pascalToSnake(s string) string { 
 	re := regexp.MustCompile("([A-Z])")
 	snake := re.ReplaceAllStringFunc(s, func(match string) string {
-		return "_" + strings.ToLower(match) // [!code highlight]
+		return "_" + strings.ToLower(match) 
 	})
 
 	if len(snake) > 0 && snake[0] == '_' {
