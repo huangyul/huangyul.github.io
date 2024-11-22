@@ -12,7 +12,7 @@ export function createSideBarZH() {
 				text: "GO项目实战笔记",
 				collapsed: false,
 				items: [
-					{ text: "01gin项目笔记", link: "/notes/GO项目实战笔记/01gin项目笔记" },
+					{ text: "01gin相关笔记", link: "/notes/GO项目实战笔记/01gin相关笔记" },
 				]
 			}
 		].map((item, i) => (!i ? item : { ...item, collapsed: true })),
