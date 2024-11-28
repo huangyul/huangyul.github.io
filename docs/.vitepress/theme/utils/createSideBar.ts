@@ -21,6 +21,7 @@ export function createSideBarZH() {
 				collapsed: false,
 				items: [
 					{ text: "01基础知识", link: "/notes/WSL/01基础知识" },
+					{ text: "02开发配置", link: "/notes/WSL/02开发配置" },
 				]
 			},
 		].map((item, i) => (!i ? item : { ...item, collapsed: true })),
