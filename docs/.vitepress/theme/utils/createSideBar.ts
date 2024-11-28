@@ -15,7 +15,14 @@ export function createSideBarZH() {
 					{ text: "01gin相关笔记", link: "/notes/GO项目实战笔记/01gin相关笔记" },
 					{ text: "02性能相关", link: "/notes/GO项目实战笔记/02性能相关" },
 				]
-			}
+			},
+			{
+				text: "WSL",
+				collapsed: false,
+				items: [
+					{ text: "01基础知识", link: "/notes/WSL/01基础知识" },
+				]
+			},
 		].map((item, i) => (!i ? item : { ...item, collapsed: true })),
 	}
 }
