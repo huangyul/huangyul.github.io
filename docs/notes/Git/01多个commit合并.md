@@ -92,6 +92,11 @@ squash abcdef4 Add feature day 4
 squash abcdef5 Add feature day 5
 ```
 
+:::tip
+`pick` 命令用于选择一个提交，而 `squash` 命令用于将多个提交合并为一个提交。
+选择第一个 `pick` 是因为要告诉 `Git`，将后面的提交合并到第一个提交，也就是从这个提交延续的。
+:::
+
 ### 3.保存并退出编辑器：
 - 对于 `Vim`：按 `Esc`，输入 `:wq`，然后按回车。
 - 对于 `Nano`：按 `Ctrl + X`，然后按 `Y` 保存。

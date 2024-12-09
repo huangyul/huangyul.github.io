@@ -24,6 +24,13 @@ export function createSideBarZH() {
 					{ text: "02开发配置", link: "/notes/WSL/02开发配置" },
 				]
 			},
+			{
+				text: "Git",
+				collapsed: false,
+				items: [
+					{ text: "01多个commit合并", link: "/notes/Git/01多个commit合并" },
+				]
+			},
 		].map((item, i) => (!i ? item : { ...item, collapsed: true })),
 	}
 }
