@@ -1,0 +1,195 @@
+{
+  "main": {
+    "id": "00379a4e680bf922",
+    "type": "split",
+    "children": [
+      {
+        "id": "c613d4b99f736748",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "374af3000b127993",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "go应用开发/2、搭建web服务.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2、搭建web服务"
+            }
+          },
+          {
+            "id": "f43e2f5dea45b5e3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "世软接口文档/自定义报表v1.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "自定义报表v1"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "e0d2c100017fd1a2",
+    "type": "split",
+    "children": [
+      {
+        "id": "a9d259d0ca0c14c8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "253f87aac9d98b9f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "byModifiedTimeReverse"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "c2e97f039fcfc246",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "2e7f3e880b2e759e",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "f9a47a3955517fdd",
+    "type": "split",
+    "children": [
+      {
+        "id": "f82beb2e134df1d1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "27c6511d9a042692",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "世软接口文档/自定义报表v1.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "自定义报表v1 的反向链接列表"
+            }
+          },
+          {
+            "id": "717561951ce9b7ae",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "世软接口文档/自定义报表v1.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "自定义报表v1 的出链列表"
+            }
+          },
+          {
+            "id": "3d6a1a8339ae336c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "7b8563b0815e2350",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "go应用开发/2、搭建web服务.md"
+              },
+              "icon": "lucide-list",
+              "title": "2、搭建web服务 的大纲"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "f43e2f5dea45b5e3",
+  "lastOpenFiles": [
+    "go应用开发/2、搭建web服务.md",
+    "世软接口文档/自定义报表v1.md",
+    "go应用开发/1、项目搭建.md",
+    "未命名.md",
+    "世软接口文档",
+    "2025-01-20.md",
+    "未命名",
+    "未命名.canvas",
+    "欢迎.md",
+    "go应用开发"
+  ]
+}
