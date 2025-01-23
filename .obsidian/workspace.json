@@ -35,8 +35,7 @@
               "title": "自定义报表v1"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -92,8 +91,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "f9a47a3955517fdd",
@@ -176,17 +174,18 @@
       "canvas:新建白板": false,
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
-      "command-palette:打开命令面板": false
+      "command-palette:打开命令面板": false,
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f43e2f5dea45b5e3",
+  "active": "253f87aac9d98b9f",
   "lastOpenFiles": [
+    "2025-01-20.md",
+    "未命名.md",
     "go应用开发/2、搭建web服务.md",
     "世软接口文档/自定义报表v1.md",
     "go应用开发/1、项目搭建.md",
-    "未命名.md",
     "世软接口文档",
-    "2025-01-20.md",
     "未命名",
     "未命名.canvas",
     "欢迎.md",
