@@ -39,7 +39,3 @@ func main() {
 
 
 
-
-测试自动推送obsidian
-
-
