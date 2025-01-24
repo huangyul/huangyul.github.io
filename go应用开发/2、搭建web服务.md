@@ -40,6 +40,6 @@ func main() {
 
 
 
-测试zi
+测试自动推送obsidian
 
 
