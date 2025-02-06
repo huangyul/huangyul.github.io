@@ -28,7 +28,7 @@
               "type": "markdown",
               "state": {
                 "file": "tmp/会员资产变更查询.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
@@ -155,10 +155,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "go应用开发/2、搭建web服务.md"
+                "file": "tmp/会员资产变更查询.md"
               },
               "icon": "lucide-list",
-              "title": "2、搭建web服务 的大纲"
+              "title": "会员资产变更查询 的大纲"
             }
           }
         ],
