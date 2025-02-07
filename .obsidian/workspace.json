@@ -34,9 +34,21 @@
               "icon": "lucide-file",
               "title": "会员资产变更查询"
             }
+          },
+          {
+            "id": "5b7a4092c0512eef",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.8.4"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.8.4"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -180,7 +192,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "2e7b19d48120bec5",
+  "active": "5b7a4092c0512eef",
   "lastOpenFiles": [
     "go应用开发/1、项目搭建.md",
     "tmp/会员资产变更查询.md",
