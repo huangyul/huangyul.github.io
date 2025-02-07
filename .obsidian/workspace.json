@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "go应用开发/1、项目搭建.md",
+                "file": "tmp/心里话.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1、项目搭建"
+              "title": "心里话"
             }
           },
           {
@@ -34,21 +34,9 @@
               "icon": "lucide-file",
               "title": "会员资产变更查询"
             }
-          },
-          {
-            "id": "5b7a4092c0512eef",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.8.4"
-              },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.8.4"
-            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -67,7 +55,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "byModifiedTimeReverse"
+                "sortOrder": "byModifiedTimeReverse",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "文件列表"
@@ -192,11 +181,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5b7a4092c0512eef",
+  "active": "2e7b19d48120bec5",
   "lastOpenFiles": [
-    "go应用开发/1、项目搭建.md",
-    "tmp/会员资产变更查询.md",
+    "tmp/心里话.md",
     "tmp/自定义报表v1-api.md",
+    "tmp/会员资产变更查询.md",
+    "go应用开发/1、项目搭建.md",
     "go应用开发/2、搭建web服务.md",
     "新建 文本文档.txt",
     "2025-01-20.md",
