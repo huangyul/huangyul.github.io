@@ -140,10 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "tmp/会员资产变更查询.md"
+                "file": "go重写redis/1、基础加固.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "会员资产变更查询 的大纲"
+              "title": "1、基础加固 的大纲"
             }
           }
         ],
