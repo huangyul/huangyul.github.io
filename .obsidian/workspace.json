@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 321.5
+    "width": 321.5,
+    "collapsed": true
   },
   "right": {
     "id": "f9a47a3955517fdd",
@@ -168,7 +169,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "253f87aac9d98b9f",
+  "active": "f101d8f537165e47",
   "lastOpenFiles": [
     "小日记/2025-02-08.md",
     "go重写redis/1、基础加固.md",
