@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "go重写redis/1、基础加固.md",
+                "file": "go重写redis/2、数据结构.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1、基础加固"
+              "title": "2、数据结构"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 321.5,
-    "collapsed": true
+    "width": 321.5
   },
   "right": {
     "id": "f9a47a3955517fdd",
@@ -141,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "go重写redis/1、基础加固.md",
+                "file": "go重写redis/2、数据结构.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "1、基础加固 的大纲"
+              "title": "2、数据结构 的大纲"
             }
           }
         ],
@@ -171,8 +170,9 @@
   },
   "active": "f101d8f537165e47",
   "lastOpenFiles": [
+    "go重写redis/1、重新认识.md",
+    "go重写redis/2、数据结构.md",
     "小日记/2025-02-08.md",
-    "go重写redis/1、基础加固.md",
     "小日记/2025-02-07.md",
     "tmp/心里话.md",
     "小日记",
