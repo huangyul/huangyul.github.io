@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "tmp/自定义报表未完成.md",
-                "mode": "source",
+                "file": "tmp/门店资产对账接口.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "自定义报表未完成"
+              "title": "门店资产对账接口"
             }
           },
           {
@@ -49,8 +49,7 @@
               "title": "报表中心-导出key"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -107,7 +106,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "f9a47a3955517fdd",
@@ -197,12 +197,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "67ccab023dcb7917",
+  "active": "f101d8f537165e47",
   "lastOpenFiles": [
-    "tmp/门店资产对账接口.md",
-    "tmp/报表中心-导出key.md",
-    "go web项目开发/权限管理.md",
     "tmp/自定义报表未完成.md",
+    "go web项目开发/权限管理.md",
+    "tmp/报表中心-导出key.md",
+    "tmp/门店资产对账接口.md",
     "tmp/会员资产变更查询.md",
     "go应用开发/1、项目搭建.md",
     "go web项目开发",
