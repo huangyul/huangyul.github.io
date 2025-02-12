@@ -49,8 +49,7 @@
               "title": "报表中心-导出key"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -107,7 +106,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "f9a47a3955517fdd",
@@ -197,17 +197,17 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "2252be5aed3cdf89",
+  "active": "f101d8f537165e47",
   "lastOpenFiles": [
+    "tmp/报表中心-导出key.md",
+    "go应用开发/2、搭建web服务.md",
     "go web项目开发/权限管理.md",
     "tmp/门店资产对账接口.md",
-    "tmp/报表中心-导出key.md",
     "tmp/自定义报表异步导出.md",
     "tmp/自定义报表未完成.md",
     "tmp/会员资产变更查询.md",
     "go应用开发/1、项目搭建.md",
     "go web项目开发",
-    "go应用开发/2、搭建web服务.md",
     "go重写redis/2、数据结构.md",
     "go重写redis/1、重新认识.md",
     "小日记/2025-02-08.md",
