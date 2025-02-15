@@ -13,26 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "tmp/自定义报表v1-api.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "自定义报表v1-api"
-            }
-          },
-          {
-            "id": "67ccab023dcb7917",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "tmp/报表中心-导出key.md",
+                "file": "tmp/数据加工api.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "报表中心-导出key"
+              "title": "数据加工api"
             }
           }
         ]
@@ -154,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "tmp/自定义报表v1-api.md",
+                "file": "tmp/数据加工api.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "自定义报表v1-api 的大纲"
+              "title": "数据加工api 的大纲"
             }
           }
         ],
@@ -184,6 +170,8 @@
   },
   "active": "2252be5aed3cdf89",
   "lastOpenFiles": [
+    "tmp/自定义报表v1-api.md",
+    "tmp/数据加工api.md",
     "tmp/门店资产对账接口.md",
     "tmp/自定义报表异步导出.md",
     "tmp/自定义报表未完成.md",
@@ -207,7 +195,6 @@
     "未命名 1.canvas",
     "未命名 2.canvas",
     "go重写redis",
-    "tmp/自定义报表v1-api.md",
     "新建 文本文档.txt",
     "2025-01-20.md",
     "tmp",
