@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "tmp/数据加工api.md",
-                "mode": "preview",
+                "file": "go重写redis/2、数据结构.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "数据加工api"
+              "title": "2、数据结构"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "f9a47a3955517fdd",
@@ -171,15 +170,21 @@
   },
   "active": "2252be5aed3cdf89",
   "lastOpenFiles": [
-    "tmp/自定义报表v1-api.md",
+    "static/image/Pasted image 20250216203621.png",
+    "static/image/Pasted image 20250216203053.png",
+    "go重写redis/2、数据结构.md",
+    "static/image/Pasted image 20250216202637.png",
+    "go应用开发/2、搭建web服务.md",
+    "Pasted image 20250216203049.png",
+    "static/image",
+    "static",
     "tmp/数据加工api.md",
+    "tmp/自定义报表v1-api.md",
     "tmp/门店资产对账接口.md",
     "tmp/自定义报表异步导出.md",
     "tmp/自定义报表未完成.md",
     "tmp/报表中心-导出key.md",
-    "go重写redis/2、数据结构.md",
     "go应用开发/1、项目搭建.md",
-    "go应用开发/2、搭建web服务.md",
     "go web项目开发/性能测试.md",
     "go web项目开发/微服务.md",
     "go web项目开发/权限管理.md",
