@@ -35,7 +35,8 @@
               "title": "自定义报表v1-api"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -183,10 +184,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "2252be5aed3cdf89",
+  "active": "8031ee4543c5f01c",
   "lastOpenFiles": [
-    "tmp/自定义报表v1-api.md",
     "iam-开发/1、使用Makefile管理项目.md",
+    "tmp/自定义报表v1-api.md",
     "go重写redis/3、协程.md",
     "iam-开发",
     "go重写redis/2、数据结构.md",
