@@ -50,7 +50,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -107,7 +107,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "f9a47a3955517fdd",
@@ -197,10 +198,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "8031ee4543c5f01c",
+  "active": "911499ebfe9e01ac",
   "lastOpenFiles": [
-    "tmp/数据加工api.md",
     "tmp/世软每日TODO.md",
+    "tmp/数据加工api.md",
     "tmp/自定义报表v1-api.md",
     "iam-开发/1、使用Makefile管理项目.md",
     "tmp/世软每日todolist",
