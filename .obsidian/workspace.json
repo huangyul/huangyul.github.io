@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "tmp/世软每日todolist/2025-02-19.md",
+                "file": "tmp/世软每日TODO.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-02-19"
+              "title": "世软每日TODO"
             }
           },
           {
@@ -50,7 +50,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -197,10 +197,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "911499ebfe9e01ac",
+  "active": "8031ee4543c5f01c",
   "lastOpenFiles": [
-    "tmp/世软每日todolist/2025-02-19.md",
     "tmp/数据加工api.md",
+    "tmp/世软每日TODO.md",
     "tmp/自定义报表v1-api.md",
     "iam-开发/1、使用Makefile管理项目.md",
     "tmp/世软每日todolist",
