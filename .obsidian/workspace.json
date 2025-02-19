@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "tmp/自定义报表v1-api.md",
+                "file": "tmp/世软每日todolist/2025-02-19.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "自定义报表v1-api"
+              "title": "2025-02-19"
             }
           }
         ],
@@ -93,8 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "f9a47a3955517fdd",
@@ -186,8 +185,10 @@
   },
   "active": "8031ee4543c5f01c",
   "lastOpenFiles": [
-    "iam-开发/1、使用Makefile管理项目.md",
     "tmp/自定义报表v1-api.md",
+    "tmp/世软每日todolist/2025-02-19.md",
+    "tmp/世软每日todolist",
+    "iam-开发/1、使用Makefile管理项目.md",
     "go重写redis/3、协程.md",
     "iam-开发",
     "go重写redis/2、数据结构.md",
