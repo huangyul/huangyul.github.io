@@ -48,21 +48,9 @@
               "icon": "lucide-file",
               "title": "数据加工api"
             }
-          },
-          {
-            "id": "a194710434ba3f80",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.8.7"
-              },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.8.7"
-            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -210,11 +198,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "a194710434ba3f80",
+  "active": "8031ee4543c5f01c",
   "lastOpenFiles": [
-    "iam-开发/1、使用Makefile管理项目.md",
-    "tmp/世软每日TODO.md",
     "tmp/数据加工api.md",
+    "tmp/世软每日TODO.md",
+    "iam-开发/1、使用Makefile管理项目.md",
     "tmp/自定义报表v1-api.md",
     "tmp/世软每日todolist",
     "go重写redis/3、协程.md",
