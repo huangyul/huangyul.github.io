@@ -49,7 +49,8 @@
               "title": "数据加工api"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -197,8 +198,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "2252be5aed3cdf89",
+  "active": "8031ee4543c5f01c",
   "lastOpenFiles": [
+    "go应用开发/2、搭建web服务.md",
     "go应用开发/1、项目搭建.md",
     "go web项目开发/权限管理.md",
     "iam-开发/1、使用Makefile管理项目.md",
@@ -212,7 +214,6 @@
     "static/image/Pasted image 20250216203621.png",
     "static/image/Pasted image 20250216203053.png",
     "static/image/Pasted image 20250216202637.png",
-    "go应用开发/2、搭建web服务.md",
     "Pasted image 20250216203049.png",
     "static/image",
     "static",
