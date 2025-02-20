@@ -48,9 +48,21 @@
               "icon": "lucide-file",
               "title": "数据加工api"
             }
+          },
+          {
+            "id": "a194710434ba3f80",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.8.7"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.8.7"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -198,7 +210,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "911499ebfe9e01ac",
+  "active": "a194710434ba3f80",
   "lastOpenFiles": [
     "iam-开发/1、使用Makefile管理项目.md",
     "tmp/世软每日TODO.md",
