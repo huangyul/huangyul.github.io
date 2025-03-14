@@ -48,9 +48,21 @@
               "icon": "lucide-file",
               "title": "数据加工api"
             }
+          },
+          {
+            "id": "a265a4b9829f24a6",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.8.9"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.8.9"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -170,13 +182,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "tmp/数据加工api.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "数据加工api 的大纲"
+              "title": "大纲"
             }
           }
         ],
@@ -197,7 +208,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "957a69f4f337a0dc",
+  "active": "a265a4b9829f24a6",
   "lastOpenFiles": [
     "tmp/世软每日TODO.md",
     "tmp/数据加工api.md",
