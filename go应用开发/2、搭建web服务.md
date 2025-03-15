@@ -1,4 +1,4 @@
-## 使用 `gin` 启动 `http` 服务
+# 使用 `gin` 启动 `http` 服务
 
 ```go
 func main() {
@@ -37,5 +37,21 @@ func main() {
 > `gin`的[中间件汇总](https://github.com/gin-contrib)
 
 
+# 接口认证
 
+## `session` 机制
 
+服务器存储 `session`（内存、 `redis` 等），然后将 `sessionid` 通过 `cookie` 发到客户端
+
+基于cookie的实现：
+将session数据加密存放到cookie中
+
+```go
+// 指定使用cookie
+store := cookie.NewStore([]byte("secret"))  
+server.Use(sessions.Sessions("webook", store))
+
+// 存
+sess := sessions.Default(ctx)
+sess.Get(key)
+```
