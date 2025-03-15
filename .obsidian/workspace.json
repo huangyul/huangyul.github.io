@@ -27,15 +27,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "go重写redis/1、重新认识.md",
-                "mode": "source",
+                "file": "tmp/云后台合并-线上接口.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1、重新认识"
+              "title": "云后台合并-线上接口"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -154,13 +155,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "tmp/数据加工api.md",
+                "file": "tmp/云后台合并-线上接口.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "数据加工api 的大纲"
+              "title": "云后台合并-线上接口 的大纲"
             }
           }
         ],
@@ -181,11 +182,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "2252be5aed3cdf89",
+  "active": "8031ee4543c5f01c",
   "lastOpenFiles": [
+    "tmp/数据加工api.md",
     "tmp/云后台合并-线上接口.md",
     "go重写redis/1、重新认识.md",
-    "tmp/数据加工api.md",
     "tmp/世软每日TODO.md",
     "go应用开发/2、搭建web服务.md",
     "iam-开发/1、使用Makefile管理项目.md",
