@@ -43,8 +43,9 @@ func main() {
 
 服务器存储 `session`（内存、 `redis` 等），然后将 `sessionid` 通过 `cookie` 发到客户端
 
-基于cookie的实现：
-将session数据加密存放到cookie中
+### 基于 `cookie` 的实现
+
+将 `session` 数据加密存放到 `cookie` 中
 
 ```go
 // 指定使用cookie
@@ -53,5 +54,26 @@ server.Use(sessions.Sessions("webook", store))
 
 // 存
 sess := sessions.Default(ctx)
+sess.Set(key, value)
+sess.Options(&sessions.Options{
+	MaxAge: xxxxx
+})
+sess.Save()
+
+// 取
+sess := sessions.Default(ctx)
 sess.Get(key)
+```
+
+### 基于 `redis` 的实现
+
+将 `session` 数据存放到 `redis` 中，适合分布式系统
+
+```go
+// based on redis  
+store, err := redis.NewStore(16, "tcp", "localhost:16379", "", []byte("secret"), []byte("enc"))  
+if err != nil {  
+    panic(err)  
+}  
+server.Use(sessions.Sessions("webook", store))
 ```
