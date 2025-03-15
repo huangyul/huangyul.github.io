@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "tmp/数据加工api.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
@@ -181,13 +181,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "253f87aac9d98b9f",
+  "active": "2252be5aed3cdf89",
   "lastOpenFiles": [
     "tmp/云后台合并-线上接口.md",
+    "go重写redis/1、重新认识.md",
     "tmp/数据加工api.md",
     "tmp/世软每日TODO.md",
     "go应用开发/2、搭建web服务.md",
-    "go重写redis/1、重新认识.md",
     "iam-开发/1、使用Makefile管理项目.md",
     "go重写redis/2、数据结构.md",
     "go重写redis/3、协程.md",
