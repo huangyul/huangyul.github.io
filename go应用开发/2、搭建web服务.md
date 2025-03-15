@@ -77,3 +77,49 @@ if err != nil {
 }  
 server.Use(sessions.Sessions("webook", store))
 ```
+
+## 基于 JWT 的实现
+
+1. **无状态架构**：Token自包含用户信息，服务器无需存储会话数据，天然适配微服务与水平扩展
+2. ​**跨平台与跨域支持**：Token可通过Header传递，规避Cookie限制，适配Native App、IoT设备及跨域API调用
+3. ​**灵活性与性能**：
+   - ​**细粒度控制**：Token可包含权限声明（如`role: admin`），实现动态授权
+   - ​**减少I/O开销**：JWT验签仅需密钥，无需查询数据库（但需注意Token撤销问题）
+   
+```go
+// 生成token 
+loginClaim := middleware.LoginClaims{  
+    UserId: user.ID,  
+    RegisteredClaims: jwt.RegisteredClaims{  
+       ExpiresAt: jwt.NewNumericDate(time.Now().Add(time.Minute * 30)),  
+    },  
+}  
+tokenStr, err := jwt.NewWithClaims(jwt.SigningMethodHS256, loginClaim).SignedString([]byte("secret"))  
+if err != nil {  
+    ctx.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})  
+    return  
+}
+
+// 解析token
+tokenStr := ctx.GetHeader("Authorization")  
+  
+if tokenStr == "" {  
+    ctx.AbortWithStatus(http.StatusUnauthorized)  
+    return  
+}  
+  
+tokenStr = strings.TrimPrefix(tokenStr, "Bearer ")  
+if tokenStr == "" {  
+    ctx.AbortWithStatus(http.StatusUnauthorized)  
+    return  
+}  
+var c LoginClaims  
+token, err := jwt.ParseWithClaims(tokenStr, &c, func(token *jwt.Token) (interface{}, error) {  
+    return []byte("secret"), nil  
+})  
+// 主要判断token能否成功被解密以及token有效期
+if err != nil || !token.Valid {  
+    ctx.AbortWithStatus(http.StatusUnauthorized)  
+    return  
+}
+```
