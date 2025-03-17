@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "tmp/世软每日TODO.md",
+                "file": "go重写redis/3、协程.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "世软每日TODO"
+              "title": "3、协程"
             }
           }
         ],
@@ -169,13 +169,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "tmp/世软每日TODO.md",
+                "file": "go重写redis/3、协程.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "世软每日TODO 的大纲"
+              "title": "3、协程 的大纲"
             }
           }
         ],
@@ -198,10 +198,10 @@
   },
   "active": "db453341cfa79ec0",
   "lastOpenFiles": [
+    "tmp/世软每日TODO.md",
     "tmp/数据加工api.md",
     "tmp/云后台合并-线上接口.md",
     "go应用开发/10、测试.md",
-    "tmp/世软每日TODO.md",
     "go应用开发/2、搭建web服务.md",
     "go重写redis/2、数据结构.md",
     "static/image/Pasted image 20250216203621.png",
