@@ -49,8 +49,7 @@
               "title": "世软每日TODO"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -169,13 +168,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "tmp/世软每日TODO.md",
+                "file": "tmp/数据加工api.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "世软每日TODO 的大纲"
+              "title": "数据加工api 的大纲"
             }
           }
         ],
@@ -183,7 +182,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 559.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -196,13 +195,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "db453341cfa79ec0",
+  "active": "2252be5aed3cdf89",
   "lastOpenFiles": [
-    "go重写redis/3、协程.md",
-    "go应用开发/10、测试.md",
+    "tmp/自定义报表v1-api.md",
+    "tmp/接口文档.md",
     "tmp/世软每日TODO.md",
-    "tmp/云后台合并-线上接口.md",
     "tmp/数据加工api.md",
+    "go应用开发/10、测试.md",
+    "go重写redis/3、协程.md",
+    "tmp/云后台合并-线上接口.md",
     "go应用开发/2、搭建web服务.md",
     "go重写redis/2、数据结构.md",
     "static/image/Pasted image 20250216203621.png",
@@ -212,8 +213,6 @@
     "go重写redis/1、重新认识.md",
     "iam-开发/1、使用Makefile管理项目.md",
     "go web项目开发/权限管理.md",
-    "tmp/接口文档.md",
-    "tmp/自定义报表v1-api.md",
     "tmp/世软每日todolist",
     "iam-开发",
     "Pasted image 20250216203049.png",
