@@ -36,7 +36,7 @@
             }
           },
           {
-            "id": "db453341cfa79ec0",
+            "id": "7a5420a3a0ba16e9",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -49,7 +49,8 @@
               "title": "世软每日TODO"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -168,13 +169,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "tmp/数据加工api.md",
+                "file": "tmp/世软每日TODO.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "数据加工api 的大纲"
+              "title": "世软每日TODO 的大纲"
             }
           }
         ],
@@ -195,13 +196,16 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "2252be5aed3cdf89",
+  "active": "7a5420a3a0ba16e9",
   "lastOpenFiles": [
+    "static/image/Pasted image 20250320093731.png",
+    "go应用开发/10、测试.md",
+    "().md",
+    "tmp/世软每日TODO.md",
+    "static/image/Pasted image 20250320093518.png",
+    "tmp/数据加工api.md",
     "tmp/自定义报表v1-api.md",
     "tmp/接口文档.md",
-    "tmp/世软每日TODO.md",
-    "tmp/数据加工api.md",
-    "go应用开发/10、测试.md",
     "go重写redis/3、协程.md",
     "tmp/云后台合并-线上接口.md",
     "go应用开发/2、搭建web服务.md",
@@ -237,9 +241,7 @@
     "未命名 2.canvas",
     "go重写redis",
     "新建 文本文档.txt",
-    "2025-01-20.md",
     "tmp",
-    "欢迎.md",
     "go应用开发"
   ]
 }
