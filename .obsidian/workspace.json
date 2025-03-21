@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "tmp/世软每日TODO.md",
-                "mode": "preview",
+                "file": "tmp/云后台合并-线上接口.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "世软每日TODO"
+              "title": "云后台合并-线上接口"
             }
           }
         ],
@@ -107,7 +107,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "f9a47a3955517fdd",
@@ -169,13 +170,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "tmp/世软每日TODO.md",
+                "file": "tmp/云后台合并-线上接口.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "世软每日TODO 的大纲"
+              "title": "云后台合并-线上接口 的大纲"
             }
           }
         ],
@@ -183,7 +184,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 559.5
+    "width": 299.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -198,11 +199,11 @@
   },
   "active": "7a5420a3a0ba16e9",
   "lastOpenFiles": [
-    "未命名",
     "tmp/世软每日TODO.md",
-    "static/image/Pasted image 20250320093731.png",
-    "go应用开发/10、测试.md",
     "().md",
+    "go应用开发/10、测试.md",
+    "未命名",
+    "static/image/Pasted image 20250320093731.png",
     "static/image/Pasted image 20250320093518.png",
     "tmp/数据加工api.md",
     "tmp/自定义报表v1-api.md",
@@ -242,7 +243,6 @@
     "未命名 2.canvas",
     "go重写redis",
     "新建 文本文档.txt",
-    "tmp",
-    "go应用开发"
+    "tmp"
   ]
 }
