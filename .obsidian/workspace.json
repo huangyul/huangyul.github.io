@@ -42,7 +42,7 @@
               "type": "markdown",
               "state": {
                 "file": "tmp/世软每日TODO.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
@@ -64,7 +64,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -183,13 +183,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "tmp/世软每日TODO.md",
+                "file": "tmp/云后台合并-线上接口.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "世软每日TODO 的大纲"
+              "title": "云后台合并-线上接口 的大纲"
             }
           }
         ],
@@ -210,12 +210,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "7a5420a3a0ba16e9",
+  "active": "86b5bf2429537f8b",
   "lastOpenFiles": [
+    "tmp/世软每日TODO.md",
     "tmp/云后台合并-线上接口.md",
     "tmp/云后台合并接口对接问题.md",
     "未命名.md",
-    "tmp/世软每日TODO.md",
     "().md",
     "go应用开发/10、测试.md",
     "未命名",
