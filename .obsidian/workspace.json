@@ -34,9 +34,21 @@
               "icon": "lucide-file",
               "title": "10、测试"
             }
+          },
+          {
+            "id": "98e1493d0cc468fb",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.8.10"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.8.10"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -155,13 +167,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "go应用开发/10、测试.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "10、测试 的大纲"
+              "title": "大纲"
             }
           }
         ],
@@ -182,7 +193,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "8031ee4543c5f01c",
+  "active": "98e1493d0cc468fb",
   "lastOpenFiles": [
     "tmp/云后台合并-线上接口.md",
     "測試.md",
