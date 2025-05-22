@@ -141,9 +141,7 @@ protoc -I ./proto --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go
 
 在[官网](https://docs.buf.build/installation)进行安装
 
-##### 使用
-
-###### 初始化 Buf 工作区
+##### 初始化 Buf 工作区
 
 在根目录下执行 `buf config init` ，会生成一个 `buf.yaml` 的配置文件，添加 `modules` 字段指定模块路径，内容如下：
 ``` 内容如下：
@@ -205,7 +203,7 @@ managed:
 - **仅使用 gRPC**：如果您的项目只需要支持 gRPC 协议，建议使用 `buf.build/protocolbuffers/go` 和 `buf.build/protocolbuffers/go-grpc` 两个插件。
 - **需要多协议支持**：如果您的项目需要同时支持 gRPC、gRPC-Web 和 Connect 协议，建议使用 `buf.build/protocolbuffers/go` 和 `buf.build/connectrpc/go` 两个插件。[buf.build](https://buf.build/docs/bsr/remote-plugins/usage/?utm_source=chatgpt.com)
 - **仅使用 Connect**：如果您的项目只需要支持 Connect 协议，建议使用 `buf.build/protocolbuffers/go` 和 `buf.build/connectrpc/go` 两个插件。
-###### 生成代码
+##### 生成代码
 
 执行命令：`buf generate`
 

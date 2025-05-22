@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "tmp/数据加工api.md",
+                "file": "go应用开发/微服务-服务注册与发现.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "数据加工api"
+              "title": "微服务-服务注册与发现"
             }
           },
           {
@@ -27,16 +27,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "go应用开发/微服务.md",
+                "file": "go应用开发/微服务-服务注册与发现.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "微服务"
+              "title": "微服务-服务注册与发现"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -157,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "go应用开发/微服务.md",
+                "file": "go应用开发/微服务-服务注册与发现.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "微服务 的大纲"
+              "title": "微服务-服务注册与发现 的大纲"
             }
           }
         ],
@@ -184,10 +183,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "d190ab55f4efb95e",
+  "active": "2252be5aed3cdf89",
   "lastOpenFiles": [
+    "go应用开发/微服务-rpc与grpc.md",
     "tmp/数据加工api.md",
-    "go应用开发/微服务.md",
+    "go应用开发/微服务-服务注册与发现.md",
     "測試.md",
     "go应用开发/分布式锁.md",
     "go应用开发/测试.md",
@@ -222,7 +222,6 @@
     "tmp/自定义报表异步导出.md",
     "tmp/自定义报表未完成.md",
     "tmp/报表中心-导出key.md",
-    "tmp/会员资产变更查询.md",
     "go web项目开发",
     "小日记",
     "未命名.canvas",
