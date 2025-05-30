@@ -28,7 +28,7 @@
               "type": "markdown",
               "state": {
                 "file": "tmp/自定义报表v1-api.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
@@ -186,8 +186,10 @@
   },
   "active": "d190ab55f4efb95e",
   "lastOpenFiles": [
+    "go微服务框架学习/限流器.md",
     "tmp/微服务框架学习指南.md",
     "tmp/自定义报表v1-api.md",
+    "go微服务框架学习",
     "tmp/ONE-API 学习指南.md",
     "go应用开发/微服务-服务注册与发现.md",
     "tmp/世软每日TODO.md",
@@ -205,7 +207,6 @@
     "().md",
     "tmp/云后台合并接口对接问题.md",
     "未命名.md",
-    "未命名",
     "static/image/Pasted image 20250320093731.png",
     "static/image/Pasted image 20250320093518.png",
     "tmp/接口文档.md",
@@ -222,7 +223,6 @@
     "static/image",
     "static",
     "tmp/门店资产对账接口.md",
-    "tmp/自定义报表异步导出.md",
     "go web项目开发",
     "小日记",
     "未命名.canvas",
