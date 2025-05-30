@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "tmp/自定义报表v1-api.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
@@ -35,8 +35,7 @@
               "title": "ONE-API 学习指南"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -157,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "tmp/ONE-API 学习指南.md",
+                "file": "tmp/自定义报表v1-api.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "ONE-API 学习指南 的大纲"
+              "title": "自定义报表v1-api 的大纲"
             }
           }
         ],
@@ -184,11 +183,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "d190ab55f4efb95e",
+  "active": "2252be5aed3cdf89",
   "lastOpenFiles": [
+    "tmp/ONE-API 学习指南.md",
     "tmp/自定义报表v1-api.md",
     "go应用开发/微服务-服务注册与发现.md",
-    "tmp/ONE-API 学习指南.md",
     "tmp/世软每日TODO.md",
     "go应用开发/微服务-rpc与grpc.md",
     "tmp/数据加工api.md",
