@@ -50,7 +50,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -171,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "tmp/工单系统API.md",
+                "file": "go微服务框架学习/熔断器.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "工单系统API 的大纲"
+              "title": "熔断器 的大纲"
             }
           }
         ],
@@ -198,12 +198,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "79d368cdd5cd0e58",
+  "active": "96a2a50ccc8a6ae3",
   "lastOpenFiles": [
+    "tmp/工单系统API.md",
     "go微服务框架学习/熔断器.md",
     "tmp/微服务框架学习指南.md",
     "go微服务框架学习/限流器.md",
-    "tmp/工单系统API.md",
     "tmp/数据加工api.md",
     "tmp/接口文档.md",
     "tmp/自定义报表v1-api.md",
