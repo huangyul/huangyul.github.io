@@ -49,7 +49,8 @@
               "title": "负载均衡"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -170,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "tmp/微服务框架学习指南.md",
+                "file": "go应用开发/微服务-rpc与grpc.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "微服务框架学习指南 的大纲"
+              "title": "微服务-rpc与grpc 的大纲"
             }
           }
         ],
@@ -197,11 +198,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "2252be5aed3cdf89",
+  "active": "79d368cdd5cd0e58",
   "lastOpenFiles": [
+    "tmp/微服务框架学习指南.md",
     "go应用开发/微服务-rpc与grpc.md",
     "tmp/工单系统API.md",
-    "tmp/微服务框架学习指南.md",
     "go微服务框架学习/负载均衡.md",
     "go微服务框架学习/熔断器.md",
     "go微服务框架学习/限流器.md",
