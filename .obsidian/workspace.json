@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "tmp/微服务框架学习指南.md",
+                "file": "tmp/Kratos 微服务框架源码学习计划.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "微服务框架学习指南"
+              "title": "Kratos 微服务框架源码学习计划"
             }
           },
           {
@@ -49,8 +49,7 @@
               "title": "RPC 与 gRPC"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -171,13 +170,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "go微服务框架学习/RPC 与 gRPC.md",
+                "file": "tmp/Kratos 微服务框架源码学习计划.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "RPC 与 gRPC 的大纲"
+              "title": "Kratos 微服务框架源码学习计划 的大纲"
             }
           }
         ],
@@ -198,11 +197,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "96a2a50ccc8a6ae3",
+  "active": "2252be5aed3cdf89",
   "lastOpenFiles": [
-    "tmp/微服务框架学习指南.md",
     "tmp/工单系统API.md",
     "go微服务框架学习/RPC 与 gRPC.md",
+    "tmp/Kratos 微服务框架源码学习计划.md",
+    "tmp/微服务框架学习指南.md",
     "go应用开发/微服务-rpc与grpc.md",
     "go应用开发/微服务-服务注册与发现.md",
     "go微服务框架学习/负载均衡.md",
@@ -228,7 +228,6 @@
     "未命名.md",
     "static/image/Pasted image 20250320093731.png",
     "static/image/Pasted image 20250320093518.png",
-    "go重写redis/3、协程.md",
     "static/image/Pasted image 20250216203621.png",
     "static/image/Pasted image 20250216203053.png",
     "static/image/Pasted image 20250216202637.png",
