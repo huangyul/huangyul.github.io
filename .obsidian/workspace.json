@@ -50,7 +50,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -171,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "tmp/工单系统API.md",
+                "file": "go微服务框架学习/RPC 与 gRPC.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "工单系统API 的大纲"
+              "title": "RPC 与 gRPC 的大纲"
             }
           }
         ],
@@ -198,11 +198,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "79d368cdd5cd0e58",
+  "active": "96a2a50ccc8a6ae3",
   "lastOpenFiles": [
     "tmp/微服务框架学习指南.md",
-    "go微服务框架学习/RPC 与 gRPC.md",
     "tmp/工单系统API.md",
+    "go微服务框架学习/RPC 与 gRPC.md",
     "go应用开发/微服务-rpc与grpc.md",
     "go应用开发/微服务-服务注册与发现.md",
     "go微服务框架学习/负载均衡.md",
