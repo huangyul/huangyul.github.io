@@ -28,7 +28,7 @@
               "type": "markdown",
               "state": {
                 "file": "tmp/工单系统API.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
@@ -199,9 +199,10 @@
   },
   "active": "2252be5aed3cdf89",
   "lastOpenFiles": [
-    "tmp/Kratos 微服务框架源码学习计划.md",
-    "tmp/任务管理系统.md",
     "tmp/工单系统API.md",
+    "tmp/数据加工api.md",
+    "tmp/任务管理系统.md",
+    "tmp/Kratos 微服务框架源码学习计划.md",
     "go微服务框架学习/RPC 与 gRPC.md",
     "tmp/微服务框架学习指南.md",
     "go应用开发/微服务-rpc与grpc.md",
@@ -209,7 +210,6 @@
     "go微服务框架学习/负载均衡.md",
     "go微服务框架学习/熔断器.md",
     "go微服务框架学习/限流器.md",
-    "tmp/数据加工api.md",
     "tmp/接口文档.md",
     "tmp/自定义报表v1-api.md",
     "tmp/ONE-API 学习指南.md",
