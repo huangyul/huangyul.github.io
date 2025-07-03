@@ -46,7 +46,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -167,13 +167,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "go微服务框架学习/RPC 与 gRPC.md",
+                "file": "华为OD/机试.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of RPC 与 gRPC"
+              "title": "Outline of 机试"
             }
           }
         ],
@@ -194,8 +194,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "96a2a50ccc8a6ae3",
+  "active": "79d368cdd5cd0e58",
   "lastOpenFiles": [
+    "go微服务框架学习/RPC 与 gRPC.md",
     "华为OD/机试.md",
     "tmp/数据加工接口文档.md",
     "华为OD",
@@ -204,7 +205,6 @@
     "tmp/工单系统API.md",
     "tmp/数据加工api.md",
     "tmp/Kratos 微服务框架源码学习计划.md",
-    "go微服务框架学习/RPC 与 gRPC.md",
     "tmp/微服务框架学习指南.md",
     "go应用开发/微服务-rpc与grpc.md",
     "go应用开发/微服务-服务注册与发现.md",
