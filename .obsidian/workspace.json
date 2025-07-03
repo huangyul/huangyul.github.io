@@ -11,14 +11,10 @@
             "id": "2252be5aed3cdf89",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "tmp/后台系统.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "后台系统"
+              "title": "New tab"
             }
           },
           {
@@ -198,8 +194,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "79d368cdd5cd0e58",
+  "active": "253f87aac9d98b9f",
   "lastOpenFiles": [
+    "Untitled",
     "tmp/数据加工接口文档.md",
     "tmp",
     "tmp/后台系统.md",
@@ -227,7 +224,6 @@
     "go web项目开发/性能测试.md",
     "go web项目开发/微服务.md",
     "go web项目开发/权限管理.md",
-    "().md",
     "static/image/Pasted image 20250320093731.png",
     "static/image/Pasted image 20250320093518.png",
     "static/image/Pasted image 20250216203621.png",
