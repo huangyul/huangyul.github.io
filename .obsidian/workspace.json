@@ -23,12 +23,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "tmp/数据加工接口文档.md",
-                "mode": "preview",
+                "file": "华为OD/机试.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "数据加工接口文档"
+              "title": "机试"
             }
           },
           {
@@ -46,7 +46,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -167,13 +167,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "tmp/数据加工接口文档.md",
+                "file": "go微服务框架学习/RPC 与 gRPC.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 数据加工接口文档"
+              "title": "Outline of RPC 与 gRPC"
             }
           }
         ],
@@ -194,10 +194,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "253f87aac9d98b9f",
+  "active": "96a2a50ccc8a6ae3",
   "lastOpenFiles": [
-    "Untitled",
+    "华为OD/机试.md",
     "tmp/数据加工接口文档.md",
+    "华为OD",
     "tmp",
     "tmp/后台系统.md",
     "tmp/工单系统API.md",
@@ -240,7 +241,6 @@
     "未命名 3.canvas",
     "未命名 1.canvas",
     "未命名 2.canvas",
-    "go重写redis",
-    "新建 文本文档.txt"
+    "go重写redis"
   ]
 }
