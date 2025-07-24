@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "tmp/数据加工API文档(2).md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
@@ -145,7 +145,7 @@
                 "file": "tmp/数据加工API文档(2).md",
                 "followCursor": false,
                 "showSearch": true,
-                "searchQuery": "商品"
+                "searchQuery": ""
               },
               "icon": "lucide-list",
               "title": "Outline of 数据加工API文档(2)"
