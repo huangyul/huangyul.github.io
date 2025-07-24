@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "tmp/数据加工API文档(2).md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
@@ -145,7 +145,7 @@
                 "file": "tmp/数据加工API文档(2).md",
                 "followCursor": false,
                 "showSearch": true,
-                "searchQuery": "实物"
+                "searchQuery": "商品"
               },
               "icon": "lucide-list",
               "title": "Outline of 数据加工API文档(2)"
@@ -156,7 +156,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 506.5
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
