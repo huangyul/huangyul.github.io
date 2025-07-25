@@ -145,7 +145,7 @@
                 "file": "tmp/数据加工API文档(2).md",
                 "followCursor": false,
                 "showSearch": true,
-                "searchQuery": ""
+                "searchQuery": "明细"
               },
               "icon": "lucide-list",
               "title": "Outline of 数据加工API文档(2)"
@@ -156,7 +156,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 570.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -169,7 +169,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "61193000d9b406e6",
+  "active": "7b8563b0815e2350",
   "lastOpenFiles": [
     "tmp/数据加工接口文档.md",
     "tmp/数据加工API文档(2).md",
