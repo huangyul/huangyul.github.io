@@ -145,7 +145,7 @@
                 "file": "tmp/数据加工API文档.md",
                 "followCursor": false,
                 "showSearch": true,
-                "searchQuery": "会员排行"
+                "searchQuery": "商品"
               },
               "icon": "lucide-list",
               "title": "Outline of 数据加工API文档"
@@ -156,7 +156,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 570.5
+    "width": 588.5
   },
   "left-ribbon": {
     "hiddenItems": {
