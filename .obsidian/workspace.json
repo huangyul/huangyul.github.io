@@ -20,9 +20,15 @@
               "icon": "lucide-file",
               "title": "数据加工API文档"
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "16d9db646b75f35a",
+        "type": "tabs",
+        "children": [
           {
-            "id": "956dfd08c63d97db",
+            "id": "c6a4aad938cc24f6",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -35,8 +41,7 @@
               "title": "target"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -184,7 +189,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "956dfd08c63d97db",
+  "active": "c6a4aad938cc24f6",
   "lastOpenFiles": [
     "tmp/数据加工API文档.md",
     "aicoder/target.md",
