@@ -167,7 +167,7 @@
                 "file": "aicoder/target.md",
                 "followCursor": false,
                 "showSearch": true,
-                "searchQuery": "按会员"
+                "searchQuery": ""
               },
               "icon": "lucide-list",
               "title": "Outline of target"
@@ -191,7 +191,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "7b8563b0815e2350",
+  "active": "96cec708c0190b3f",
   "lastOpenFiles": [
     "tmp/数据加工API文档.md",
     "aicoder/target.md",
