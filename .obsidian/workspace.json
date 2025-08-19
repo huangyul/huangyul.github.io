@@ -21,8 +21,23 @@
               "icon": "lucide-file",
               "title": "数据加工API文档"
             }
+          },
+          {
+            "id": "d89e2ef04dba1d67",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Untitled.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Untitled"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       },
       {
         "id": "b3dc460be2489056",
@@ -164,13 +179,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "tmp/数据加工API文档.md",
+                "file": "Untitled.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 数据加工API文档"
+              "title": "Outline of Untitled"
             }
           }
         ],
@@ -191,10 +206,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "61193000d9b406e6",
+  "active": "d89e2ef04dba1d67",
   "lastOpenFiles": [
-    "aicoder/target.md",
     "tmp/数据加工API文档.md",
+    "Untitled.md",
+    "Untitled",
+    "aicoder/target.md",
     "static/image/0f4f9d86-0dc8-4b1a-b1fa-60a96bcbda2c.png",
     "static/image/6edab377-9a12-43b1-bbe9-6e5a3e1cfaad.png",
     "web3/Go后端.md",
@@ -235,7 +252,6 @@
     "Pasted image 20250216203049.png",
     "static/image",
     "static",
-    "go web项目开发",
     "未命名.canvas",
     "未命名 3.canvas",
     "未命名 1.canvas",
