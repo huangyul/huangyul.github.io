@@ -6,7 +6,7 @@
       {
         "id": "beba9f7dcfeb716b",
         "type": "tabs",
-        "dimension": 57.47330960854092,
+        "dimension": 79.12087912087912,
         "children": [
           {
             "id": "61193000d9b406e6",
@@ -41,7 +41,7 @@
       {
         "id": "b3dc460be2489056",
         "type": "tabs",
-        "dimension": 42.52669039145908,
+        "dimension": 20.87912087912088,
         "children": [
           {
             "id": "96cec708c0190b3f",
@@ -178,13 +178,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "tmp/京东礼品首页优化.md",
+                "file": "tmp/数据加工API文档.md",
                 "followCursor": false,
                 "showSearch": true,
-                "searchQuery": "变更"
+                "searchQuery": "门店"
               },
               "icon": "lucide-list",
-              "title": "Outline of 京东礼品首页优化"
+              "title": "Outline of 数据加工API文档"
             }
           }
         ],
@@ -192,8 +192,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 675.5
   },
   "left-ribbon": {
     "hiddenItems": {
