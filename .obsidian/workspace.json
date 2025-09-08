@@ -23,6 +23,18 @@
             }
           },
           {
+            "id": "173d4b58e86228b1",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.9.12"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.9.12"
+            }
+          },
+          {
             "id": "d89e2ef04dba1d67",
             "type": "leaf",
             "state": {
@@ -36,7 +48,8 @@
               "title": "京东礼品首页优化"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       },
       {
         "id": "b3dc460be2489056",
@@ -178,13 +191,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "tmp/数据加工API文档.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": "门店"
               },
               "icon": "lucide-list",
-              "title": "Outline of 数据加工API文档"
+              "title": "Outline"
             }
           }
         ],
@@ -206,7 +218,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "61193000d9b406e6",
+  "active": "173d4b58e86228b1",
   "lastOpenFiles": [
     "tmp/京东礼品首页优化.md",
     "tmp/数据加工API文档.md",
