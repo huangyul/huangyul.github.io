@@ -47,7 +47,8 @@
               "title": "京东礼品首页优化"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -168,13 +169,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "tmp/数据加工API文档.md",
+                "file": "tmp/京东礼品首页优化.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": "门店"
               },
               "icon": "lucide-list",
-              "title": "Outline of 数据加工API文档"
+              "title": "Outline of 京东礼品首页优化"
             }
           }
         ],
@@ -196,10 +197,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "61193000d9b406e6",
+  "active": "d89e2ef04dba1d67",
   "lastOpenFiles": [
-    "tmp/京东礼品首页优化.md",
     "tmp/数据加工API文档.md",
+    "tmp/京东礼品首页优化.md",
     "web3/Go后端.md",
     "Untitled.base",
     "aicoder/target.md",
