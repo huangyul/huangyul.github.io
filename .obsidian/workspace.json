@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "tmp/Untitled.md",
+                "file": "tmp/商户管理平台接口文档.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Untitled"
+              "title": "商户管理平台接口文档"
             }
           },
           {
@@ -168,13 +168,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "tmp/Untitled.md",
+                "file": "tmp/商户管理平台接口文档.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": "门店"
               },
               "icon": "lucide-list",
-              "title": "Outline of Untitled"
+              "title": "Outline of 商户管理平台接口文档"
             }
           }
         ],
@@ -182,7 +182,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 586.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -199,7 +199,7 @@
   "active": "61193000d9b406e6",
   "lastOpenFiles": [
     "tmp/数据加工API文档.md",
-    "tmp/Untitled.md",
+    "tmp/商户管理平台接口文档.md",
     "tmp/京东饭卡.md",
     "web3/Go后端.md",
     "Untitled.base",
