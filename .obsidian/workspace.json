@@ -22,6 +22,18 @@
             }
           },
           {
+            "id": "91ea0c3de6f66f52",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.10.6"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.10.6"
+            }
+          },
+          {
             "id": "173d4b58e86228b1",
             "type": "leaf",
             "state": {
@@ -47,7 +59,8 @@
               "title": "京东饭卡"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -168,13 +181,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "tmp/商户管理平台接口文档.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": "门店"
               },
               "icon": "lucide-list",
-              "title": "Outline of 商户管理平台接口文档"
+              "title": "Outline"
             }
           }
         ],
@@ -196,7 +208,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "61193000d9b406e6",
+  "active": "91ea0c3de6f66f52",
   "lastOpenFiles": [
     "tmp/数据加工API文档.md",
     "tmp/商户管理平台接口文档.md",
