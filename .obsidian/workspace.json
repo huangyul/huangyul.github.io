@@ -11,12 +11,14 @@
             "id": "173d4b58e86228b1",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.9.12"
+                "file": "tmp/京东饭卡.md",
+                "mode": "preview",
+                "source": false
               },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.9.12"
+              "icon": "lucide-file",
+              "title": "京东饭卡"
             }
           },
           {
@@ -154,12 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "tmp/京东饭卡.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": "门店"
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of 京东饭卡"
             }
           }
         ],
@@ -183,9 +186,9 @@
   },
   "active": "173d4b58e86228b1",
   "lastOpenFiles": [
-    "tmp/京东饭卡.md",
     "tmp/商户管理平台接口文档.md",
     "tmp/数据加工API文档.md",
+    "tmp/京东饭卡.md",
     "web3/Go后端.md",
     "Untitled.base",
     "aicoder/target.md",
