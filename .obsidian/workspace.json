@@ -13,12 +13,24 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "tmp/京东饭卡.md",
+                "file": "aicoder/target.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "京东饭卡"
+              "title": "target"
+            }
+          },
+          {
+            "id": "52f4f622f166bca4",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.12.4"
+              },
+              "icon": "lucide-book-up",
+              "title": "版本说明 1.12.4"
             }
           },
           {
@@ -35,7 +47,8 @@
               "title": "京东饭卡"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -58,7 +71,7 @@
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
-              "title": "Files"
+              "title": "文件列表"
             }
           },
           {
@@ -156,13 +169,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "tmp/京东饭卡.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": "门店"
               },
               "icon": "lucide-list",
-              "title": "Outline of 京东饭卡"
+              "title": "大纲"
             }
           }
         ],
@@ -174,21 +186,21 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "bases:Create new base": false,
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false,
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false,
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "173d4b58e86228b1",
+  "active": "52f4f622f166bca4",
   "lastOpenFiles": [
+    "tmp/京东饭卡.md",
     "tmp/商户管理平台接口文档.md",
     "tmp/数据加工API文档.md",
-    "tmp/京东饭卡.md",
     "web3/Go后端.md",
     "Untitled.base",
     "aicoder/target.md",
