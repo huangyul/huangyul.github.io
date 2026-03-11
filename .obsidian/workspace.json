@@ -22,25 +22,13 @@
             }
           },
           {
-            "id": "52f4f622f166bca4",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.12.4"
-              },
-              "icon": "lucide-book-up",
-              "title": "版本说明 1.12.4"
-            }
-          },
-          {
             "id": "d89e2ef04dba1d67",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "tmp/京东饭卡.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
@@ -169,12 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "tmp/京东饭卡.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": "门店"
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "京东饭卡 的大纲"
             }
           }
         ],
@@ -196,7 +185,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "52f4f622f166bca4",
+  "active": "d89e2ef04dba1d67",
   "lastOpenFiles": [
     "tmp/京东饭卡.md",
     "tmp/商户管理平台接口文档.md",
