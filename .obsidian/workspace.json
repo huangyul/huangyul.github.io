@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "tmp/商户管理平台接口文档.md",
+                "file": "ai/前置知识.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "商户管理平台接口文档"
+              "title": "前置知识"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "tmp/商户管理平台接口文档.md",
+                "file": "ai/前置知识.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": "门店"
               },
               "icon": "lucide-list",
-              "title": "商户管理平台接口文档 的大纲"
+              "title": "前置知识 的大纲"
             }
           }
         ],
@@ -172,9 +172,11 @@
   },
   "active": "7eea3d49dceb24f8",
   "lastOpenFiles": [
+    "tmp/商户管理平台接口文档.md",
+    "ai/前置知识.md",
+    "ai",
     "go应用开发/分布式锁.md",
     "aicoder/target.md",
-    "tmp/商户管理平台接口文档.md",
     "tmp/京东饭卡.md",
     "2026-04-15.md",
     "tmp/数据加工API文档.md",
@@ -206,7 +208,6 @@
     "tmp/云后台合并-线上接口.md",
     "go微服务框架学习",
     "tmp/世软每日TODO.md",
-    "測試.md",
     "static/image/Pasted image 20250320093731.png",
     "static/image/Pasted image 20250320093518.png",
     "static/image/Pasted image 20250216203621.png",
@@ -215,7 +216,6 @@
     "tmp/世软每日todolist",
     "iam-开发",
     "Pasted image 20250216203049.png",
-    "static/image",
     "未命名.canvas",
     "未命名 3.canvas",
     "未命名 1.canvas",
