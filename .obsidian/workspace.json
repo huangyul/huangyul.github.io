@@ -34,9 +34,21 @@
               "icon": "lucide-file",
               "title": "京东饭卡"
             }
+          },
+          {
+            "id": "249f76c6f431cbf3",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.12.7"
+              },
+              "icon": "lucide-book-up",
+              "title": "版本说明 1.12.7"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -157,13 +169,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2026-04-15.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": "门店"
               },
               "icon": "lucide-list",
-              "title": "2026-04-15 的大纲"
+              "title": "大纲"
             }
           }
         ],
@@ -185,7 +196,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "253f87aac9d98b9f",
+  "active": "249f76c6f431cbf3",
   "lastOpenFiles": [
     "tmp/京东饭卡.md",
     "2026-04-15.md",
