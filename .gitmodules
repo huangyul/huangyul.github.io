@@ -1,0 +1,3 @@
+[submodule "ai-agents-from-zero"]
+	path = ai-agents-from-zero
+	url = git@github.com:didilili/ai-agents-from-zero.git
