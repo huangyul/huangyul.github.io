@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ai-agents-from-zero/1-2-提示词工程基础.md",
+                "file": "ai-agents-from-zero/1-3-RAG、微调、续训与智能体选型.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1-2-提示词工程基础"
+              "title": "1-3-RAG、微调、续训与智能体选型"
             }
           },
           {
@@ -35,8 +35,7 @@
               "title": "1-提示词工程"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -158,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ai/1-提示词工程.md",
+                "file": "ai-agents-from-zero/1-3-RAG、微调、续训与智能体选型.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": "门店"
               },
               "icon": "lucide-list",
-              "title": "1-提示词工程 的大纲"
+              "title": "1-3-RAG、微调、续训与智能体选型 的大纲"
             }
           }
         ],
@@ -186,7 +185,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "0b48921717af8b57",
+  "active": "7eea3d49dceb24f8",
   "lastOpenFiles": [
     "ai-agents-from-zero/1-2-提示词工程基础.md",
     "ai/1-提示词工程.md",
