@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ai-agents-from-zero/3-基于Coze&Dify平台的智能体开发.md",
+                "file": "ai/3-LangChain.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "3-基于Coze&Dify平台的智能体开发"
+              "title": "3-LangChain"
             }
           },
           {
@@ -92,8 +92,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 305.5,
-    "collapsed": true
+    "width": 305.5
   },
   "right": {
     "id": "f9a47a3955517fdd",
@@ -157,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ai-agents-from-zero/3-基于Coze&Dify平台的智能体开发.md",
+                "file": "ai/3-LangChain.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": "门店"
               },
               "icon": "lucide-list",
-              "title": "3-基于Coze&Dify平台的智能体开发 的大纲"
+              "title": "3-LangChain 的大纲"
             }
           }
         ],
@@ -187,6 +186,7 @@
   },
   "active": "7eea3d49dceb24f8",
   "lastOpenFiles": [
+    "ai-agents-from-zero/3-基于Coze&Dify平台的智能体开发.md",
     "ai/3-LangChain.md",
     "ai/3-LangChain",
     "ai-agents-from-zero/2-RAG-搭建企业私有&个人知识库.md",
@@ -232,7 +232,6 @@
     "ai-agents-from-zero/实战项目-电商问数/6-MySQL、Embedding与日志管理.md",
     "ai-agents-from-zero/实战项目-电商问数/5-Qdrant与ES快速入门与接入.md",
     "ai-agents-from-zero/实战项目-电商问数/4-项目结构与基础服务配置管理.md",
-    "ai-agents-from-zero/实战项目-电商问数/3-开发环境与基础服务准备.md",
     "未命名.canvas",
     "未命名 3.canvas",
     "未命名 1.canvas",
