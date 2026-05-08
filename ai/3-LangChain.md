@@ -49,3 +49,44 @@ create_agent(模型、工具、提示等) → [Agent]
 一句话定义：
 
 > **Model I/O = Format（输入格式化）→ Predict（模型调用）→ Parse（输出解析）**
+
+### 使用方式
+
+#### 原生SDK
+
+```py
+client = OpenAI(api_key=api_key, base_url=base_url)
+resp = client.chat.completions.create(model=model, messages=messages)
+print(resp.choices[0].message.content)
+```
+
+#### langchain provider
+
+```py
+from langchain_openai import ChatOpenAI
+from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
+
+
+# 1. 实例化Provider
+llm = ChatOpenAI(model=model, api_key=api_key, base_url=base_url)
+
+# 2. 构建消息列表
+messages = [
+    SystemMessage(content="你是一个中文助手，擅长回答各种问题。"),
+    HumanMessage(content="你好，请你介绍一下 LangChain"),
+]
+
+# 3. 直接调用（Predict）
+response = llm.invoke(messages)
+print(response.content)
+```
+
+#### init chat
+
+目前主流推荐
+
+```python
+chat_model = init_chat_model(
+    model=f"openai:{model}", api_key=api_key, base_url=base_url
+)
+```
