@@ -102,20 +102,77 @@ chat_model = init_chat_model(
 - **元组/字典列表**：`[("system", "..."), ("user", "...")]` 或 `[{"role": "system", "content": "..."}, ...]`。
 
 #### 2. 核心消息类型
-- **SystemMessage**：设定人设、规则、回答边界（稳定约束）。
-- **HumanMessage**：用户当前输入、追问（动态任务）。
-- **AIMessage**：模型的回复，用于保存多轮对话历史。
-- **ToolMessage**：外部工具/函数执行结果的回传。
+LangChain 将对话拆分为不同角色，使模型能更好理解上下文：
+
+```python
+from langchain_core.messages import SystemMessage, HumanMessage, AIMessage, ToolMessage
+
+messages = [
+    SystemMessage(content="你是一个专业的法律助手。"), # 设定规则
+    HumanMessage(content="什么是合同法？"),        # 用户提问
+    AIMessage(content="合同法是..."),              # 模型回复（用于多轮对话历史）
+    # ToolMessage 用于回传工具调用结果，详见 Agent 章节
+]
+```
 
 #### 3. 提示词模板 (Templates)
-- **PromptTemplate**：面向纯文本任务（摘要、翻译等），结果通常为字符串。
-- **ChatPromptTemplate**：面向对话场景，由多条消息模板组成，支持 `from_messages` 创建。
-- **MessagesPlaceholder**：消息占位符，多轮对话拼接的关键，用于动态插入不确定长度的历史记录。
+模板化是 Prompt 工程的核心，解决“硬编码”问题。
+
+- **PromptTemplate**：适合单段文本。
+  ```python
+  from langchain_core.prompts import PromptTemplate
+  template = PromptTemplate.from_template("请帮我摘要以下内容：{text}")
+  prompt = template.format(text="LangChain 是一个...")
+  ```
+
+- **ChatPromptTemplate**：最推荐的对话场景写法。
+  ```python
+  from langchain_core.prompts import ChatPromptTemplate
+  
+  prompt_template = ChatPromptTemplate.from_messages([
+      ("system", "你是一个{role}"),
+      ("human", "{question}")
+  ])
+  # 填充后得到消息列表
+  messages = prompt_template.format_messages(role="专家", question="什么是 RAG?")
+  ```
+
+- **MessagesPlaceholder**：**多轮对话的关键**。在模板中预留坑位，动态插入不确定长度的历史记录。
+  ```python
+  from langchain_core.prompts import MessagesPlaceholder
+  
+  prompt = ChatPromptTemplate.from_messages([
+      ("system", "你是个助手"),
+      MessagesPlaceholder("chat_history"), # 动态插入历史消息列表
+      ("human", "{input}")
+  ])
+  ```
 
 #### 4. 模型调用方式
-- **invoke / ainvoke**：单次同步/异步调用。
-- **stream / astream**：流式输出，提升用户体验（打字机效果）。
-- **batch / abatch**：批量处理多条输入，适合离线任务。
+除了基础的 `invoke`，常用进阶方式：
+
+- **stream (流式)**：打字机效果。
+  ```python
+  for chunk in model.stream("讲个长故事"):
+      print(chunk.content, end="", flush=True)
+  ```
+
+- **batch (批量)**：并发处理多条输入（效率远高于循环调用）。
+  ```python
+  resps = model.batch(["什么是 AI?", "什么是 ML?"])
+  ```
 
 #### 5. 工程化管理
-通过 `load_prompt` 从 **JSON / YAML** 文件加载提示词，实现 Prompt 与代码逻辑分离，便于版本管理与团队协作。
+将 Prompt 存放在外部文件（如 `prompt.yaml`），实现代码与内容分离：
+
+```yaml
+# prompt.yaml
+_type: prompt
+input_variables: ["topic"]
+template: "请详细介绍一下 {topic}"
+```
+
+```python
+from langchain_core.prompts import load_prompt
+template = load_prompt("prompt.yaml")
+```
