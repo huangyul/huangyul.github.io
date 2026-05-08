@@ -90,3 +90,32 @@ chat_model = init_chat_model(
     model=f"openai:{model}", api_key=api_key, base_url=base_url
 )
 ```
+
+### Prompt
+
+**Prompt** 在 LangChain 中不只是“一段字符串”，而是对模型输入的**工程化组织**（角色 + 模板 + 占位符）。
+
+#### 1. 入参形态
+聊天模型支持多种输入方式：
+- **纯字符串**：`model.invoke("...")`，适合快速测试。
+- **消息列表**（推荐）：`[SystemMessage(...), HumanMessage(...)]`，结构清晰，利于模型理解。
+- **元组/字典列表**：`[("system", "..."), ("user", "...")]` 或 `[{"role": "system", "content": "..."}, ...]`。
+
+#### 2. 核心消息类型
+- **SystemMessage**：设定人设、规则、回答边界（稳定约束）。
+- **HumanMessage**：用户当前输入、追问（动态任务）。
+- **AIMessage**：模型的回复，用于保存多轮对话历史。
+- **ToolMessage**：外部工具/函数执行结果的回传。
+
+#### 3. 提示词模板 (Templates)
+- **PromptTemplate**：面向纯文本任务（摘要、翻译等），结果通常为字符串。
+- **ChatPromptTemplate**：面向对话场景，由多条消息模板组成，支持 `from_messages` 创建。
+- **MessagesPlaceholder**：消息占位符，多轮对话拼接的关键，用于动态插入不确定长度的历史记录。
+
+#### 4. 模型调用方式
+- **invoke / ainvoke**：单次同步/异步调用。
+- **stream / astream**：流式输出，提升用户体验（打字机效果）。
+- **batch / abatch**：批量处理多条输入，适合离线任务。
+
+#### 5. 工程化管理
+通过 `load_prompt` 从 **JSON / YAML** 文件加载提示词，实现 Prompt 与代码逻辑分离，便于版本管理与团队协作。
