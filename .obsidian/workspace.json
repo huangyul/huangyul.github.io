@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ai/3-LangChain.md",
-                "mode": "source",
+                "file": "tmp/门票需求接口.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "3-LangChain"
+              "title": "门票需求接口"
             }
           },
           {
@@ -35,8 +35,7 @@
               "title": "14-输出解析器"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -157,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ai-agents-from-zero/14-输出解析器.md",
+                "file": "tmp/门票需求接口.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": "门店"
               },
               "icon": "lucide-list",
-              "title": "14-输出解析器 的大纲"
+              "title": "门票需求接口 的大纲"
             }
           }
         ],
@@ -171,7 +170,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 222.5
+    "width": 537.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -185,13 +184,21 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "0b48921717af8b57",
+  "active": "7eea3d49dceb24f8",
   "lastOpenFiles": [
     "ai-agents-from-zero/14-输出解析器.md",
+    "tmp/MemberAssetGateTicket接口文档.md",
+    "tmp/BigProject接口文档.md",
+    "tmp/GateInoutLog接口文档.md",
+    "tmp/BigProjectController接口文档.md",
+    "tmp/门票需求接口.md",
+    "tmp/GateTicket接口文档.md",
+    "tmp/数据加工API文档.md",
+    "tmp/商户管理平台接口文档.md",
+    "ai/3-LangChain.md",
     "ai-agents-from-zero/13-提示词与消息模板.md",
     "ai-agents-from-zero/8-企业级大模型部署.md",
     "ai/2-RAG - 搭建知识库.md",
-    "ai/3-LangChain.md",
     "ai-agents-from-zero/3-基于Coze&Dify平台的智能体开发.md",
     "ai/3-LangChain",
     "ai-agents-from-zero/2-RAG-搭建企业私有&个人知识库.md",
@@ -225,14 +232,6 @@
     "ai-agents-from-zero/案例与源码-1-Coze&Dify工作流智能体/3.7-Dify案例：客服对话记录分析/3.7-客服对话记录分析-Dify.md",
     "ai-agents-from-zero/案例与源码-1-Coze&Dify工作流智能体/3.6-Coze案例：客服对话记录分析/3.6-客服对话记录分析-Coze.md",
     "ai-agents-from-zero/案例与源码-1-Coze&Dify工作流智能体/3.5-Dify案例：客户投诉分类助手/3.5-客户投诉分类助手.md",
-    "ai-agents-from-zero/案例与源码-1-Coze&Dify工作流智能体/3.4-Dify案例：一键生成行业调研报告/3.4-一键生成行业调研报告.md",
-    "ai-agents-from-zero/案例与源码-1-Coze&Dify工作流智能体/3.3-Coze案例：产品营销海报生成/3.3-产品营销海报生成.md",
-    "ai-agents-from-zero/案例与源码-1-Coze&Dify工作流智能体/3.2-Coze案例：复刻爆款视频/3.2-复刻爆款视频.md",
-    "ai-agents-from-zero/案例与源码-1-Coze&Dify工作流智能体/3.10-Coze案例：商品营销卖点提炼/3.10-商品营销卖点提炼-Coze.md",
-    "ai-agents-from-zero/案例与源码-1-Coze&Dify工作流智能体/3.1-Coze案例：一键生成行业调研PPT/3.1-一键生成行业调研PPT.md",
-    "ai-agents-from-zero/实战项目-电商问数/9-字段与指标检索能力构建.md",
-    "ai-agents-from-zero/实战项目-电商问数/8-表与字段信息同步到元数据库.md",
-    "ai-agents-from-zero/实战项目-电商问数/7-元数据知识库总览与构建入口.md",
     "未命名.canvas",
     "未命名 3.canvas",
     "未命名 1.canvas",
