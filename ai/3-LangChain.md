@@ -209,7 +209,7 @@ from typing import TypedDict, Annotated
 from langchain_openai import ChatOpenAI
 
 # 定义输出结构
-class Joke(TypedDict):
+class Joke(TypedDict):  
     setup: Annotated[str, "笑话的铺垫"]
     punchline: Annotated[str, "笑话的梗（笑点）"]
 
@@ -254,4 +254,4 @@ format_instructions = parser.get_format_instructions()
 - **误区 1：能解析成 JSON = 业务逻辑正确**。JSON 格式正确不代表数据合理（如年龄输出了 500 岁）。必须配合 Pydantic 的校验规则或业务层二次验证。
 - **误区 2：解析器能完全代替 Prompt 设计**。如果 Prompt 没写清字段含义，解析器依然会失败。Prompt 负责“生成质量”，解析器负责“交付规格”。
 - **误区 3：过度工程化**。如果只是简单的问答展示，强行引入 Pydantic 会增加代码复杂度。应根据“数据流向”决定解析深度。
-
+
