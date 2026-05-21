@@ -159,7 +159,7 @@
                 "file": "tmp/门票需求接口.md",
                 "followCursor": false,
                 "showSearch": true,
-                "searchQuery": "门店"
+                "searchQuery": ""
               },
               "icon": "lucide-list",
               "title": "门票需求接口 的大纲"
@@ -170,7 +170,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 683.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -184,7 +184,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "7eea3d49dceb24f8",
+  "active": "7b8563b0815e2350",
   "lastOpenFiles": [
     "ai-agents-from-zero/实战项目-深度研搜/images/13/13-11-1-1.png",
     "ai-agents-from-zero/实战项目-深度研搜/images/13/13-3-1-1.png",
