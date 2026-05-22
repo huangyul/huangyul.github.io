@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "tmp/弹珠 礼品卡明细加工及报表接口.md",
+                "file": "tmp/门票需求接口.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "弹珠 礼品卡明细加工及报表接口"
+              "title": "门票需求接口"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "tmp/弹珠 礼品卡明细加工及报表接口.md",
+                "file": "tmp/门票需求接口.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "弹珠 礼品卡明细加工及报表接口 的大纲"
+              "title": "门票需求接口 的大纲"
             }
           }
         ],
@@ -184,10 +184,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "7b8563b0815e2350",
+  "active": "7eea3d49dceb24f8",
   "lastOpenFiles": [
-    "tmp/门票需求接口.md",
     "tmp/弹珠 礼品卡明细加工及报表接口.md",
+    "tmp/门票需求接口.md",
     "ai-agents-from-zero/实战项目-深度研搜/images/13/13-11-1-1.png",
     "ai-agents-from-zero/实战项目-深度研搜/images/13/13-3-1-1.png",
     "ai-agents-from-zero/实战项目-深度研搜/images/13",
