@@ -22,3 +22,24 @@ LLM 的核心是 Attention（注意力）机制。当 Prompt 过长时，模型�
 
 - 它是一个“总和限制”：大模型的上下文窗口（比如 GPT-4o 的 128k，或者某些轻量级本地模型的 8k）指的是 Input Tokens（Prompt + 历史记录） + Output Tokens（模型即将生成的回复） 的总和。
 - 为什么不是无限记忆？：因为 Transformer 架构的计算复杂度。虽然现在很多模型号称支持 1M（百万）上下文，但正如你上一节学到的，文本越长，不仅越贵，而且“Lost in the Middle”现象越严重。把 10 万字无脑塞给大模型，它的智商会直线下降。
+
+当对话长度撑爆`Context window`时，有以下三种策略：
+1. 阶段策略：
+   - 滑动窗口法（Sliding Window / Window Buffer）：
+    - 逻辑：规定一个固定的 Token 阈值（例如 4096）。当新对话进来导致总 Token 超标时，锁死 System Prompt 不动，将最早的 User-Assistant 对话轮次从队列中 Pop 掉（先进先出），只保留最近的 $N$ 条对话。
+    - 缺点：Agent 会彻底遗忘很久以前聊过的内容。
+  - 按轮次截断（Max Turns）：
+    - 逻辑：不看 Token，只看轮次（比如只保留最近 5 轮对话）。
+    - 缺点：可能单词聊天就撑爆，一般不使用
+2. 上下文控制：这是一种预防性的工程手段，在把数据发给模型之前，先精细化分配“Token 预算（Token Budget）”。
+3. Memory 基础（长短期记忆架构）:
+   - 短期记忆（Short-term Memory）：
+     - 载体：当前 Session 的滑动窗口（RAM）。
+     - 特点：极其精准，带有语境，但容量有限，随用随抛。
+   - 长期记忆（Long-term Memory）：
+     - 载体：PostgreSQL (pgvector) / Redis / 关系型数据库（ROM）。
+     - 实现：
+       - Summary Memory（滚动摘要）：把被滑动窗口淘汰掉的老对话，用一个异步 Task 让大模型压缩成一句“历史摘要”，作为 System Prompt 的一部分永久带上。
+       - Semantic Memory（语义记忆）：把老对话向量化存入 pgvector。当用户提问“我三天前说过的那个 Bug 怎么解？”时，通过向量检索捞出那一段历史，临时的插入到当前 Prompt 中。
+
+
