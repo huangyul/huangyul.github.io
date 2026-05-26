@@ -57,3 +57,47 @@ LLM 的核心是 Attention（注意力）机制。当 Prompt 过长时，模型�
 - Retrieval 错误（检索污染 / 垃圾进垃圾出）
 - Prompt 不明确（Ambiguous Prompt）
 - Tool 失败（工具链断裂 / 状态失控）
+
+## Structured Output
+
+在过去（Prompt 崇拜时代），工程师只能在提示词里求大模型：“请务必返回 JSON，不要返回任何解释性文字”。但这完全是碰运气，模型稍微一抖，后端 json.loads() 就会报 500 崩溃。
+
+到了 2026 年的今天，工业界已经彻底抛弃了纯靠 Prompt 约束 JSON 的作法。现在让模型稳定输出固定 Schema 的底层核心手段主要有两种：
+
+1. JSON Mode（基础版约束）
+- 原理：在调用大模型 API 时，传入一个配置参数（如 OpenAI 的 response_format={"type": "json_object"}）。
+- 效果：大模型在底层解码（Decoding）时，如果发现下一个 Token 会导致整个字符串破坏 JSON 语法，它就会强制调整概率分布，逼着自己吐出符合 JSON 格式的符号。
+- 注意点：它只保证输出是合法的 JSON 格式（不会少逗号或括号），但不保证 JSON 里的 Key 是你想要的（它可能会自己魔改 Key 的名字）。
+
+2. Structured Outputs（生产级终极方案）
+- 原理：你直接在 API 中提交一个标准的 JSON Schema（在 Python 中通常用 Pydantic 定义）。
+- 效果：云厂商的推理引擎会在底层挂载一个基于该 Schema 的状态机（Grammar-Based Sampling）。大模型在预测下一个 Token 时，只能在满足你定义的 Schema 的 Token 集合里做概率选择。
+- 工程优势：100% 稳定。大模型不仅返回的是 JSON，而且字段、类型、甚至 Enum（枚举值）都绝对不可能越界。
+
+** 简单demo **
+
+```py
+client = OpenAI(api_key=api_key, base_url=base_url)
+
+
+class UserInfo(BaseModel):
+    name: str
+    age: int
+    email: str
+    skills: List[str]
+
+
+resp = client.chat.completions.parse(
+    model="gpt-5.4",
+    messages=[
+        {"role": "system", "content": "你是一个专业人才数据提取器"},
+        {
+            "role": "user",
+            "content": "请从下面内容中提取：我叫张三，今年28岁，我的邮箱是 zhangsan@web2.com，我会 Python、FastAPI 和 Docker。",
+        },
+    ],
+    response_format=UserInfo,
+)
+
+print(resp.choices[0].message.content)
+```
