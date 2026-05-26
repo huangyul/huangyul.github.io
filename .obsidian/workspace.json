@@ -187,6 +187,7 @@
   },
   "active": "0b48921717af8b57",
   "lastOpenFiles": [
+    "ai/quick_llm.md",
     "ai/ask_prompt.md",
     "ai-agents-from-zero/实战项目-电商问数/images/10/10-3-0-1.svg",
     "ai-agents-from-zero/实战项目-电商问数/images/10",
@@ -230,7 +231,6 @@
     "tmp/GateTicket接口文档.md",
     "ai/3-LangChain.md",
     "ai-agents-from-zero/13-提示词与消息模板.md",
-    "ai-agents-from-zero/8-企业级大模型部署.md",
     "ai/3-LangChain",
     "ai/2-RAG - 搭建知识库",
     "未命名.canvas",
