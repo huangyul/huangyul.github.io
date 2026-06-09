@@ -20,25 +20,28 @@ Python + FastAPI + PostgreSQL(pgvector) + LangGraph + Docker + SSE
 【当前学习的内容】
 
 ```md
-建立：
+Tool Calling
 
-> Context Engineering 思维
+重点：
 
-而不是 Prompt 崇拜。
+> Agent 本质是 Tool Routing。
 
-## P0（必须学）
+你必须自己手写。
 
-### 1. Token
+不要先上框架。
 
-理解：
+项目：
+天气 Agent
 
-* token 是什么
-* 为什么贵
-* 为什么影响上下文
+流程：
+用户问题
+→ 模型决定调用天气工具
+→ 返回结果
 
-必须会回答：
+验收标准：
+你必须能解释：
 
-> 为什么 prompt 太长会变差？
-
----
+1. 为什么用 tool calling？
+2. 为什么不用 prompt parsing？
+3. tool schema 为什么重要？
 ```
