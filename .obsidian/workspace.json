@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ai/progress.md",
+                "file": "ai/ai.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "progress"
+              "title": "ai"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ai/progress.md",
+                "file": "ai/ai.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "progress 的大纲"
+              "title": "ai 的大纲"
             }
           }
         ],
@@ -172,6 +172,9 @@
   },
   "active": "305824736df5e035",
   "lastOpenFiles": [
+    "ai/ask_prompt.md",
+    "ai/progress.md",
+    "ai/quick_llm.md",
     "ai/ai.md",
     "ai/1-基础知识.md",
     "ai/2-RAG - 搭建知识库.md",
@@ -189,8 +192,6 @@
     "tmp/云管家v1.2.1 commit id.md",
     "tmp/门票需求接口.md",
     "tmp/商户管理平台接口文档.md",
-    "ai/quick_llm.md",
-    "ai/ask_prompt.md",
     "ai-agents-from-zero/实战项目-电商问数/images/10/10-3-0-1.svg",
     "ai-agents-from-zero/实战项目-电商问数/images/10",
     "ai-agents-from-zero/实战项目-电商问数/images/6/6-0-0-1.svg",
@@ -200,7 +201,6 @@
     "ai-agents-from-zero/实战项目-电商问数/images/12",
     "ai-agents-from-zero/实战项目-深度研搜/images/7",
     "ai-agents-from-zero/实战项目-深度研搜/images/14",
-    "ai/progress.md",
     "tmp/弹珠 礼品卡明细加工及报表接口.md",
     "ai-agents-from-zero/14-输出解析器.md",
     "tmp/数据加工API文档.md",
