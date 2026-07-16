@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ai/ai.md",
+                "file": "ai/progress.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ai"
+              "title": "progress"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ai/ai.md",
+                "file": "ai/progress.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "ai 的大纲"
+              "title": "progress 的大纲"
             }
           }
         ],
@@ -172,6 +172,11 @@
   },
   "active": "305824736df5e035",
   "lastOpenFiles": [
+    "ai/ai.md",
+    "ai/1-基础知识.md",
+    "ai/2-RAG - 搭建知识库.md",
+    "ai/3-LangChain.md",
+    "ai/前置知识.md",
     "ai-agents-from-zero/images/28/28-5-4-1.png",
     "ai-agents-from-zero/images/28/28-5-1-1.png",
     "ai-agents-from-zero/images/28/28-4-1-1.png",
@@ -193,11 +198,9 @@
     "ai-agents-from-zero/实战项目-电商问数/images/15/15-5-1-1.svg",
     "ai-agents-from-zero/实战项目-电商问数/images/12/12-3-0-1.svg",
     "ai-agents-from-zero/实战项目-电商问数/images/12",
-    "ai-agents-from-zero/实战项目-深度研搜/images/7/7-1-2-1.svg",
     "ai-agents-from-zero/实战项目-深度研搜/images/7",
     "ai-agents-from-zero/实战项目-深度研搜/images/14",
     "ai/progress.md",
-    "ai/ai.md",
     "tmp/弹珠 礼品卡明细加工及报表接口.md",
     "ai-agents-from-zero/14-输出解析器.md",
     "tmp/数据加工API文档.md",
@@ -214,9 +217,6 @@
     "ai-agents-from-zero/7-企业级大模型部署.md",
     "ai-agents-from-zero/6-Coze与Dify的Windows平台部署.md",
     "tmp/MemberAssetGateTicket接口文档.md",
-    "tmp/BigProject接口文档.md",
-    "tmp/GateInoutLog接口文档.md",
-    "tmp/BigProjectController接口文档.md",
     "ai/3-LangChain",
     "未命名.canvas",
     "未命名 3.canvas",
