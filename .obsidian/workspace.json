@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ai/ai.md",
+                "file": "ai-agents-from-zero/21-Agent智能体.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ai"
+              "title": "21-Agent智能体"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ai/ai.md",
+                "file": "ai-agents-from-zero/21-Agent智能体.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "ai 的大纲"
+              "title": "21-Agent智能体 的大纲"
             }
           }
         ],
@@ -172,10 +172,19 @@
   },
   "active": "305824736df5e035",
   "lastOpenFiles": [
+    "ai-agents-from-zero/22-LangGraph概述与快速入门.md",
+    "ai-agents-from-zero/23-LangGraphAPI：图与状态.md",
+    "ai-agents-from-zero/27-Skills技能与AI编程工具实践.md",
+    "ai-agents-from-zero/26-LangGraph多智能体与A2A.md",
+    "ai-agents-from-zero/6-Coze与Dify的Windows平台部署.md",
+    "ai-agents-from-zero/2-RAG-搭建企业私有&个人知识库.md",
+    "ai-agents-from-zero/28-大模型微调概述与整体流程.md",
+    "ai-agents-from-zero/1-1-大模型认知与工程概览.md",
+    "ai-agents-from-zero/_sidebar.md",
+    "ai/ai.md",
     "ai/ask_prompt.md",
     "ai/progress.md",
     "ai/quick_llm.md",
-    "ai/ai.md",
     "ai/1-基础知识.md",
     "ai/2-RAG - 搭建知识库.md",
     "ai/3-LangChain.md",
@@ -187,7 +196,6 @@
     "ai-agents-from-zero/images/28/28-2-2-1.png",
     "ai-agents-from-zero/images/28/28-2-1-1.png",
     "ai-agents-from-zero/images/28",
-    "ai-agents-from-zero/28-大模型微调概述与整体流程.md",
     "华为OD/机试.md",
     "tmp/云管家v1.2.1 commit id.md",
     "tmp/门票需求接口.md",
@@ -209,14 +217,6 @@
     "ai-agents-from-zero/实战项目-深度研搜/images/0",
     "ai-agents-from-zero/实战项目-深度研搜/14-FastAPI接口与项目闭环.md",
     "ai-agents-from-zero/实战项目-深度研搜/13-主智能体搭建与异步执行.md",
-    "ai-agents-from-zero/实战项目-深度研搜/12-RAGFlow子智能体与知识库准备.md",
-    "ai-agents-from-zero/实战项目-深度研搜/11-数据库查询子智能体与MySQL工具.md",
-    "ai-agents-from-zero/实战项目-深度研搜/10-网络搜索子智能体与Tavily工具.md",
-    "ai-agents-from-zero/实战项目-深度研搜/0-前言.md",
-    "ai-agents-from-zero/8-Docker入门与Dify部署常见问题.md",
-    "ai-agents-from-zero/7-企业级大模型部署.md",
-    "ai-agents-from-zero/6-Coze与Dify的Windows平台部署.md",
-    "tmp/MemberAssetGateTicket接口文档.md",
     "ai/3-LangChain",
     "未命名.canvas",
     "未命名 3.canvas",
