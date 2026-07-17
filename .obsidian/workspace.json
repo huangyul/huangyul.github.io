@@ -4,21 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "70f7a7f43ee1ae0e",
+        "id": "1a6e12fa6eeecd65",
         "type": "tabs",
         "children": [
           {
-            "id": "305824736df5e035",
+            "id": "533d67985121897a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "aicoder/target.md",
+                "file": "ai/agent开发/1-基础知识.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "target"
+              "title": "1-基础知识"
+            }
+          },
+          {
+            "id": "da4139736be3f15a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ai-agents-from-zero/1-1-大模型认知与工程概览.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "1-1-大模型认知与工程概览"
             }
           }
         ]
@@ -142,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "aicoder/target.md",
+                "file": "ai/agent开发/1-基础知识.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "target 的大纲"
+              "title": "1-基础知识 的大纲"
             }
           }
         ],
@@ -170,10 +184,25 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "305824736df5e035",
+  "active": "533d67985121897a",
   "lastOpenFiles": [
-    "华为OD/机试.md",
     "ai-agents-from-zero/1-1-大模型认知与工程概览.md",
+    "ai/agent开发/1-基础知识.md",
+    "ai/3-LangChain.md",
+    "tmp/弹珠 礼品卡明细加工及报表接口.md",
+    "ai/agent开发",
+    "ai/2-RAG - 搭建知识库.md",
+    "ai/1-基础知识.md",
+    "ai/quick_llm.md",
+    "ai/progress.md",
+    "ai/ask_prompt.md",
+    "ai/前置知识.md",
+    "web3/Go后端.md",
+    "static/image/0f4f9d86-0dc8-4b1a-b1fa-60a96bcbda2c.png",
+    "static/image/6edab377-9a12-43b1-bbe9-6e5a3e1cfaad.png",
+    "static/image/Pasted image 20250216202637.png",
+    "华为OD/机试.md",
+    "aicoder/target.md",
     "ai-agents-from-zero/21-Agent智能体.md",
     "ai-agents-from-zero/22-LangGraph概述与快速入门.md",
     "ai-agents-from-zero/23-LangGraphAPI：图与状态.md",
@@ -184,13 +213,6 @@
     "ai-agents-from-zero/28-大模型微调概述与整体流程.md",
     "ai-agents-from-zero/_sidebar.md",
     "ai/ai.md",
-    "ai/ask_prompt.md",
-    "ai/progress.md",
-    "ai/quick_llm.md",
-    "ai/1-基础知识.md",
-    "ai/2-RAG - 搭建知识库.md",
-    "ai/3-LangChain.md",
-    "ai/前置知识.md",
     "ai-agents-from-zero/images/28/28-5-4-1.png",
     "ai-agents-from-zero/images/28/28-5-1-1.png",
     "ai-agents-from-zero/images/28/28-4-1-1.png",
@@ -203,21 +225,13 @@
     "tmp/商户管理平台接口文档.md",
     "ai-agents-from-zero/实战项目-电商问数/images/10/10-3-0-1.svg",
     "ai-agents-from-zero/实战项目-电商问数/images/10",
-    "ai-agents-from-zero/实战项目-电商问数/images/6/6-0-0-1.svg",
     "ai-agents-from-zero/实战项目-电商问数/images/6",
-    "ai-agents-from-zero/实战项目-电商问数/images/15/15-5-1-1.svg",
-    "ai-agents-from-zero/实战项目-电商问数/images/12/12-3-0-1.svg",
     "ai-agents-from-zero/实战项目-电商问数/images/12",
     "ai-agents-from-zero/实战项目-深度研搜/images/7",
     "ai-agents-from-zero/实战项目-深度研搜/images/14",
-    "tmp/弹珠 礼品卡明细加工及报表接口.md",
-    "ai-agents-from-zero/14-输出解析器.md",
-    "tmp/数据加工API文档.md",
     "ai-agents-from-zero/实战项目-深度研搜/images/13",
     "ai-agents-from-zero/实战项目-深度研搜/images/12",
     "ai-agents-from-zero/实战项目-深度研搜/images/0",
-    "ai-agents-from-zero/实战项目-深度研搜/14-FastAPI接口与项目闭环.md",
-    "ai/3-LangChain",
     "未命名.canvas",
     "未命名 3.canvas",
     "未命名 1.canvas",
