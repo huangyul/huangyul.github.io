@@ -93,7 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 366.5
+    "width": 304.5
   },
   "right": {
     "id": "f9a47a3955517fdd",
@@ -171,7 +171,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 452.5
+    "width": 328.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -187,6 +187,8 @@
   },
   "active": "da4139736be3f15a",
   "lastOpenFiles": [
+    "ai-agents-from-zero/_sidebar.md",
+    "ai-agents-from-zero/1-2-提示词工程基础.md",
     "ai/agent开发/1-基础知识.md",
     "ai-agents-from-zero/1-1-大模型认知与工程概览.md",
     "ai/3-LangChain.md",
@@ -212,7 +214,6 @@
     "ai-agents-from-zero/6-Coze与Dify的Windows平台部署.md",
     "ai-agents-from-zero/2-RAG-搭建企业私有&个人知识库.md",
     "ai-agents-from-zero/28-大模型微调概述与整体流程.md",
-    "ai-agents-from-zero/_sidebar.md",
     "ai/ai.md",
     "ai-agents-from-zero/images/28/28-5-4-1.png",
     "ai-agents-from-zero/images/28/28-5-1-1.png",
@@ -223,7 +224,6 @@
     "ai-agents-from-zero/images/28",
     "tmp/云管家v1.2.1 commit id.md",
     "tmp/门票需求接口.md",
-    "tmp/商户管理平台接口文档.md",
     "ai-agents-from-zero/实战项目-电商问数/images/10/10-3-0-1.svg",
     "ai-agents-from-zero/实战项目-电商问数/images/10",
     "ai-agents-from-zero/实战项目-电商问数/images/6",
