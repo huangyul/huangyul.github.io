@@ -35,7 +35,8 @@
               "title": "1-1-大模型认知与工程概览"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -156,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ai/agent开发/1-基础知识.md",
+                "file": "ai-agents-from-zero/1-1-大模型认知与工程概览.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "1-基础知识 的大纲"
+              "title": "1-1-大模型认知与工程概览 的大纲"
             }
           }
         ],
@@ -184,10 +185,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "533d67985121897a",
+  "active": "da4139736be3f15a",
   "lastOpenFiles": [
-    "ai-agents-from-zero/1-1-大模型认知与工程概览.md",
     "ai/agent开发/1-基础知识.md",
+    "ai-agents-from-zero/1-1-大模型认知与工程概览.md",
     "ai/3-LangChain.md",
     "tmp/弹珠 礼品卡明细加工及报表接口.md",
     "ai/agent开发",
