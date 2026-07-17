@@ -93,7 +93,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 304.5
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "f9a47a3955517fdd",
@@ -171,7 +172,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 328.5
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -187,10 +188,10 @@
   },
   "active": "da4139736be3f15a",
   "lastOpenFiles": [
-    "ai-agents-from-zero/_sidebar.md",
-    "ai-agents-from-zero/1-2-提示词工程基础.md",
     "ai/agent开发/1-基础知识.md",
     "ai-agents-from-zero/1-1-大模型认知与工程概览.md",
+    "ai-agents-from-zero/_sidebar.md",
+    "ai-agents-from-zero/1-2-提示词工程基础.md",
     "ai/3-LangChain.md",
     "tmp/弹珠 礼品卡明细加工及报表接口.md",
     "ai/agent开发",
