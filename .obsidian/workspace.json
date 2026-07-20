@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "世软相关/各种账号密码.md",
+                "file": "ai/agent开发/2-RAG.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "各种账号密码"
+              "title": "2-RAG"
             }
           },
           {
@@ -27,15 +27,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ai-agents-from-zero/1-2-提示词工程基础.md",
+                "file": "ai-agents-from-zero/2-RAG-搭建企业私有&个人知识库.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1-2-提示词工程基础"
+              "title": "2-RAG-搭建企业私有&个人知识库"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -92,7 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 398.5
   },
   "right": {
     "id": "f9a47a3955517fdd",
@@ -156,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "世软相关/各种账号密码.md",
+                "file": "ai-agents-from-zero/2-RAG-搭建企业私有&个人知识库.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "各种账号密码 的大纲"
+              "title": "2-RAG-搭建企业私有&个人知识库 的大纲"
             }
           }
         ],
@@ -180,20 +181,24 @@
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
-      "bases:新建数据库": false
+      "bases:新建数据库": false,
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "533d67985121897a",
+  "active": "da4139736be3f15a",
   "lastOpenFiles": [
+    "ai/agent开发/2-RAG.md",
+    "ai/agent开发/1-基础知识.md",
+    "ai-agents-from-zero/2-RAG-搭建企业私有&个人知识库.md",
+    "ai-agents-from-zero/1-3-RAG、微调、续训与智能体选型.md",
+    "ai-agents-from-zero/1-2-提示词工程基础.md",
+    "世软相关/各种账号密码.md",
     "static/image/企业微信截图_17810634107826.png",
     "static/image",
     "static",
     "static/image/Pasted image 20260720100418.png",
-    "世软相关/各种账号密码.md",
     "static/image/Pasted image 20260720100422.png",
-    "ai/agent开发/1-基础知识.md",
     "世软相关",
-    "ai-agents-from-zero/1-2-提示词工程基础.md",
     "ai-agents-from-zero/1-1-大模型认知与工程概览.md",
     "ai-agents-from-zero/_sidebar.md",
     "ai/3-LangChain.md",
@@ -217,14 +222,11 @@
     "ai-agents-from-zero/27-Skills技能与AI编程工具实践.md",
     "ai-agents-from-zero/26-LangGraph多智能体与A2A.md",
     "ai-agents-from-zero/6-Coze与Dify的Windows平台部署.md",
-    "ai-agents-from-zero/2-RAG-搭建企业私有&个人知识库.md",
     "ai-agents-from-zero/28-大模型微调概述与整体流程.md",
-    "ai/ai.md",
     "ai-agents-from-zero/images/28/28-5-4-1.png",
     "ai-agents-from-zero/images/28/28-5-1-1.png",
     "ai-agents-from-zero/images/28/28-4-1-1.png",
     "ai-agents-from-zero/images/28/28-2-4-1.png",
-    "ai-agents-from-zero/images/28/28-2-2-1.png",
     "ai-agents-from-zero/images/28",
     "ai-agents-from-zero/实战项目-电商问数/images/10",
     "ai-agents-from-zero/实战项目-电商问数/images/6",
