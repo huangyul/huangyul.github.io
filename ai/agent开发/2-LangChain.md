@@ -106,3 +106,104 @@ result = chain.invoke({
 | `HumanMessage`  | 用户消息，对应用户当前输入            | 放用户问题、补充条件、后续追问    |
 | `AIMessage`     | 模型回复消息                   | 保存上一轮回复，支持多轮上下文    |
 | `ToolMessage`   | 工具执行结果消息                 | 把外部工具/函数的返回结果回传给模型 |
+
+#### ChatPromptTemplate 和 PlaceholderMessage
+
+| **组件**                    | **核心定位**          | **解决的问题**                                                              |
+| ------------------------- | ----------------- | ---------------------------------------------------------------------- |
+| **`ChatPromptTemplate`**  | **结构化 Prompt 模板** | 将带有变量的文本，转化为带明确角色（System / Human / AI）的消息列表（`Messages`），专为 Chat 模型设计。  |
+| **`MessagesPlaceholder`** | **动态消息占位符**       | 在模板中预留一个“空位”，专门用来**批量塞入一个消息数组**（如 `List[Message]`），是让 LLM 获得多轮对话记忆的关键。 |
+##### 1. 核心概念与关系
+
+|**组件**|**定位与作用**|
+|---|---|
+|**`ChatPromptTemplate`**|**结构化 Prompt 模板**。负责把带变量的文本组装成带角色（`system` / `human` / `ai`）的消息列表。|
+|**`MessagesPlaceholder`**|**历史消息占位符**。在模板里预留一个“空位”，专门用来**批量塞入多条历史消息**。|
+
+> **💡 关键区别：**
+> 
+> 普通变量 `{input}` 替换的是**单个字符串**；占位符 `{chat_history}` 替换的是**多条 Message 对象组成的列表**。
+
+##### 2. 现代标准写法（元组语法）
+
+目前最推荐使用元组（Tuple）写法，极简且语义清晰：
+
+```Python
+from langchain_core.prompts import ChatPromptTemplate
+
+prompt = ChatPromptTemplate.from_messages([
+    ("system", "你是一个注重简洁的助手。"),
+    ("placeholder", "{chat_history}"),  # 👈 替代 MessagesPlaceholder 的极简语法
+    ("human", "{input}")
+])
+```
+
+##### 3. 运行机制：历史是如何被塞进去的？
+
+不管在 LangChain 里定义了多少个占位符，**在发送给底层 LLM API 时，都会被自动打平（Unpack）合并成一条单维度的消息数组**。
+
+Plaintext
+
+```
+【模板定义】                          【传给 API 的真实数据结构】
+System: "你是一个助手。"              [
+Placeholder: "{chat_history}"  --->     {"role": "system", "content": "你是一个助手。"},
+Human: "{input}"                        {"role": "user", "content": "我叫小明，喜欢苹果。"}, # 历史
+                                        {"role": "assistant", "content": "好的，记住了！"}, # 历史
+                                        {"role": "user", "content": "我喜欢吃什么？"}       # 当前输入
+                                      ]
+```
+
+###### ❓ 既然 API 只收一条数组，为什么还允许自定义不同的 Key Name（多占位符）？
+
+- **工程解耦**：方便把“**与用户的聊天历史**（存数据库）”和“**Agent 的思考/工具调用步骤**（存临时内存）”分开传递与维护。
+    
+- **精准裁剪**：当 Token 超长时，可以只压缩聊天历史，而保留最新的工具调用记录。
+    
+
+##### 4. 实战代码模板（LCEL 链式调用）
+
+```Python
+import os
+from langchain.chat_models import init_chat_model
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.messages import HumanMessage, AIMessage
+
+api_key = os.getenv("DEEPSEEK_API_KEY")
+model = "deepseek-v4-flash"
+base_url = "https://api.deepseek.com"
+
+llm = init_chat_model(
+    model=model,
+    api_key=api_key,
+    base_url=base_url,
+)
+
+p = ChatPromptTemplate.from_messages([
+  ("system", "你是一个幽默风趣的 AI 助手"),
+  ("placeholder", "{history}"),
+  ("human", "{question}")
+])
+chain = p | llm
+history = []
+print("智能 AI 聊天，<输入 'exit' 退出>")
+while True:
+  user_input = input("\n你：")
+  if user_input == "exit":
+    print("再见!")
+    break
+
+  if not user_input.strip():
+    continue
+
+  resp = chain.invoke({
+    "history": history,
+    "question": user_input
+  }).content
+
+  print(f"AI: {resp}")
+
+  history.append(HumanMessage(content=user_input))
+
+  history.append(AIMessage(content=resp))
+```

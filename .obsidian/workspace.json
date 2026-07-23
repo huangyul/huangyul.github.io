@@ -35,8 +35,7 @@
               "title": "13-提示词与消息模板"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -157,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ai-agents-from-zero/13-提示词与消息模板.md",
+                "file": "ai/agent开发/2-LangChain.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "13-提示词与消息模板 的大纲"
+              "title": "2-LangChain 的大纲"
             }
           }
         ],
@@ -185,10 +184,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "9a481a3da897c982",
+  "active": "da4139736be3f15a",
   "lastOpenFiles": [
-    "ai/agent开发/2-LangChain.md",
     "ai-agents-from-zero/13-提示词与消息模板.md",
+    "ai/agent开发/2-LangChain.md",
     "ai-agents-from-zero/12-Ollama本地部署与调用.md",
     "ai-agents-from-zero/11-Model-I-O与模型接入.md",
     "ai-agents-from-zero/10-LangChain快速上手与HelloWorld.md",
