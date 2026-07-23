@@ -95,7 +95,7 @@ result = chain.invoke({
     "input": question
 })
 ```
-
+### 消息模板
 #### 消息类型
 
 在 LangChain 官方语境里，最核心的几类消息是：**SystemMessage**、**HumanMessage**、**AIMessage**、**ToolMessage**。
@@ -204,6 +204,5 @@ while True:
   print(f"AI: {resp}")
 
   history.append(HumanMessage(content=user_input))
-
   history.append(AIMessage(content=resp))
 ```
