@@ -81,7 +81,20 @@ messages = [
 print(llm.invoke(messages).content)
 ```
 
-目前用的最多的是第三种：**角色模板**
+目前最常见的用法：
+
+```python
+prompt = ChatPromptTemplate.from_messages([
+    ("system", SYSTEM_PROMPT),
+    ("human", "{input}")
+])
+
+chain = prompt | llm
+
+result = chain.invoke({
+    "input": question
+})
+```
 
 #### 消息类型
 
