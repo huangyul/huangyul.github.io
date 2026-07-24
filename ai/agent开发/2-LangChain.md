@@ -206,3 +206,15 @@ while True:
   history.append(HumanMessage(content=user_input))
   history.append(AIMessage(content=resp))
 ```
+
+## 输出解析器
+
+把模型的**文本输出**转成程序易用的**结构化数据**（如字符串、JSON、强类型对象）
+
+**输出解析器分类**
+
+| 解析器                    | 最终结果                   | 适用场景                  | 说明                      |
+| ---------------------- | ---------------------- | --------------------- | ----------------------- |
+| `StrOutputParser`      | 字符串 `str`              | 只需要展示文本，不需要拆字段        | 最简单，通常就是取出模型输出正文内容      |
+| `JsonOutputParser`     | Python `dict` / `list` | 希望模型返回 JSON，再交给程序继续处理 | 适合字段抽取、接口返回、工作流参数传递     |
+| `PydanticOutputParser` | Pydantic 对象            | 需要强类型和运行时校验           | 适合对字段类型、长度、范围有明确要求的业务场景 |
