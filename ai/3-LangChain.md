@@ -188,11 +188,11 @@ template = load_prompt("prompt.yaml")
 - **工程衔接**：使模型输出能直接对接数据库、前端 API 或后续工作流。
 
 #### 2. 常用解析器分类
-| 解析器 | 最终结果 | 适用场景 |
-| :--- | :--- | :--- |
-| `StrOutputParser` | `str` | 仅需展示文本，如聊天回复、文章润色。 |
-| `JsonOutputParser` | `dict` / `list` | 需要抽取字段，如“问题/答案”、“事件要素”。 |
-| `PydanticOutputParser` | `Pydantic` 对象 | 生产环境首选，需要强类型和运行时校验（如年龄范围）。 |
+| 解析器                    | 最终结果            | 适用场景                       |
+| :--------------------- | :-------------- | :------------------------- |
+| `StrOutputParser`      | `str`           | 仅需展示文本，如聊天回复、文章润色。         |
+| `JsonOutputParser`     | `dict` / `list` | 需要抽取字段，如“问题/答案”、“事件要素”。    |
+| `PydanticOutputParser` | `Pydantic` 对象   | 生产环境首选，需要强类型和运行时校验（如年龄范围）。 |
 
 #### 3. 结构化输出 (Structured Output)
 现代 LangChain 推荐在支持的模型（如 GPT-4o, Claude 3.5）上直接使用 `with_structured_output` 接口。
