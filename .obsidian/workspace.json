@@ -25,14 +25,10 @@
             "id": "9a481a3da897c982",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ai-agents-from-zero/14-输出解析器.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "14-输出解析器"
+              "title": "新标签页"
             }
           }
         ],
@@ -157,13 +153,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ai-agents-from-zero/14-输出解析器.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "14-输出解析器 的大纲"
+              "title": "大纲"
             }
           }
         ],
@@ -181,8 +176,7 @@
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
-      "bases:新建数据库": false,
-      "obsidian-git:Open Git source control": false
+      "bases:新建数据库": false
     }
   },
   "active": "9a481a3da897c982",
