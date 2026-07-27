@@ -20,8 +20,19 @@
               "icon": "lucide-file",
               "title": "14-输出解析器"
             }
+          },
+          {
+            "id": "9404b6396fd6d6ea",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新标签页"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       },
       {
         "id": "d2bc2bf6e03bc003",
@@ -162,13 +173,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ai-agents-from-zero/14-输出解析器.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "14-输出解析器 的大纲"
+              "title": "大纲"
             }
           }
         ],
@@ -190,10 +200,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "da4139736be3f15a",
+  "active": "9404b6396fd6d6ea",
   "lastOpenFiles": [
-    "ai/3-LangChain.md",
     "ai-agents-from-zero/14-输出解析器.md",
+    "ai/3-LangChain.md",
     "ai-agents-from-zero/案例与源码-3-LangGraph框架/07-senior/state_persistence/sqlite_checkpoints/sqlite_data.db",
     "ai-agents-from-zero/案例与源码-3-LangGraph框架/07-senior/time_travel/TimeTravel.py",
     "ai-agents-from-zero/案例与源码-3-LangGraph框架/07-senior/subgraph/SubGraphSimple.py",
