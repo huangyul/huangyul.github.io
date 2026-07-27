@@ -25,10 +25,14 @@
             "id": "9404b6396fd6d6ea",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "世软相关/各种账号密码.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "各种账号密码"
             }
           }
         ],
@@ -173,12 +177,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "世软相关/各种账号密码.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "各种账号密码 的大纲"
             }
           }
         ],
