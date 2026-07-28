@@ -162,13 +162,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ai/3-LangChain.md",
+                "file": "ai-agents-from-zero/14-输出解析器.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "3-LangChain 的大纲"
+              "title": "14-输出解析器 的大纲"
             }
           }
         ],
@@ -190,10 +190,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "9a481a3da897c982",
+  "active": "da4139736be3f15a",
   "lastOpenFiles": [
-    "ai-agents-from-zero/14-输出解析器.md",
     "ai/3-LangChain.md",
+    "ai-agents-from-zero/14-输出解析器.md",
     "世软相关/各种账号密码.md",
     "ai-agents-from-zero/案例与源码-3-LangGraph框架/07-senior/state_persistence/sqlite_checkpoints/sqlite_data.db",
     "ai-agents-from-zero/案例与源码-3-LangGraph框架/07-senior/time_travel/TimeTravel.py",
