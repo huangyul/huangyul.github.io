@@ -286,3 +286,72 @@ format_instructions = parser.get_format_instructions()
 - **误区 3：过度工程化**。如果只是简单的问答展示，强行引入 Pydantic 会增加代码复杂度。应根据“数据流向”决定解析深度。
 
 # LCEL与链式调用
+
+## 1. 核心概念
+
+- **LCEL (LangChain Expression Language)**：LangChain 的核心声明式编程规范。
+    
+- **统一接口 (Runnable)**：Prompt、Model、OutputParser 等核心组件均继承自 `Runnable` 接口。
+    
+- **基本语法**：通过管道符 `|` 将组件按数据流顺序拼接起来：
+    
+    Python
+    
+    ```
+    chain = prompt | model | output_parser
+    ```
+    
+
+## 2. 核心优势
+
+同一个 `chain` 组装完成后，自动拥有多种调用模式，无需重构底层逻辑：
+
+- **`invoke(input)`**：同步单次调用。
+    
+- **`stream(input)`**：原生打字机流式输出（逐字/逐块吐出）。
+    
+- **`ainvoke()` / `astream()`**：异步单次调用 / 异步流式输出。
+    
+- **`batch(inputs)`**：并发批量处理多个输入。
+    
+
+## 3. 标准入门代码模板
+
+Python
+
+```python
+import os
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.output_parsers import StrOutputParser
+from langchain_openai import ChatOpenAI
+
+# 1. 环境配置
+os.environ["OPENAI_API_KEY"] = "your-api-key-here"
+
+# 2. 组件定义
+prompt = ChatPromptTemplate.from_template("请用一句话告诉我：{topic} 的核心原理是什么？")
+model = ChatOpenAI(model="gpt-4o-mini", temperature=0.7)
+output_parser = StrOutputParser()  # 将模型输出提取为纯文本
+
+# 3. LCEL 链式组装
+chain = prompt | model | output_parser
+
+# 4. 单次调用 (invoke)
+response = chain.invoke({"topic": "光合作用"})
+print("【单次结果】:", response)
+
+# 5. 打字机流式输出 (stream)
+print("【流式输出】:", end=" ")
+for chunk in chain.stream({"topic": "相对论"}):
+    print(chunk, end="", flush=True)
+```
+
+## 4. 常用高级原语 (Primitives)
+
+在组装复杂工作流（如 RAG 检索或分流处理）时常用的辅助构件：
+
+- **`RunnablePassthrough`**：原封不动透传输入数据。
+    
+- **`RunnableParallel` / `{}`**：并行执行多个子任务（例如：同时检索向量库与格式化输入）。
+    
+- **`RunnableLambda`**：将任意自定义 Python 函数封装为标准组件，无缝插入链中。

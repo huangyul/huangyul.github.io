@@ -177,13 +177,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ai-agents-from-zero/15-LCEL与链式调用.md",
+                "file": "ai/agent开发/2-LangChain.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "15-LCEL与链式调用 的大纲"
+              "title": "2-LangChain 的大纲"
             }
           }
         ],
@@ -205,10 +205,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "da4139736be3f15a",
+  "active": "2adbc4c5abd9c0bf",
   "lastOpenFiles": [
-    "ai/agent开发/2-LangChain.md",
     "ai-agents-from-zero/15-LCEL与链式调用.md",
+    "ai/agent开发/2-LangChain.md",
     "ai-agents-from-zero/13-提示词与消息模板.md",
     "ai/agent开发/1-基础知识.md",
     "ai/3-LangChain.md",
