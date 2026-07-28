@@ -20,23 +20,8 @@
               "icon": "lucide-file",
               "title": "14-输出解析器"
             }
-          },
-          {
-            "id": "9404b6396fd6d6ea",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "世软相关/各种账号密码.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "各种账号密码"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
         "id": "d2bc2bf6e03bc003",
@@ -177,13 +162,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "世软相关/各种账号密码.md",
+                "file": "ai-agents-from-zero/14-输出解析器.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "各种账号密码 的大纲"
+              "title": "14-输出解析器 的大纲"
             }
           }
         ],
@@ -205,8 +190,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "9404b6396fd6d6ea",
+  "active": "da4139736be3f15a",
   "lastOpenFiles": [
+    "世软相关/各种账号密码.md",
     "ai-agents-from-zero/14-输出解析器.md",
     "ai/3-LangChain.md",
     "ai-agents-from-zero/案例与源码-3-LangGraph框架/07-senior/state_persistence/sqlite_checkpoints/sqlite_data.db",
@@ -252,7 +238,6 @@
     "ai-agents-from-zero/实战项目-电商问数/5-Qdrant与ES快速入门与接入.md",
     "ai-agents-from-zero/实战项目-电商问数/4-项目结构与基础服务配置管理.md",
     "ai-agents-from-zero/实战项目-电商问数/3-开发环境与基础服务准备.md",
-    "ai-agents-from-zero/实战项目-电商问数/2-项目整体架构与智能体流程.md",
     "未命名.canvas",
     "未命名 3.canvas",
     "未命名 1.canvas",
