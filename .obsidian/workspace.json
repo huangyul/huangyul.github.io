@@ -179,13 +179,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ai-agents-from-zero/16-记忆与对话历史（含Redis基础）.md",
+                "file": "ai/agent开发/2-LangChain.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "16-记忆与对话历史（含Redis基础） 的大纲"
+              "title": "2-LangChain 的大纲"
             }
           }
         ],
@@ -207,8 +207,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "da4139736be3f15a",
+  "active": "2adbc4c5abd9c0bf",
   "lastOpenFiles": [
+    "ai-agents-from-zero/16-记忆与对话历史（含Redis基础）.md",
     "ai-agents-from-zero/15-LCEL与链式调用.md",
     "ai/agent开发/2-LangChain.md",
     "ai-agents-from-zero/13-提示词与消息模板.md",
@@ -254,7 +255,6 @@
     "ai-agents-from-zero/教程案例链接汇总.md",
     "ai-agents-from-zero/教程更新日志.md",
     "ai-agents-from-zero/工具导航与参考资料索引.md",
-    "ai-agents-from-zero/实战项目-电商问数/9-字段与指标检索能力构建.md",
     "未命名.canvas",
     "未命名 3.canvas",
     "未命名 1.canvas",
