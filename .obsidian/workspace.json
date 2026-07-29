@@ -210,8 +210,8 @@
   "active": "2adbc4c5abd9c0bf",
   "lastOpenFiles": [
     "ai-agents-from-zero/16-记忆与对话历史（含Redis基础）.md",
-    "ai-agents-from-zero/15-LCEL与链式调用.md",
     "ai/agent开发/2-LangChain.md",
+    "ai-agents-from-zero/15-LCEL与链式调用.md",
     "ai-agents-from-zero/13-提示词与消息模板.md",
     "ai/agent开发/1-基础知识.md",
     "ai/3-LangChain.md",
