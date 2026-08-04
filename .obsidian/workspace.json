@@ -49,12 +49,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ai/agent开发/2-LangChain.md",
+                "file": "od/算法题/大纲.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2-LangChain"
+              "title": "大纲"
             }
           }
         ],
@@ -181,7 +181,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ai/agent开发/2-LangChain.md",
+                "file": "od/算法题/大纲.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -211,8 +211,13 @@
   },
   "active": "2adbc4c5abd9c0bf",
   "lastOpenFiles": [
-    "ai-agents-from-zero/16-记忆与对话历史（含Redis基础）.md",
     "ai/agent开发/2-LangChain.md",
+    "od/算法题/大纲.md",
+    "od/算法题",
+    "未命名",
+    "未命名 1",
+    "od",
+    "ai-agents-from-zero/16-记忆与对话历史（含Redis基础）.md",
     "ai-agents-from-zero/15-LCEL与链式调用.md",
     "ai-agents-from-zero/13-提示词与消息模板.md",
     "ai/agent开发/1-基础知识.md",
@@ -227,10 +232,6 @@
     "ai-agents-from-zero/案例与源码-3-LangGraph框架/07-senior/subgraph/SubGraphPro.py",
     "ai-agents-from-zero/案例与源码-3-LangGraph框架/07-senior/subgraph/SubGraphHello.py",
     "ai-agents-from-zero/案例与源码-3-LangGraph框架/07-senior/streaming/StreamMultipleModes.py",
-    "ai-agents-from-zero/案例与源码-3-LangGraph框架/07-senior/streaming/StreamLLMTokens.py",
-    "ai-agents-from-zero/案例与源码-3-LangGraph框架/07-senior/streaming/StreamGraphState.py",
-    "ai-agents-from-zero/案例与源码-3-LangGraph框架/07-senior/streaming/StreamCustomDataSimple.py",
-    "ai-agents-from-zero/案例与源码-3-LangGraph框架/07-senior/streaming/StreamCustomData.py",
     "ai-agents-from-zero/案例与源码-3-LangGraph框架/01-helloworld/beforeimg/langgraph7c7b3e11.png",
     "ai-agents-from-zero/案例与源码-3-LangGraph框架/01-helloworld/beforeimg/langgraph2cf5a7dc.png",
     "ai-agents-from-zero/案例与源码-2-LangChain框架/10-rag/docloads/assets/sample.md",
@@ -256,7 +257,6 @@
     "ai-agents-from-zero/教程目录大纲.md",
     "ai-agents-from-zero/教程案例链接汇总.md",
     "ai-agents-from-zero/教程更新日志.md",
-    "ai-agents-from-zero/工具导航与参考资料索引.md",
     "未命名.canvas",
     "未命名 3.canvas",
     "未命名 1.canvas",
