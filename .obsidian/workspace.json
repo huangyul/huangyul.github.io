@@ -14,6 +14,20 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "ai-agents-from-zero/16-记忆与对话历史（含Redis基础）.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "16-记忆与对话历史（含Redis基础）"
+            }
+          },
+          {
+            "id": "38a6d7cb8e987dc5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "世软相关/各种账号密码.md",
                 "mode": "source",
                 "source": false
@@ -22,7 +36,8 @@
               "title": "各种账号密码"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       },
       {
         "id": "d2bc2bf6e03bc003",
@@ -209,9 +224,17 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "da4139736be3f15a",
+  "active": "38a6d7cb8e987dc5",
   "lastOpenFiles": [
     "ai-agents-from-zero/16-记忆与对话历史（含Redis基础）.md",
+    "ai-agents-from-zero/17-Tools工具调用.md",
+    "ai-agents-from-zero/18-向量数据库与Embedding实战.md",
+    "ai-agents-from-zero/20-MCP模型上下文协议.md",
+    "ai-agents-from-zero/4-Python调用Dify平台工作流.md",
+    "ai-agents-from-zero/2-RAG-搭建企业私有&个人知识库.md",
+    "案例与源码-1-Coze&Dify工作流智能体/3.4-Dify案例：一键生成行业调研报告/3.4-一键生成行业调研报告.md",
+    "案例与源码-1-Coze&Dify工作流智能体/3.5-Dify案例：客户投诉分类助手/3.5-客户投诉分类助手.md",
+    "世软相关/各种账号密码.md",
     "od/算法题/2026-08-04.md",
     "od/算法题/大纲.md",
     "ai/agent开发/2-LangChain.md",
@@ -226,7 +249,6 @@
     "ai/2-RAG - 搭建知识库.md",
     "ai/1-基础知识.md",
     "ai-agents-from-zero/14-输出解析器.md",
-    "世软相关/各种账号密码.md",
     "ai-agents-from-zero/案例与源码-3-LangGraph框架/07-senior/state_persistence/sqlite_checkpoints/sqlite_data.db",
     "ai-agents-from-zero/案例与源码-3-LangGraph框架/07-senior/time_travel/TimeTravel.py",
     "ai-agents-from-zero/案例与源码-3-LangGraph框架/07-senior/subgraph/SubGraphSimple.py",
@@ -250,13 +272,6 @@
     "ai-agents-from-zero/案例与源码-1-Coze&Dify工作流智能体/3.6-Coze案例：客服对话记录分析/3.6-客服对话记录分析-Coze.md",
     "ai-agents-from-zero/案例与源码-1-Coze&Dify工作流智能体/3.5-Dify案例：客户投诉分类助手/3.5-客户投诉分类助手.md",
     "ai-agents-from-zero/案例与源码-1-Coze&Dify工作流智能体/3.4-Dify案例：一键生成行业调研报告/3.4-一键生成行业调研报告.md",
-    "ai-agents-from-zero/案例与源码-1-Coze&Dify工作流智能体/3.3-Coze案例：产品营销海报生成/3.3-产品营销海报生成.md",
-    "ai-agents-from-zero/案例与源码-1-Coze&Dify工作流智能体/3.2-Coze案例：复刻爆款视频/3.2-复刻爆款视频.md",
-    "ai-agents-from-zero/案例与源码-1-Coze&Dify工作流智能体/3.10-Coze案例：商品营销卖点提炼/3.10-商品营销卖点提炼-Coze.md",
-    "ai-agents-from-zero/案例与源码-1-Coze&Dify工作流智能体/3.1-Coze案例：一键生成行业调研PPT/3.1-一键生成行业调研PPT.md",
-    "ai-agents-from-zero/新手入门与常见问题.md",
-    "ai-agents-from-zero/教程目录大纲.md",
-    "ai-agents-from-zero/教程案例链接汇总.md",
     "未命名.canvas",
     "未命名 3.canvas",
     "未命名 1.canvas",
