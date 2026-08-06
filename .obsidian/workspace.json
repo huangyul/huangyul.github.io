@@ -14,12 +14,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ai-agents-from-zero/16-记忆与对话历史（含Redis基础）.md",
+                "file": "世软相关/各种账号密码.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "16-记忆与对话历史（含Redis基础）"
+              "title": "各种账号密码"
             }
           }
         ]
@@ -181,7 +181,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ai-agents-from-zero/16-记忆与对话历史（含Redis基础）.md",
+                "file": "世软相关/各种账号密码.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -211,6 +211,7 @@
   },
   "active": "da4139736be3f15a",
   "lastOpenFiles": [
+    "ai-agents-from-zero/16-记忆与对话历史（含Redis基础）.md",
     "od/算法题/2026-08-04.md",
     "od/算法题/大纲.md",
     "ai/agent开发/2-LangChain.md",
@@ -218,7 +219,6 @@
     "未命名",
     "未命名 1",
     "od",
-    "ai-agents-from-zero/16-记忆与对话历史（含Redis基础）.md",
     "ai-agents-from-zero/15-LCEL与链式调用.md",
     "ai-agents-from-zero/13-提示词与消息模板.md",
     "ai/agent开发/1-基础知识.md",
