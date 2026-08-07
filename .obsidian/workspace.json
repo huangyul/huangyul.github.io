@@ -6,7 +6,7 @@
       {
         "id": "5b0bb12c9fa82aa5",
         "type": "tabs",
-        "dimension": 40.96467391304348,
+        "dimension": 59.10326086956522,
         "children": [
           {
             "id": "da4139736be3f15a",
@@ -28,12 +28,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "世软相关/未命名.md",
+                "file": "世软相关/AI 编程实践分享.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "未命名"
+              "title": "AI 编程实践分享"
             }
           }
         ],
@@ -42,7 +42,7 @@
       {
         "id": "d2bc2bf6e03bc003",
         "type": "tabs",
-        "dimension": 59.03532608695652,
+        "dimension": 40.89673913043478,
         "children": [
           {
             "id": "9a481a3da897c982",
@@ -196,7 +196,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "世软相关/未命名.md",
+                "file": "世软相关/AI 编程实践分享.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -227,7 +227,7 @@
   "active": "38a6d7cb8e987dc5",
   "lastOpenFiles": [
     "世软相关/各种账号密码.md",
-    "世软相关/未命名.md",
+    "世软相关/AI 编程实践分享.md",
     "ai-agents-from-zero/16-记忆与对话历史（含Redis基础）.md",
     "ai-agents-from-zero/17-Tools工具调用.md",
     "ai-agents-from-zero/18-向量数据库与Embedding实战.md",
