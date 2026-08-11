@@ -20,9 +20,15 @@
               "icon": "lucide-file",
               "title": "16-记忆与对话历史（含Redis基础）"
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "b37a5b8eebb50caf",
+        "type": "tabs",
+        "children": [
           {
-            "id": "af5caf3b1b3bfa73",
+            "id": "21791e5c52f18d90",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -35,8 +41,7 @@
               "title": "2026-08-04"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -187,7 +192,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "af5caf3b1b3bfa73",
+  "active": "21791e5c52f18d90",
   "lastOpenFiles": [
     "ai-agents-from-zero/16-记忆与对话历史（含Redis基础）.md",
     "世软相关/AI 编程实践分享-黄耀洁.md",
