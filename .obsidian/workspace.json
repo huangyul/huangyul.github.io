@@ -80,8 +80,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 203.5,
-    "collapsed": true
+    "width": 203.5
   },
   "right": {
     "id": "f9a47a3955517fdd",
@@ -173,17 +172,17 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "21791e5c52f18d90",
+  "active": "253f87aac9d98b9f",
   "lastOpenFiles": [
+    "世软相关/各种账号密码.md",
+    "世软相关/AI 编程实践分享_黄耀洁.md",
     "od/算法题/2026-08-04.md",
     "ai-agents-from-zero/16-记忆与对话历史（含Redis基础）.md",
     "世软相关/AI 编程实践分享-黄耀洁.md",
-    "世软相关/AI 编程实践分享_黄耀洁.md",
     "世软相关/AI 编程实践分享.md",
     "世软相关/AI编程实践分享2.md",
     "static/image/Pasted image 20260810101515.png",
     "ai/agent开发/2-LangChain.md",
-    "世软相关/各种账号密码.md",
     "ai-agents-from-zero/17-Tools工具调用.md",
     "ai-agents-from-zero/18-向量数据库与Embedding实战.md",
     "ai-agents-from-zero/20-MCP模型上下文协议.md",
