@@ -6,6 +6,7 @@
       {
         "id": "b37a5b8eebb50caf",
         "type": "tabs",
+        "dimension": 25.747282608695656,
         "children": [
           {
             "id": "21791e5c52f18d90",
@@ -26,6 +27,7 @@
       {
         "id": "6f2c1fa11a8b425b",
         "type": "tabs",
+        "dimension": 74.25271739130434,
         "children": [
           {
             "id": "7a57ed05589103ff",
@@ -33,12 +35,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "od/算法题/2026-08-17.md",
+                "file": "ai-agents-from-zero/13-提示词与消息模板.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-08-17"
+              "title": "13-提示词与消息模板"
             }
           }
         ]
@@ -164,7 +166,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "od/算法题/2026-08-17.md",
+                "file": "ai-agents-from-zero/13-提示词与消息模板.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -194,8 +196,12 @@
   },
   "active": "7a57ed05589103ff",
   "lastOpenFiles": [
-    "od/算法题/2026-08-04.md",
+    "ai/ai.md",
+    "ai/quick_llm.md",
+    "ai/progress.md",
+    "ai/ask_prompt.md",
     "od/算法题/2026-08-17.md",
+    "od/算法题/2026-08-04.md",
     "od/算法题/大纲.md",
     "od/算法题/2026-08-19.md",
     "世软相关/# 版本发布模块 · 前端重构需求文档.md",
@@ -221,10 +227,6 @@
     "未命名 1",
     "od",
     "ai-agents-from-zero/15-LCEL与链式调用.md",
-    "ai-agents-from-zero/13-提示词与消息模板.md",
-    "ai/agent开发/1-基础知识.md",
-    "ai/3-LangChain.md",
-    "ai/2-RAG - 搭建知识库.md",
     "ai-agents-from-zero/案例与源码-3-LangGraph框架/07-senior/state_persistence/sqlite_checkpoints/sqlite_data.db",
     "ai-agents-from-zero/案例与源码-3-LangGraph框架/07-senior/time_travel/TimeTravel.py",
     "ai-agents-from-zero/案例与源码-3-LangGraph框架/07-senior/subgraph/SubGraphSimple.py",
