@@ -33,12 +33,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "od/算法题/大纲.md",
+                "file": "od/算法题/2026-08-19.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "大纲"
+              "title": "2026-08-19"
             }
           }
         ]
@@ -164,7 +164,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "od/算法题/大纲.md",
+                "file": "od/算法题/2026-08-19.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -194,9 +194,9 @@
   },
   "active": "7a57ed05589103ff",
   "lastOpenFiles": [
+    "od/算法题/大纲.md",
     "od/算法题/2026-08-19.md",
     "od/算法题/2026-08-17.md",
-    "od/算法题/大纲.md",
     "od/算法题/未命名.md",
     "od/算法题/2026-08-04.md",
     "世软相关/# 版本发布模块 · 前端重构需求文档.md",
