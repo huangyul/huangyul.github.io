@@ -119,3 +119,119 @@ func backtrack(候选列表, 当前状态) {
 3. **“Go 切片收集结果时直接 `append(res, path)`”**
     
     - **错**。切片底层共用数组，后续的“恢复现场”会篡改已收集的结果，必须 `make` 对应长度的临时切片并执行 `copy`。
+
+
+# BFS
+
+**BFS（Breadth-First Search，广度优先搜索）** 是一种用于图或树结构中逐层遍历或搜索节点的算法。
+
+它的核心思维是“按层推进”：从起点开始，先访问它的所有直接邻居（第一层），再依次访问邻居的邻居（第二层），以此类推，就像往平静的水面扔进一颗石子，水波从中心一层层向外扩展一样。
+
+### 一、 BFS 与 DFS 的核心对比
+
+|**特性**|**BFS（广度优先搜索）**|**DFS（深度优先搜索）**|
+|---|---|---|
+|**搜索策略**|齐头并进，逐层向外扩展|选定一条路走到底，撞墙后再回溯|
+|**核心数据结构**|**队列（Queue，先进先出 FIFO）**|**栈（Stack，先进后出 FILO）** 或函数递归|
+|**空间复杂度**|较高（需要存下一整层的所有节点）|较低（只需存从根到当前节点的路径）|
+|**适用场景**|**寻找无权图中的最短路径 / 最少步数**|**路径探索、全排列、回溯、连通块判断**|
+|**形象比喻**|水波扩散、雷达扫射|走迷宫（不撞南墙不回头）|
+
+### 二、 BFS 的核心原理解析
+
+要实现 BFS，必须依靠两个核心组件：
+
+1. **队列（Queue）**：保存待访问的节点，保证“先发现的节点先被扩展”。
+    
+2. **访问记录（Visited 集合）**：标记已访问过的节点，防止因为图中有环而陷入死循环。
+    
+
+#### 算法通用步骤：
+
+1. 将**起点**放入队列，并标记为已访问。
+    
+2. 当队列不为空时，循环执行以下操作：
+    
+    - 从队列头部弹出一个节点 `u`。
+        
+    - 处理节点 `u`（如判断是否为目标节点）。
+        
+    - 遍历 `u` 的所有邻接节点 `v`：
+        
+        - 如果 `v` 还没被访问过，将其标记为已访问，并**压入队列尾部**。
+
+
+示例代码：
+
+```go
+package main
+
+import "fmt"
+
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
+
+// LevelOrder 基础广度优先遍历
+func LevelOrder(tree *TreeNode) {
+	// 1. 边界检查：空树直接返回，防止 node.Val 报 nil panic
+	if tree == nil {
+		return
+	}
+
+	// 2. 初始化队列，将根节点放入队列
+	queue := []*TreeNode{tree}
+	fmt.Println("开始遍历二叉树")
+
+	// 3. 队列非空时持续处理
+	for len(queue) > 0 {
+		// 弹出队头元素
+		node := queue[0]
+		queue = queue[1:]
+
+		fmt.Println("当前节点：", node.Val)
+
+		// 左右子节点非空则依次追加进队尾
+		if node.Left != nil {
+			queue = append(queue, node.Left)
+		}
+		if node.Right != nil {
+			queue = append(queue, node.Right)
+		}
+	}
+}
+
+// LevelOrderGrouped 如果需要按“层”返回结果（例如 LeetCode 102 题）
+func LevelOrderGrouped(root *TreeNode) [][]int {
+	if root == nil {
+		return nil
+	}
+
+	var result [][]int
+	queue := []*TreeNode{root}
+
+	for len(queue) > 0 {
+		levelSize := len(queue) // 记录当前这一层一共有多少个节点
+		currentLevel := make([]int, 0, levelSize)
+
+		// 一次性只处理当前层的所有节点
+		for i := 0; i < levelSize; i++ {
+			node := queue[0]
+			queue = queue[1:]
+			currentLevel = append(currentLevel, node.Val)
+
+			if node.Left != nil {
+				queue = append(queue, node.Left)
+			}
+			if node.Right != nil {
+				queue = append(queue, node.Right)
+			}
+		}
+		result = append(result, currentLevel)
+	}
+
+	return result
+}
+```
