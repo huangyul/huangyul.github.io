@@ -178,7 +178,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "od/算法题/大纲.md",
+                "file": "od/算法基础学习/01 字符串.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -206,10 +206,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "0bed8e7148c7479e",
+  "active": "6977ac4ad882d745",
   "lastOpenFiles": [
-    "od/算法基础学习/01 字符串.md",
     "od/算法题/大纲.md",
+    "od/算法基础学习/01 字符串.md",
     "od/算法基础学习/03 二分查找.md",
     "od/算法基础学习/01 基础知识.md",
     "od/算法基础学习/02 排序.md",
