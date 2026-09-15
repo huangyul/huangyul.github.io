@@ -193,7 +193,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "od/算法题/大纲.md",
+                "file": "od/算法基础学习/04 矩阵.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -213,7 +213,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -231,7 +231,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "6977ac4ad882d745",
+  "active": "7b8563b0815e2350",
   "lastOpenFiles": [
     "od/算法题/大纲.md",
     "od/算法基础学习/04 矩阵.md",
