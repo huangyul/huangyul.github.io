@@ -193,7 +193,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "od/算法题/大纲.md",
+                "file": "od/算法基础学习/04 矩阵.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -231,10 +231,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "9474a15deccd3984",
+  "active": "6977ac4ad882d745",
   "lastOpenFiles": [
-    "od/算法基础学习/04 矩阵.md",
     "od/算法题/大纲.md",
+    "od/算法基础学习/04 矩阵.md",
     "od/算法基础学习/03 双指针.md",
     "世软相关/# 版本发布模块 · 前端重构需求文档.md",
     "od/算法基础学习/02 哈希表.md",
