@@ -104,7 +104,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#二维线性DP",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -125,7 +125,8 @@
               "title": "书签"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -231,7 +232,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "6977ac4ad882d745",
+  "active": "c2e97f039fcfc246",
   "lastOpenFiles": [
     "od/算法基础学习/06 队列.md",
     "od/算法基础学习/07 动态规划.md",
