@@ -61,12 +61,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "od/算法题/大纲.md",
-                "mode": "source",
+                "file": "世软相关/接口文档.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "大纲"
+              "title": "接口文档"
             }
           }
         ],
@@ -125,8 +125,7 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -194,7 +193,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "od/算法题/大纲.md",
+                "file": "世软相关/接口文档.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -234,10 +233,11 @@
   },
   "active": "9474a15deccd3984",
   "lastOpenFiles": [
+    "od/算法题/大纲.md",
+    "世软相关/接口文档.md",
     "od/算法基础学习/07 动态规划.md",
     "od/算法基础学习/06 队列.md",
     "od/算法基础学习/03 双指针.md",
-    "od/算法题/大纲.md",
     "od/算法基础学习/05 栈.md",
     "od/算法基础学习/01 字符串.md",
     "世软相关/# 版本发布模块 · 前端重构需求文档.md",
@@ -261,7 +261,6 @@
     "世软相关/AI 编程实践分享_黄耀洁.md",
     "世软相关/各种账号密码.md",
     "od/算法题/未命名.md",
-    "未命名.md",
     "static/image/Pasted image 20260810101515.png",
     "od/算法题",
     "未命名",
