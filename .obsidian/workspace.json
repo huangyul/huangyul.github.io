@@ -192,7 +192,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "世软相关/# 版本发布模块 · 前端重构需求文档.md",
+                "file": "od/算法基础学习/08 贪心算法.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -230,10 +230,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "0bed8e7148c7479e",
+  "active": "6977ac4ad882d745",
   "lastOpenFiles": [
-    "od/算法题/大纲.md",
     "世软相关/# 版本发布模块 · 前端重构需求文档.md",
+    "od/算法题/大纲.md",
     "世软相关/接口文档.md",
     "od/算法基础学习/08 贪心算法.md",
     "od/算法基础学习/07 动态规划.md",
