@@ -69,7 +69,8 @@
               "title": "大纲"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -192,7 +193,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "od/算法基础学习/09 DFS 和 BFS.md",
+                "file": "od/算法题/大纲.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -230,10 +231,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "6977ac4ad882d745",
+  "active": "9474a15deccd3984",
   "lastOpenFiles": [
-    "od/算法基础学习/08 贪心算法.md",
     "od/算法基础学习/09 DFS 和 BFS.md",
+    "od/算法基础学习/08 贪心算法.md",
     "世软相关/# 版本发布模块 · 前端重构需求文档.md",
     "od/算法题/大纲.md",
     "世软相关/接口文档.md",

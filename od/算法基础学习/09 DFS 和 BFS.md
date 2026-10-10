@@ -173,9 +173,7 @@ func levelOrder(root *TreeNode) [][]int {
 
 **核心代码 (Go)**
 
-Go
-
-```
+```Go
 package main
 
 type TreeNode struct {
@@ -250,9 +248,7 @@ _注意：叶子节点是指左右两个子节点都为空的节点。_
 
 **核心代码 (Go)**
 
-Go
-
-```
+```Go
 package main
 
 type TreeNode struct {
