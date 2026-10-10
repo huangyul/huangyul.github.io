@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "od/算法基础学习/未命名.md",
+                "file": "od/算法基础学习/09 DFS 和 BFS.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "未命名"
+              "title": "09 DFS 和 BFS"
             }
           },
           {
@@ -192,7 +192,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "od/算法基础学习/未命名.md",
+                "file": "od/算法基础学习/09 DFS 和 BFS.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -233,7 +233,7 @@
   "active": "6977ac4ad882d745",
   "lastOpenFiles": [
     "od/算法基础学习/08 贪心算法.md",
-    "od/算法基础学习/未命名.md",
+    "od/算法基础学习/09 DFS 和 BFS.md",
     "世软相关/# 版本发布模块 · 前端重构需求文档.md",
     "od/算法题/大纲.md",
     "世软相关/接口文档.md",
