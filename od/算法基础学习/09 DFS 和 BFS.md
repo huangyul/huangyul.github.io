@@ -293,6 +293,176 @@ func minDepth(root *TreeNode) int {
 }
 ```
 
+### LeetCode 46. 全排列 (Permutations)
+
+**📋 题目描述**
+
+给定一个不含重复数字的整数数组 `nums`，返回其所有可能的全排列。可以按任意顺序返回答案。
+
+**示例**
+
+- 输入: `nums = [1, 2, 3]`
+    
+- 输出: `[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]`
+    
+- 解释: 长度为 3 的数组无重排列共有 $3! = 6$ 种可能。
+    
+
+**重要约束 & 边界条件**
+
+- $1 \le \text{nums.length} \le 6$
+    
+- $-10 \le \text{nums}[i] \le 10$
+    
+- `nums` 中的所有整数互不相同。
+    
+
+**核心思想 & 突破口**
+
+- **核心思想**：DFS 回溯法（决策树深度遍历）。
+    
+- **突破口**：
+    
+    - **抽屉填空模型**：每个位置从所有未被选中的数字中挑一个。因为元素有顺序依赖（`[1, 2]` 和 `[2, 1]` 属于不同排列），每一层都需要面对整个 `nums` 数组，但不能重复选已经挑过的元素。
+        
+    - **状态剪枝**：使用 `visited` 布尔数组记录已被选中的元素，若 `visited[i] == true` 则直接 `continue` 剪枝。
+        
+    - **恢复现场（回溯）**：退回上一层时，必须将当前元素从 `path` 弹出，并重置 `visited[i] = false`，保证平行的兄弟分支能再次使用该元素。
+        
+- **收集结果时机**：当暂存路径长度满足 `len(path) == len(nums)` 时，说明一个全排列构造完成，拷贝加入结果集。
+    
+
+**复杂度分析**
+
+- 时间复杂度: $\mathcal{O}(N \times N!)$，全排列共 $N!$ 个解，每个解生成与拷贝耗时 $\mathcal{O}(N)$。
+    
+- 空间复杂度: $\mathcal{O}(N)$，不计返回结果数组，递归调用栈深度为 $N$，`visited` 数组和 `path` 切片占用 $\mathcal{O}(N)$ 辅助空间。
+    
+
+**核心代码 (Go)**
+
+```Go
+package main
+
+func permute(nums []int) [][]int {
+	var res [][]int
+	var path []int
+	visited := make([]bool, len(nums))
+
+	var backtrack func()
+	backtrack = func() {
+		// 终止条件：抽屉放满，收集结果
+		if len(path) == len(nums) {
+			temp := make([]int, len(path))
+			copy(temp, path)
+			res = append(res, temp)
+			return
+		}
+
+		for i := 0; i < len(nums); i++ {
+			// 剪枝：已使用的卡片跳过
+			if visited[i] {
+				continue
+			}
+
+			// 做选择
+			visited[i] = true
+			path = append(path, nums[i])
+
+			// 深入下一层
+			backtrack()
+
+			// 撤销选择（恢复现场）
+			path = path[:len(path)-1]
+			visited[i] = false
+		}
+	}
+
+	backtrack()
+	return res
+}
+```
+
+### LeetCode 78. 子集 (Subsets)
+
+**📋 题目描述**
+
+给你一个整数数组 `nums`，数组中的元素互不相同。返回该数组所有可能的子集（幂集）。解集不能包含重复的子集。可以按任意顺序返回解集。
+
+**示例**
+
+- 输入: `nums = [1, 2, 3]`
+    
+- 输出: `[[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]`
+    
+- 解释: 长度为 3 的集合幂集大小为 $2^3 = 8$。
+    
+
+**重要约束 & 边界条件**
+
+- $1 \le \text{nums.length} \le 10$
+    
+- $-10 \le \text{nums}[i] \le 10$
+    
+- `nums` 中的所有元素互不相同。
+    
+- 空集 `[]` 也是合法的子集。
+    
+
+**核心思想 & 突破口**
+
+- **核心思想**：DFS 回溯法 + 组合不回头指针（`startIndex`）。
+    
+- **突破口**：
+    
+    - **组合去重（横向剪枝）**：子集不关心顺序（`[1, 2]` 与 `[2, 1]` 视为同一个子集）。为避免重复生成，遍历只从当前元素的后一位开始选取，即引入 `startIndex`，递归传入 `i + 1`，从而彻底省去 `visited` 数组。
+        
+    - **纵向回溯（不可或缺）**：纵向退栈时，`path` 是共享切片，仍然必须执行 `path = path[:len(path)-1]` 将当前元素弹出，否则后续平行分支会夹带上一条分支的残留元素。
+        
+- **收集结果时机**：树上的**每一个节点（包括根节点对应的空集）都是合法子集**。因此一进入递归函数，首件事就是将当前 `path` 拷贝并存入结果集，无需等待填满。
+    
+
+**复杂度分析**
+
+- 时间复杂度: $\mathcal{O}(N \times 2^N)$，子集总数为 $2^N$ 个，每个子集的复制开销最坏为 $\mathcal{O}(N)$。
+    
+- 空间复杂度: $\mathcal{O}(N)$，递归栈深度最大为 $N$，暂存路径 `path` 占用 $\mathcal{O}(N)$ 空间。
+    
+
+**核心代码 (Go)**
+
+```Go
+package main
+
+func subsets(nums []int) [][]int {
+	var res [][]int
+	var path []int
+
+	var backtrack func(startIndex int)
+	backtrack = func(startIndex int) {
+		// 节点即解：每个递归状态的 path 都是一个合法子集
+		temp := make([]int, len(path))
+		copy(temp, path)
+		res = append(res, temp)
+
+		// 横向从 startIndex 开始向后探索
+		for i := startIndex; i < len(nums); i++ {
+			// 做选择
+			path = append(path, nums[i])
+
+			// 递归：下一个工位从 i + 1 开始，杜绝回头导致的重复
+			backtrack(i + 1)
+
+			// 撤销选择（恢复现场）
+			path = path[:len(path)-1]
+		}
+	}
+
+	backtrack(0)
+	return res
+}
+```
+
 ### 做题时该选谁？
 
 1. **求“最短/最少”**（如：迷宫最少走几步、单词接龙最少变换几次）：**必选 BFS**。因为 BFS 是逐层扩展的，第一次触碰到终点时的层数必然是全局最短路径。

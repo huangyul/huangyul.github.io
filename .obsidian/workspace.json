@@ -61,7 +61,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "od/算法题/大纲.md",
+                "file": "od/大纲.md",
                 "mode": "preview",
                 "source": false
               },
@@ -193,7 +193,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "od/算法题/大纲.md",
+                "file": "od/大纲.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -231,12 +231,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "9474a15deccd3984",
+  "active": "253f87aac9d98b9f",
   "lastOpenFiles": [
+    "od/算法题/2026-08-17.md",
+    "od/算法题/2026-08-19.md",
+    "od/算法题/2026-08-04.md",
+    "od/大纲.md",
     "od/算法基础学习/09 DFS 和 BFS.md",
     "od/算法基础学习/08 贪心算法.md",
     "世软相关/# 版本发布模块 · 前端重构需求文档.md",
-    "od/算法题/大纲.md",
     "世软相关/接口文档.md",
     "od/算法基础学习/07 动态规划.md",
     "od/算法基础学习/06 队列.md",
@@ -249,9 +252,7 @@
     "od/算法基础学习/01 基础知识.md",
     "od/算法基础学习/02 排序.md",
     "od/算法基础学习/05 DFS 与 BFS.md",
-    "od/算法题/2026-08-19.md",
     "od/算法基础学习/04 回溯算法.md",
-    "od/算法题/2026-08-04.md",
     "未命名.canvas",
     "未命名 1.canvas",
     "ai-agents-from-zero/13-提示词与消息模板.md",
@@ -259,7 +260,6 @@
     "ai/quick_llm.md",
     "ai/progress.md",
     "ai/ask_prompt.md",
-    "od/算法题/2026-08-17.md",
     "世软相关/AI 编程实践分享_黄耀洁.md",
     "static/image/Pasted image 20260810101515.png",
     "od/算法题",
