@@ -304,3 +304,114 @@ func permute(nums []int) [][]int {
 1. **切片直接追加导致答案全空或错乱**： 切记不可写成 `res = append(res, path)`。在 Go 中这只会浅拷贝切片结构体本身，随着后续回溯 `path = path[:len(path)-1]`，已经存入 `res` 的子切片内容全会被底层数组修改，最终全变为空或错误数据。
     
 2. **误用 `startIndex`**： 排列问题千万不要习惯性加上 `startIndex`，否则会退化成单向组合搜索，遗漏所有逆序排列（例如能搜出 `[1, 2, 3]` 但永远搜不出 `[2, 1, 3]`）。
+
+
+## LeetCode 39. 组合总和
+
+### 核心考点
+
+- **回溯搜索与剪枝（Backtracking with Pruning）**：利用数组有序性，在递归树横向遍历时提前阻断无效分支。
+    
+- **元素复选控制（Index Invariant）**：通过控制递归入口索引（保持传入 `i`），允许单元素无限次复选的同时杜绝排列逆序重复。
+    
+- **切片内存隔离（Slice Deep Copy）**：Go 语言中回溯路径复用底层数组时的深拷贝技巧。
+    
+
+### 核心直觉与模型
+
+题目要求找出所有和为目标值的唯一组合且元素可无限复用。由于必须穷举所有具体解，核心机制是 DFS 递归树遍历，关键在于**如何避免生成排列重复**并**在超额时立即止损**。
+
+- **单向递增防重（不走回头路）**：每次只允许从当前元素及之后的元素中挑选，强制所有解集保持升序排列，自然消除类似 `[2, 3, 2]` 和 `[2, 2, 3]` 的组合重复。
+    
+- **物理参照（撞墙即停）**：
+    
+    - 先将候选数组升序排序。
+        
+    - 递归推进时，一旦发现当前数字已大于剩余目标值（`candidates[i] > remain`），后续更大数值必然全部溢出，直接 `break` 打断横向遍历，截断整棵子树。
+        
+- **切片副本隔离**：通过 `append([]int(nil), path...)` 快速拷贝当前有效路径，避免回溯弹出元素时篡改已存入结果集的切片底层数组。
+    
+
+### 算法步骤
+
+1. **预排序**：对 `candidates` 执行升序排序，为后续提前退出循环建立单调性前提。
+    
+2. **初始化容器**：声明解集切片 `res` 以及当前递归路径 `path`。
+    
+3. **回溯闭包定义**：定义 `backtrack(remain, start)`，维护剩余目标值与本层挑选起始索引。
+    
+4. **递归基判断**：若 `remain == 0`，说明成功凑齐目标值，深拷贝 `path` 并追加至 `res` 后返回。
+    
+5. **横向展开与剪枝**：遍历下标从 `start` 开始：
+    
+    - 若 `candidates[i] > remain`，直接 `break` 结束本层遍历（剪枝）。
+        
+    - 将 `candidates[i]` 追加至 `path`。
+        
+    - 纵向递归进入 `backtrack(remain - candidates[i], i)`（传入 `i` 以允许重复挑选自身）。
+        
+    - 回溯撤销：执行 `path = path[:len(path)-1]`。
+        
+6. **启动搜索**：调用 `backtrack(target, 0)` 并返回 `res`。
+    
+
+### Go 标杆代码
+
+
+
+```Go
+func combinationSum(candidates []int, target int) [][]int {
+    // 1. 预处理：升序排序，为后续提前 break 剪枝创造单调性条件
+    sort.Ints(candidates)
+
+    var res [][]int
+    var path []int
+
+    // 2. 定义回溯闭包
+    // remain: 距离 target 的剩余差额
+    // start: 当前层可选元素的起始下标，防止选回前面的元素导致重复组合
+    var backtrack func(remain int, start int)
+    backtrack = func(remain int, start int) {
+        // 3. 递归出口：恰好凑齐
+        if remain == 0 {
+            // 易错避坑：切片共享底层数组，必须执行深拷贝
+            res = append(res, append([]int(nil), path...))
+            return
+        }
+
+        // 4. 横向遍历分支
+        for i := start; i < len(candidates); i++ {
+            // 核心剪枝：当前数值已超额，后续数字更大必然超额，直接撞墙退出
+            if candidates[i] > remain {
+                break
+            }
+
+            // 做选择
+            path = append(path, candidates[i])
+
+            // 纵向递归：可重复选自身，因此下一层递归起始依然传 i，而不是 i + 1
+            backtrack(remain-candidates[i], i)
+
+            // 撤销选择（回溯）
+            path = path[:len(path)-1]
+        }
+    }
+
+    // 5. 从起始下标 0 开始搜寻
+    backtrack(target, 0)
+    return res
+}
+```
+
+### 复杂度分析
+
+- **时间复杂度**：$O(S)$，其中 $S$ 为所有可行解的长度之和。松弛上界为 $O(2^n \times n)$，但在排序剪枝和正整数限制（$candidates[i] \ge 2, target \le 40$）下，实际递归树极度收敛，执行时间在毫秒级别。
+    
+- **空间复杂度**：$O(target)$。最坏情况下由最小元素 2 连续构成，递归栈深度最大为 $target / 2$；临时路径切片 `path` 的最大长度同样为 $O(target)$。
+    
+
+### 华为 OD 考场关联与变体
+
+- **真题伪装外壳**：机考中常包装为“_物资精准配重方案_”、“_固定额度代金券组合_”等需要枚举所有解的场景（200分题高频）。
+    
+- **ACM 输入解析**：题目若以 `[2,3,6,7]` 字符串格式给出输入，需先用 `strings.Trim(line, "[]")` 剔除外层括号，再用 `strings.Split(..., ",")` 结合 `strconv.Atoi` 提取切片。
