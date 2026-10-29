@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "od/算法基础学习/10 单链表.md",
+                "file": "od/算法基础学习/10 DFS.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "10 单链表"
+              "title": "10 DFS"
             }
           }
         ],
@@ -179,7 +179,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "od/算法基础学习/10 单链表.md",
+                "file": "od/算法基础学习/10 DFS.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -219,14 +219,14 @@
   },
   "active": "9474a15deccd3984",
   "lastOpenFiles": [
+    "od/算法基础学习/09 单链表.md",
+    "od/算法基础学习/10 DFS.md",
     "od/大纲.md",
     "世软相关/# 版本发布模块 · 前端重构需求文档.md",
-    "od/算法基础学习/10 单链表.md",
     "od/算法基础学习/03 双指针.md",
     "od/算法题/2026-08-17.md",
     "od/算法题/2026-08-19.md",
     "od/算法题/2026-08-04.md",
-    "od/算法基础学习/09 DFS 和 BFS.md",
     "od/算法基础学习/08 贪心算法.md",
     "世软相关/接口文档.md",
     "od/算法基础学习/07 动态规划.md",
