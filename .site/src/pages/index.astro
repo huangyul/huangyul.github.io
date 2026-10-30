@@ -16,9 +16,10 @@ const techStack = home?.techStack || [
   'Algorithms',
 ];
 
-const recentPosts = (siteData.archiveYears || [])
-  .flatMap((yr: any) => yr.items || [])
-  .slice(0, 5);
+const blogSection = (siteData.sections || []).find(
+  (sec: any) => sec.type === 'blog' || sec.id === 'blog'
+);
+const recentBlogPosts = (blogSection?.posts || []).slice(0, 5);
 ---
 
 <BaseLayout activeNav="about">
@@ -53,19 +54,18 @@ const recentPosts = (siteData.archiveYears || [])
       {home?.signature && <p class="signature">{home.signature}</p>}
     </section>
 
-    {recentPosts.length > 0 && (
-      <section class="home-recent" aria-label="Recent updates">
+    {recentBlogPosts.length > 0 && (
+      <section class="home-recent" aria-label="Recent blog posts">
         <div class="home-recent-head">
-          <h2 class="home-recent-title">Recent Writing & Notes</h2>
-          <a class="home-recent-all" href={withBase('archive/')}>
-            All {siteData.totalPostsCount || recentPosts.length} posts →
+          <h2 class="home-recent-title">Recent Posts</h2>
+          <a class="home-recent-all" href={withBase('blog/')}>
+            All posts →
           </a>
         </div>
         <ul class="archive-list">
-          {recentPosts.map((item: any) => (
+          {recentBlogPosts.map((item: any) => (
             <li>
               <time class="home-recent-time" datetime={item.dateIso}>{item.dateYMD}</time>
-              <span class="archive-sec">{item.sectionTitle}</span>
               <a href={withBase(`post/${item.slug}/`)}>{item.title}</a>
             </li>
           ))}
