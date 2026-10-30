@@ -27,8 +27,8 @@
   --serif: "Noto Serif SC", "Songti SC", "STSong", "Noto Serif", "Source Han Serif SC", serif;
   --sans: "Lato", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
   --mono: "JetBrains Mono", "Fira Code", Consolas, monospace;
-  --measure: 760px;
-  --wide-measure: 1220px;
+  --measure: 780px;
+  --wide-measure: 1240px;
 
   /* Dark Syntax Highlighting */
   --hljs-kw: #ff7b72;
@@ -98,7 +98,7 @@ body {
   flex-direction: column;
   background: var(--paper);
   color: var(--ink);
-  font: 400 16.5px/1.78 var(--sans);
+  font: 400 17.5px/1.8 var(--sans);
   font-synthesis: none;
   -webkit-font-smoothing: antialiased;
   transition: background-color 0.25s ease, color 0.25s ease;
@@ -189,7 +189,7 @@ button:focus-visible {
   overflow: hidden;
   background: var(--paper-2);
   border: 1px solid var(--line);
-  font: 600 16px/1 var(--serif);
+  font: 600 17px/1 var(--serif);
   color: var(--ink);
   transition: transform 0.25s ease, border-color 0.25s ease;
 }
@@ -210,7 +210,7 @@ button:focus-visible {
   display: flex;
   align-items: center;
   gap: 18px;
-  font: 400 15px/1.2 var(--sans);
+  font: 400 15.5px/1.2 var(--sans);
   color: var(--muted);
 }
 
@@ -237,7 +237,7 @@ button:focus-visible {
 }
 
 .site-nav .ext-arrow {
-  font-size: 11px;
+  font-size: 11.5px;
   margin-left: 2px;
   opacity: 0.75;
 }
@@ -258,7 +258,7 @@ button:focus-visible {
   border: 1px solid var(--line);
   background: var(--paper-2);
   color: var(--muted);
-  font: 400 13px/1 var(--sans);
+  font: 400 13.5px/1 var(--sans);
   cursor: pointer;
   transition: border-color 0.2s ease, color 0.2s ease;
 }
@@ -278,7 +278,7 @@ button:focus-visible {
 }
 
 .search-kbd {
-  font-size: 11px;
+  font-size: 11.5px;
   color: var(--faint);
   background: var(--paper);
   padding: 2px 5px;
@@ -391,7 +391,7 @@ main.wide {
 }
 
 .page-title {
-  font: 600 34px/1.28 var(--serif);
+  font: 600 37px/1.28 var(--serif);
   letter-spacing: -0.2px;
   margin: 0 0 10px;
   color: var(--ink);
@@ -400,7 +400,7 @@ main.wide {
 .motto {
   font-family: var(--serif);
   font-weight: 400;
-  font-size: 14px;
+  font-size: 14.5px;
   letter-spacing: 0.6px;
   color: var(--accent);
   margin: 0 0 36px;
@@ -432,13 +432,13 @@ main.wide {
 .intro {
   min-width: 0;
   font-family: var(--sans);
-  font-size: 16.5px;
-  line-height: 1.82;
+  font-size: 17.5px;
+  line-height: 1.84;
   color: var(--body);
 }
 
 .intro .name {
-  font: 600 36px/1.25 var(--serif);
+  font: 600 39px/1.25 var(--serif);
   letter-spacing: -0.25px;
   margin: 0 0 10px;
   color: var(--ink);
@@ -449,7 +449,7 @@ main.wide {
 }
 
 .intro .hello {
-  font-size: 19px;
+  font-size: 20px;
   color: var(--ink);
   margin: 0 0 18px;
 }
@@ -466,7 +466,7 @@ main.wide {
 }
 
 .tech-badge {
-  font: 500 12.5px/1.4 var(--sans);
+  font: 500 13px/1.4 var(--sans);
   padding: 4px 12px;
   border-radius: 99px;
   background: var(--paper-2);
@@ -518,12 +518,12 @@ main.wide {
 
 .home-recent-title {
   margin: 0;
-  font: 600 17px/1.4 var(--serif);
+  font: 600 18px/1.4 var(--serif);
   color: var(--ink);
 }
 
 .home-recent-all {
-  font-size: 13px;
+  font-size: 13.5px;
   color: var(--accent);
 }
 
@@ -533,7 +533,7 @@ main.wide {
 }
 
 .home-recent .archive-list time.home-recent-time {
-  width: 82px;
+  width: 86px;
 }
 
 /* ============================================================================
@@ -546,7 +546,7 @@ main.wide {
   border: 1px dashed var(--line);
   background: var(--paper-2);
   color: var(--muted);
-  font: 400 13.5px/1.6 var(--sans);
+  font: 400 14px/1.6 var(--sans);
 }
 
 .blog-stream {
@@ -571,14 +571,14 @@ main.wide {
   align-items: center;
   gap: 10px;
   margin-bottom: 10px;
-  font: 600 12px/1.2 var(--sans);
+  font: 600 12.5px/1.2 var(--sans);
   letter-spacing: 0.6px;
   color: var(--faint);
 }
 
 .entry h2 {
   margin: 0 0 14px;
-  font: 600 21px/1.55 var(--serif);
+  font: 600 22.5px/1.55 var(--serif);
   letter-spacing: -0.1px;
   color: var(--ink);
 }
@@ -600,8 +600,8 @@ main.wide {
 }
 
 .entry .summary {
-  font-size: 15px;
-  line-height: 1.85;
+  font-size: 16px;
+  line-height: 1.84;
   color: var(--muted);
   margin: 0 0 10px;
 }
@@ -609,7 +609,7 @@ main.wide {
 .entry .more {
   display: inline-block;
   margin-top: 4px;
-  font-size: 13px;
+  font-size: 13.5px;
   letter-spacing: 0.6px;
   color: var(--accent);
 }
@@ -636,7 +636,7 @@ main.wide {
   border: 1px solid var(--line);
   background: var(--paper-2);
   color: var(--muted);
-  font: 500 14px/1.4 var(--serif);
+  font: 500 14.5px/1.4 var(--serif);
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -661,12 +661,12 @@ main.wide {
 
 .knowledge-domain-header h2 {
   margin: 0;
-  font: 600 22px/1.3 var(--serif);
+  font: 600 23.5px/1.3 var(--serif);
   color: var(--ink);
 }
 
 .knowledge-domain-header span {
-  font-size: 13px;
+  font-size: 13.5px;
   color: var(--faint);
 }
 
@@ -680,7 +680,7 @@ main.wide {
   border: 0;
   border-radius: 8px;
   background: transparent;
-  font: 600 15px/1.4 var(--serif);
+  font: 600 15.5px/1.4 var(--serif);
   color: var(--accent);
   display: inline-flex;
   align-items: center;
@@ -695,7 +695,7 @@ main.wide {
 
 .folder-chevron {
   display: inline-block;
-  font-size: 12px;
+  font-size: 12.5px;
   transition: transform 0.2s ease;
 }
 
@@ -708,7 +708,7 @@ main.wide {
 }
 
 .folder-count {
-  font: 500 11px/1.2 var(--sans);
+  font: 500 11.5px/1.2 var(--sans);
   color: var(--muted);
   background: var(--paper-2);
   border: 1px solid var(--line);
@@ -744,7 +744,7 @@ main.wide {
 
 .note-card h4 {
   margin: 0 0 8px;
-  font: 600 15.5px/1.45 var(--serif);
+  font: 600 16.5px/1.45 var(--serif);
   color: var(--ink);
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -754,8 +754,8 @@ main.wide {
 
 .note-card p {
   margin: 0 0 12px;
-  font-size: 13px;
-  line-height: 1.65;
+  font-size: 13.5px;
+  line-height: 1.68;
   color: var(--muted);
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -764,7 +764,7 @@ main.wide {
 }
 
 .note-card-meta {
-  font-size: 11.5px;
+  font-size: 12px;
   color: var(--faint);
   display: flex;
   justify-content: space-between;
@@ -818,7 +818,7 @@ main.wide {
 }
 
 .slide-card-cover-title {
-  font: 600 17px/1.5 var(--serif);
+  font: 600 18px/1.5 var(--serif);
   color: var(--ink);
   opacity: 0.85;
 }
@@ -832,20 +832,20 @@ main.wide {
 
 .slide-card-body h3 {
   margin: 0 0 8px;
-  font: 600 16.5px/1.45 var(--serif);
+  font: 600 17.5px/1.45 var(--serif);
   color: var(--ink);
 }
 
 .slide-card-body p {
   margin: 0 0 12px;
-  font-size: 13.5px;
+  font-size: 14px;
   line-height: 1.7;
   color: var(--muted);
   flex: 1;
 }
 
 .slide-card-footer {
-  font-size: 12px;
+  font-size: 12.5px;
   color: var(--faint);
   display: flex;
   justify-content: space-between;
@@ -854,7 +854,7 @@ main.wide {
 }
 
 .archive-year {
-  font: 600 22px/1.2 var(--serif);
+  font: 600 23.5px/1.2 var(--serif);
   color: var(--ink);
   margin: 40px 0 16px;
 }
@@ -879,15 +879,15 @@ main.wide {
 
 .archive-list time {
   flex: none;
-  width: 46px;
-  font-size: 12.5px;
+  width: 48px;
+  font-size: 13px;
   color: var(--faint);
   font-variant-numeric: tabular-nums;
 }
 
 .archive-list .archive-sec {
   flex: none;
-  font-size: 11.5px;
+  font-size: 12px;
   color: var(--accent);
   min-width: 52px;
 }
@@ -896,7 +896,7 @@ main.wide {
   flex: 1;
   min-width: 0;
   color: var(--body);
-  font-size: 15.5px;
+  font-size: 16.5px;
 }
 
 .archive-list a:hover {
@@ -946,7 +946,7 @@ main.wide {
 }
 
 .chapter-sidebar-head {
-  font: 600 14px/1.4 var(--serif);
+  font: 600 14.5px/1.4 var(--serif);
   color: var(--ink);
   padding-bottom: 10px;
   margin-bottom: 12px;
@@ -961,7 +961,7 @@ main.wide {
 }
 
 .chapter-folder-name {
-  font: 600 12px/1.4 var(--sans);
+  font: 600 12.5px/1.4 var(--sans);
   color: var(--faint);
   margin: 0 0 6px;
 }
@@ -980,7 +980,7 @@ main.wide {
   display: block;
   padding: 6px 10px;
   border-radius: 7px;
-  font-size: 13.5px;
+  font-size: 14px;
   line-height: 1.45;
   color: var(--muted);
 }
@@ -1005,7 +1005,7 @@ main.wide {
   padding-bottom: 14px;
   margin-bottom: 22px;
   border-bottom: 1px solid var(--line);
-  font-size: 13px;
+  font-size: 13.5px;
   color: var(--faint);
 }
 
@@ -1025,7 +1025,7 @@ main.wide {
 }
 
 .article-title {
-  font: 600 28px/1.38 var(--serif);
+  font: 600 30.5px/1.36 var(--serif);
   letter-spacing: -0.15px;
   color: var(--ink);
   margin: 0 0 14px;
@@ -1037,7 +1037,7 @@ main.wide {
   flex-wrap: wrap;
   align-items: center;
   gap: 6px 0;
-  font: 400 13px/1.5 var(--sans);
+  font: 400 13.5px/1.5 var(--sans);
   color: var(--muted);
 }
 
@@ -1065,8 +1065,8 @@ main.wide {
   width: 100%;
   color: var(--body);
   font-family: var(--sans);
-  font-size: 16.5px;
-  line-height: 1.82;
+  font-size: 17.5px;
+  line-height: 1.84;
   overflow-wrap: break-word;
 }
 
@@ -1083,23 +1083,23 @@ main.wide {
 }
 
 .article-body h1 {
-  font-size: 24px;
+  font-size: 26px;
   padding-bottom: 8px;
   border-bottom: 1px solid var(--line);
 }
 
 .article-body h2 {
-  font-size: 20.5px;
+  font-size: 22px;
   padding-left: 11px;
   border-left: 3px solid var(--accent);
 }
 
 .article-body h3 {
-  font-size: 18px;
+  font-size: 19.5px;
 }
 
 .article-body h4 {
-  font-size: 16.5px;
+  font-size: 17.5px;
   color: var(--ink);
 }
 
@@ -1173,7 +1173,7 @@ main.wide {
 }
 
 .code-lang {
-  font-size: 11.5px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.8px;
   color: var(--faint);
@@ -1185,7 +1185,7 @@ main.wide {
   border: 1px solid var(--line);
   background: var(--paper-2);
   color: var(--muted);
-  font: 500 11.5px/1.3 var(--sans);
+  font: 500 12px/1.3 var(--sans);
   cursor: pointer;
   transition: all 0.15s ease;
 }
@@ -1210,13 +1210,13 @@ main.wide {
   padding: 14px 16px;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  font: 400 13.5px/1.65 var(--mono);
+  font: 400 14px/1.65 var(--mono);
   background: var(--paper-2);
 }
 
 .article-body code {
   font-family: var(--mono);
-  font-size: 0.87em;
+  font-size: 0.88em;
   background: var(--paper-2);
   padding: 2px 5px;
   border-radius: 5px;
@@ -1293,7 +1293,7 @@ main.wide {
   padding: 7px 14px;
   background: var(--paper);
   border-bottom: 1px solid var(--line);
-  font: 600 11.5px/1.3 var(--sans);
+  font: 600 12px/1.3 var(--sans);
   color: var(--faint);
 }
 
@@ -1330,7 +1330,7 @@ main.wide {
   -webkit-overflow-scrolling: touch;
   border-collapse: collapse;
   margin: 0 0 1.5em;
-  font-size: 14px;
+  font-size: 14.5px;
 }
 
 .article-body th,
@@ -1387,7 +1387,7 @@ main.wide {
   font-weight: 600;
   color: var(--callout-color);
   margin-bottom: 6px;
-  font-size: 14.5px;
+  font-size: 15px;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -1408,7 +1408,7 @@ main.wide {
 
 .backlinks-title {
   margin: 0 0 12px;
-  font: 600 15px/1.4 var(--serif);
+  font: 600 15.5px/1.4 var(--serif);
   color: var(--ink);
 }
 
@@ -1433,12 +1433,12 @@ main.wide {
 
 .backlink-card h4 {
   margin: 0 0 4px;
-  font-size: 14.5px;
+  font-size: 15px;
   color: var(--ink);
 }
 
 .backlink-card span {
-  font-size: 11.5px;
+  font-size: 12px;
   color: var(--faint);
 }
 
@@ -1450,7 +1450,7 @@ main.wide {
   overflow-y: auto;
   padding-left: 16px;
   border-left: 1px solid var(--line);
-  font-size: 13px;
+  font-size: 13.5px;
   scrollbar-width: thin;
 }
 
@@ -1459,7 +1459,7 @@ main.wide {
   color: var(--ink);
   margin: 0 0 12px;
   letter-spacing: 1px;
-  font-size: 12px;
+  font-size: 12.5px;
   text-transform: uppercase;
 }
 
@@ -1520,12 +1520,12 @@ main.wide {
 }
 
 .post-nav-label {
-  font-size: 11.5px;
+  font-size: 12px;
   color: var(--faint);
 }
 
 .post-nav-title {
-  font-size: 14.5px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--ink);
   overflow: hidden;
@@ -1590,7 +1590,7 @@ main.wide {
   border: 0;
   background: transparent;
   color: var(--ink);
-  font: 400 15.5px/1.4 var(--serif);
+  font: 400 16px/1.4 var(--serif);
   outline: none;
 }
 
@@ -1600,7 +1600,7 @@ main.wide {
   border: 1px solid var(--line);
   background: var(--paper-2);
   color: var(--faint);
-  font-size: 11px;
+  font-size: 11.5px;
   cursor: pointer;
 }
 
@@ -1636,12 +1636,12 @@ main.wide {
 
 .search-hit-title {
   font-weight: 600;
-  font-size: 15px;
+  font-size: 15.5px;
   color: var(--ink);
 }
 
 .search-hit-badge {
-  font-size: 11px;
+  font-size: 11.5px;
   color: var(--accent);
   background: var(--accent-bg);
   padding: 2px 8px;
@@ -1650,7 +1650,7 @@ main.wide {
 
 .search-hit-snippet {
   margin: 0;
-  font-size: 12.5px;
+  font-size: 13px;
   line-height: 1.6;
   color: var(--muted);
 }
@@ -1666,7 +1666,7 @@ main.wide {
   padding: 32px 16px;
   text-align: center;
   color: var(--faint);
-  font-size: 14px;
+  font-size: 14.5px;
 }
 
 .lightbox-overlay {
@@ -1698,7 +1698,7 @@ main.wide {
 .lightbox-caption {
   margin-top: 12px;
   color: #dedbd2;
-  font-size: 13px;
+  font-size: 13.5px;
   text-align: center;
 }
 
@@ -1726,7 +1726,7 @@ main.wide {
   display: grid;
   place-items: center;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 15.5px;
   transition: opacity 0.22s ease, transform 0.22s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
@@ -1780,7 +1780,7 @@ main.wide {
   padding: 24px 24px 36px;
   border-top: 1px solid var(--line);
   color: var(--faint);
-  font-size: 12px;
+  font-size: 12.5px;
   line-height: 1.8;
   display: flex;
   flex-wrap: wrap;
@@ -1838,9 +1838,9 @@ main.wide {
   }
 
   .site-mark {
-    width: 34px;
-    height: 34px;
-    font-size: 14px;
+    width: 36px;
+    height: 36px;
+    font-size: 14.5px;
   }
 
   .header-actions {
@@ -1853,7 +1853,7 @@ main.wide {
 
   .search-trigger {
     padding: 6px 11px;
-    font-size: 12.5px;
+    font-size: 13px;
   }
 
   .theme-toggle,
@@ -1880,7 +1880,7 @@ main.wide {
     flex-direction: column;
     align-items: stretch;
     gap: 2px;
-    font-size: 14.5px;
+    font-size: 15px;
     z-index: 100;
   }
 
@@ -1922,20 +1922,20 @@ main.wide {
 
   .page-title,
   .intro .name {
-    font-size: 26px;
+    font-size: 28px;
   }
 
   .intro {
-    font-size: 15px;
-    line-height: 1.82;
+    font-size: 15.5px;
+    line-height: 1.84;
   }
 
   .intro .hello {
-    font-size: 17px;
+    font-size: 18px;
   }
 
   .motto {
-    font-size: 12px;
+    font-size: 12.5px;
     margin-bottom: 24px;
   }
 
@@ -1945,30 +1945,30 @@ main.wide {
   }
 
   .article-title {
-    font-size: 22px;
+    font-size: 24px;
   }
 
   .article-body {
-    font-size: 15px;
+    font-size: 15.5px;
     line-height: 1.85;
   }
 
   .article-body h1 {
-    font-size: 21px;
+    font-size: 22.5px;
   }
 
   .article-body h2 {
-    font-size: 18.5px;
+    font-size: 19.5px;
   }
 
   .article-body h3 {
-    font-size: 16.5px;
+    font-size: 17.5px;
   }
 
   .code-block-wrapper pre,
   .article-body pre {
     padding: 12px 14px;
-    font-size: 12.5px;
+    font-size: 13px;
   }
 
   .post-nav {

@@ -172,16 +172,6 @@
               "icon": "lucide-list",
               "title": "大纲"
             }
-          },
-          {
-            "id": "d44531dc5bf4d85a",
-            "type": "leaf",
-            "state": {
-              "type": "git-view",
-              "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
-            }
           }
         ],
         "currentTab": 3
@@ -202,7 +192,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "6977ac4ad882d745",
+  "active": "7b8563b0815e2350",
   "lastOpenFiles": [
     "blog/欢迎来到我的数字花园.md",
     "od/算法基础学习/10 DFS.md",
