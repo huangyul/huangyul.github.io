@@ -41,10 +41,10 @@ const layoutClasses = [
   <div class={layoutClasses}>
     {/* Left Sidebar: Sibling Chapter Tree (Knowledge Base E-Book Mode) */}
     {hasSiblingTree && (
-      <aside class="chapter-sidebar" aria-label="专栏章节导航">
+      <aside class="chapter-sidebar" aria-label="Chapter navigation">
         <div class="chapter-sidebar-head">
-          <span>📚 {post.siblingTree.label}</span>
-          <span>{post.siblingTree.totalCount} 篇</span>
+          <span>{post.siblingTree.label}</span>
+          <span>{post.siblingTree.totalCount} notes</span>
         </div>
         {post.siblingTree.folders.map((folder: any) => (
           <div class="chapter-folder">
@@ -70,7 +70,7 @@ const layoutClasses = [
     <article class="reader-article">
       <header class="reader-head">
         <a class="back-link" href={withBase(`${post.sectionId}/`)}>
-          ← 返回 {post.sectionTitle}
+          ← Back to {post.sectionTitle}
         </a>
         <span>{siteData.site?.motto}</span>
       </header>
@@ -78,15 +78,22 @@ const layoutClasses = [
       <header class="article-header">
         <h1 class="article-title">{post.title}</h1>
         <div class="article-meta">
-          <time datetime={post.dateIso}>📅 {post.dateYMD}</time>
-          <span>
-            📂 {post.sourceLabel}
-            {post.subFolder ? ` / ${post.subFolder}` : ''}
-          </span>
-          <span>✍️ {post.wordCount?.toLocaleString() || 0} 字</span>
-          <span>⏱️ 预计阅读 {post.readingMinutes || 1} 分钟</span>
-          {post.tags && post.tags.length > 0 && (
-            <span>🏷️ {post.tags.join(' · ')}</span>
+          <time datetime={post.dateIso}>{post.dateYMD}</time>
+          <span class="meta-sep" aria-hidden="true">·</span>
+          <span>{post.wordCount?.toLocaleString() || 0} words</span>
+          <span class="meta-sep" aria-hidden="true">·</span>
+          <span>{post.readingMinutes || 1} min</span>
+          {(post.sourceLabel || (post.tags && post.tags.length > 0)) && (
+            <>
+              <span class="meta-sep" aria-hidden="true">·</span>
+              <span>
+                {post.sourceLabel}
+                {post.subFolder ? ` / ${post.subFolder}` : ''}
+                {post.tags && post.tags.length > 0
+                  ? ` · ${post.tags.join(' · ')}`
+                  : ''}
+              </span>
+            </>
           )}
         </div>
       </header>
@@ -95,8 +102,8 @@ const layoutClasses = [
 
       {/* Backlinks Section */}
       {hasBacklinks && (
-        <section class="backlinks-box" aria-label="反向链接">
-          <h3 class="backlinks-title">提及本文的笔记 ({post.backlinks.length})</h3>
+        <section class="backlinks-box" aria-label="Backlinks">
+          <h3 class="backlinks-title">Notes linking here ({post.backlinks.length})</h3>
           <div class="backlinks-grid">
             {post.backlinks.map((bl: any) => (
               <a class="backlink-card" href={withBase(`post/${bl.slug}/`)}>
@@ -110,10 +117,10 @@ const layoutClasses = [
 
       {/* Prev / Next Navigation */}
       {(post.prev || post.next) && (
-        <nav class="post-nav" aria-label="上下篇导航">
+        <nav class="post-nav" aria-label="Previous and next posts">
           {post.prev ? (
             <a class="prev" href={withBase(`post/${post.prev.slug}/`)}>
-              <span class="post-nav-label">← 上一篇</span>
+              <span class="post-nav-label">← Previous</span>
               <span class="post-nav-title">{post.prev.title}</span>
             </a>
           ) : (
@@ -121,7 +128,7 @@ const layoutClasses = [
           )}
           {post.next ? (
             <a class="next" href={withBase(`post/${post.next.slug}/`)}>
-              <span class="post-nav-label">下一篇 →</span>
+              <span class="post-nav-label">Next →</span>
               <span class="post-nav-title">{post.next.title}</span>
             </a>
           ) : (
@@ -133,8 +140,8 @@ const layoutClasses = [
 
     {/* Right Column: Sticky Table of Contents with ScrollSpy */}
     {hasToc && (
-      <aside class="toc-aside" aria-label="文章目录">
-        <h2 class="toc-title">目录 · On this page</h2>
+      <aside class="toc-aside" aria-label="Table of contents">
+        <h2 class="toc-title">On this page</h2>
         <ul class="toc-list" id="toc-list">
           {post.headings.map((h: { depth: number; text: string; id: string }) => (
             <li class={`depth-${h.depth}`}>
@@ -155,7 +162,7 @@ const layoutClasses = [
         type="button"
         class="fab-btn mobile-only"
         id="open-drawer-btn"
-        title="打开目录与章节抽屉"
+        title="Open contents drawer"
         aria-label="Open directory drawer"
       >
         ☰
@@ -165,7 +172,7 @@ const layoutClasses = [
       type="button"
       class="fab-btn"
       id="scroll-top-btn"
-      title="回到顶部"
+      title="Back to top"
       aria-label="Scroll to top"
     >
       ↑
@@ -178,7 +185,7 @@ const layoutClasses = [
       <div class="mobile-drawer">
         {hasToc && (
           <div style="margin-bottom: 28px;">
-            <h3 class="toc-title">📑 本文目录</h3>
+            <h3 class="toc-title">On this page</h3>
             <ul class="toc-list">
               {post.headings.map((h: { depth: number; text: string; id: string }) => (
                 <li class={`depth-${h.depth}`}>
@@ -192,7 +199,7 @@ const layoutClasses = [
         )}
         {hasSiblingTree && (
           <div>
-            <h3 class="toc-title">📚 {post.siblingTree.label}</h3>
+            <h3 class="toc-title">{post.siblingTree.label}</h3>
             {post.siblingTree.folders.map((folder: any) => (
               <div class="chapter-folder">
                 <div class="chapter-folder-name">{folder.folderName}</div>

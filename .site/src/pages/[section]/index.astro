@@ -23,37 +23,42 @@ const archiveYears = siteData.archiveYears || [];
   <p class="motto">
     {section.type === 'archive'
       ? `${siteData.totalPostsCount || 0} posts · ${section.motto}`
-      : `${section.postCount || 0} 篇 · ${section.motto}`}
+      : `${section.postCount || 0} posts · ${section.motto}`}
   </p>
 
   {/* 1. BLOG STREAM VIEW (HuangYul Watercolor Brush Style) */}
   {section.type === 'blog' && (
     <div class="blog-stream">
       {section.posts.length === 0 ? (
-        <p class="summary">暂无文章，在对应目录下新建 Markdown 笔记即可自动发布。</p>
+        <p class="summary">No posts yet. Add a Markdown note in the source folder and it will publish here.</p>
       ) : (
-        section.posts.map((post: any) => (
-          <article class="entry">
-            <div class="entry-meta-row">
-              <time datetime={post.dateIso}>{post.dateYMD}</time>
-              <span>·</span>
-              <span>{post.wordCount?.toLocaleString() || 0} 字</span>
-              <span>·</span>
-              <span>约 {post.readingMinutes || 1} 分钟阅读</span>
-            </div>
-            <h2>
-              <a href={withBase(`post/${post.slug}/`)}>{post.title}</a>
-            </h2>
-            {post.summary && (
-              <div class="summary">
-                <p>{post.summary}</p>
+        <>
+          {section.posts.length < 3 && (
+            <p class="blog-sparse-hint">Just getting started — {section.posts.length} post{section.posts.length === 1 ? '' : 's'} so far. More writing coming soon.</p>
+          )}
+          {section.posts.map((post: any) => (
+            <article class="entry">
+              <div class="entry-meta-row">
+                <time datetime={post.dateIso}>{post.dateYMD}</time>
+                <span>·</span>
+                <span>{post.wordCount?.toLocaleString() || 0} words</span>
+                <span>·</span>
+                <span>{post.readingMinutes || 1} min read</span>
               </div>
-            )}
-            <a class="more" href={withBase(`post/${post.slug}/`)}>
-              阅读全文 →
-            </a>
-          </article>
-        ))
+              <h2>
+                <a href={withBase(`post/${post.slug}/`)}>{post.title}</a>
+              </h2>
+              {post.summary && (
+                <div class="summary">
+                  <p>{post.summary}</p>
+                </div>
+              )}
+              <a class="more" href={withBase(`post/${post.slug}/`)}>
+                Read more →
+              </a>
+            </article>
+          ))}
+        </>
       )}
     </div>
   )}
@@ -62,9 +67,9 @@ const archiveYears = siteData.archiveYears || [];
   {section.type === 'knowledge' && (
     <div class="knowledge-container">
       {section.knowledgeGroups.length > 1 && (
-        <div class="knowledge-tabs" role="tablist" aria-label="知识库分类过滤">
+        <div class="knowledge-tabs" role="tablist" aria-label="Knowledge filters">
           <button type="button" class="knowledge-tab active" data-domain-filter="all">
-            全部 ({section.postCount})
+            All ({section.postCount})
           </button>
           {section.knowledgeGroups.map((grp: any) => (
             <button
@@ -82,7 +87,7 @@ const archiveYears = siteData.archiveYears || [];
         <section class="knowledge-domain" data-domain-section={grp.sourceRoot}>
           <div class="knowledge-domain-header">
             <h2>{grp.label}</h2>
-            <span>共 {grp.totalCount} 篇笔记</span>
+            <span>{grp.totalCount} notes</span>
           </div>
 
           {grp.folders.map((folder: any) => (
@@ -98,8 +103,8 @@ const archiveYears = siteData.archiveYears || [];
                       {item.summary && <p>{item.summary}</p>}
                     </div>
                     <div class="note-card-meta">
-                      <span>{item.wordCount?.toLocaleString() || 0} 字 · {item.readingMinutes || 1} min</span>
-                      <span>阅读 →</span>
+                      <span>{item.wordCount?.toLocaleString() || 0} words · {item.readingMinutes || 1} min</span>
+                      <span>Read →</span>
                     </div>
                   </a>
                 ))}

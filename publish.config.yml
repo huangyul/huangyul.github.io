@@ -1,77 +1,69 @@
 # ============================================================================
-# Obsidian 在线站点动态发布配置 (HuangYul 风格 · 多栏目驱动)
-# 修改此文件并推送到 GitHub 后，GitHub Actions 会自动更新线上文档
+# Obsidian publish config (HuangYul multi-section)
 # ============================================================================
 
 site:
   title: "HuangYul · Blog & Notes"
   name: "HuangYul"
-  motto: "保持思考 · 持续构建 · 知行合一"
-  description: "AI Agent 工程化、算法基础与个人思考记录"
-  # 头像路径（相对于仓库根目录，留空或文件不存在时自动显示首字母徽标）
+  motto: "Keep thinking · Keep doing"
+  description: "AI agent engineering, algorithms, and personal notes"
+  # Avatar path relative to vault root; monogram used if missing
   avatar: "static/image/avatar.jpg"
-  # 默认主题: "light" (和纸米白) 或 "dark" (深夜炭墨)
+  # Default theme: "light" or "dark"
   defaultTheme: "light"
   github: "https://github.com/huangyul"
 
 # ----------------------------------------------------------------------------
-# 首页 (About) 个人介绍配置
+# Home (About)
 # ----------------------------------------------------------------------------
 home:
   hello: "Hi, I'm HuangYul."
   paragraphs:
-    - "我是一名专注于 AI Agent 应用与工程化落地的开发者，目前主要技术栈围绕 Python、FastAPI、PostgreSQL (pgvector)、LangGraph 与 Docker。"
-    - "在转向 AI 应用工程之前，我从事 Web 全栈与前端工程架构研发。这个站点基于我的 Obsidian 知识库自动构建，用于沉淀日常技术博客、AI 与算法体系化笔记。"
-  careerTitle: "当前关注与实践方向："
+    - "I'm a developer focused on AI agent applications and engineering. My stack centers on Python, FastAPI, PostgreSQL (pgvector), LangGraph, and Docker."
+    - "Before AI application engineering, I worked on web full-stack and frontend architecture. This site is built automatically from my Obsidian vault — tech blog posts plus structured notes on AI and algorithms."
+  careerTitle: "Currently focused on:"
   career:
-    - title: "AI Agent 工程化"
-      detail: "LLM API、Tool Calling、RAG 检索增强、LangGraph 状态机与智能体工作流"
-    - title: "算法与数据结构"
-      detail: "基于 Go 语言的核心算法题型拆解、直觉化推导与手动模拟"
-    - title: "Vibe Coding 提效"
-      detail: "AI 辅助编程工作流与工程化交付实践"
-  outro: "欢迎来到我的数字花园，希望这里的内容对你有所启发。"
+    - title: "AI agent engineering"
+      detail: "LLM APIs, tool calling, RAG, LangGraph state machines, and agent workflows"
+    - title: "Algorithms & data structures"
+      detail: "Core algorithm patterns in Go — intuition, derivation, and manual walkthroughs"
+    - title: "Vibe coding"
+      detail: "AI-assisted coding workflows and shipping practice"
+  outro: "Welcome to my digital garden — hope something here sparks an idea."
   signature: "Bless,\nHuangYul"
 
 # ----------------------------------------------------------------------------
-# 动态栏目配置 (Sections)
-# 顶部导航栏会严格按照此列表顺序自动生成，支持未来无限扩展新栏目！
-#
-# 支持的栏目模板类型 (type):
-#   1. "blog"      - HuangYul 风格博客流（按时间倒序、水彩荧光笔标题、摘要渐隐预览）
-#   2. "knowledge" - 体系化知识归纳（支持多目录聚合、分类切换、桌面侧栏/移动端抽屉目录树）
-#   3. "cards"     - 卡片画廊模式（网格卡片展示，自动提取文章首图与摘要，适合案例/项目/书单）
-#   4. "archive"   - 全站时间轴归档页（按年份分组展示所有公开文章）
+# Sections (nav order)
+# Types: blog | knowledge | cards | archive
 # ----------------------------------------------------------------------------
 sections:
   - id: "blog"
-    navLabel: "博客"
-    title: "博客"
-    motto: "思考 · 随笔 · 技术分享"
+    navLabel: "Blog"
+    title: "Blog"
+    motto: "Thinking · Essays · Tech notes"
     type: "blog"
     sources:
       - "blog"
 
   - id: "notes"
-    navLabel: "笔记"
-    title: "笔记"
-    motto: "体系化学习笔记 · 先做出东西，再补理论"
+    navLabel: "Notes"
+    title: "Notes"
+    motto: "Structured learning notes · Build first, theory second"
     type: "knowledge"
     sources:
       - path: "ai"
-        label: "AI 与 Agent 开发"
+        label: "AI & Agent development"
       - path: "od"
-        label: "算法基础学习 (Go)"
+        label: "Algorithms with Go"
 
   - id: "archive"
-    navLabel: "归档"
-    title: "归档"
-    motto: "时光留痕 · 历史归档"
+    navLabel: "Archive"
+    title: "Archive"
+    motto: "A trail through time"
     type: "archive"
 
 # ----------------------------------------------------------------------------
-# 全局排除黑名单 (Exclude)
-# 匹配以下路径或关键字的目录/文件绝不会被构建到线上站点中
+# Global exclude (paths / globs never published)
 # ----------------------------------------------------------------------------
 exclude:
   - "世软相关"

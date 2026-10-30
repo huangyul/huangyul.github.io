@@ -46,6 +46,23 @@ function escapeHtml(str) {
 }
 
 /**
+ * Normalize common Obsidian/export artifacts before render & search extraction
+ */
+function normalizeObsidianArtifacts(markdown) {
+  let text = String(markdown || '');
+  // Collapse →\\rightarrow→ style artifacts and bare LaTeX arrows outside math
+  text = text.replace(/→\s*\\rightarrow\s*→/g, '→');
+  text = text.replace(/←\s*\\leftarrow\s*←/g, '←');
+  text = text.replace(/⇒\s*\\Rightarrow\s*⇒/g, '⇒');
+  text = text.replace(/\\(rightarrow|to|longrightarrow)\b/g, '→');
+  text = text.replace(/\\(leftarrow|longleftarrow)\b/g, '←');
+  text = text.replace(/\\(Rightarrow|implies)\b/g, '⇒');
+  text = text.replace(/\\(Leftarrow)\b/g, '⇐');
+  text = text.replace(/\\(leftrightarrow|Leftrightarrow)\b/g, '↔');
+  return text;
+}
+
+/**
  * Load publish.config.yml
  */
 function loadConfig() {
@@ -261,7 +278,7 @@ function cleanTitleFromFilename(filePath) {
     .map((token) => {
       if (/[\u4e00-\u9fa5]/.test(token)) return token;
       if (/^[A-Z0-9]{2,}$/.test(token)) return token;
-      if (/^[a-z]{1,3}$/.test(token)) return token.toUpperCase(); // ai, llm, api, go
+      if (/^(ai|llm|api|go|rag|dfs|bfs|sql|db|ui|ux|ml|cv|nlp|js|ts|py)$/i.test(token)) return token.toUpperCase();
       if (/^[a-z]/.test(token)) return token.charAt(0).toUpperCase() + token.slice(1);
       return token;
     })
@@ -390,7 +407,7 @@ function renderObsidianMarkdown(
     const publicUrl = resolveAndCopyImage(rawTarget, noteRelDir, imageIndex, copiedCache);
     const alt = path.basename(rawTarget.trim());
     if (!publicUrl) {
-      return `<span class="broken-embed" title="未找到图片: ${escapeHtml(alt)}">🖼️ ${escapeHtml(alt)}</span>`;
+      return `<span class="broken-embed" title="Image not found: ${escapeHtml(alt)}">🖼️ ${escapeHtml(alt)}</span>`;
     }
     if (!firstImageUrl) firstImageUrl = publicUrl;
     const widthAttr = rawSize && /^\d+$/.test(rawSize.trim()) ? ` width="${rawSize.trim()}"` : '';
@@ -457,7 +474,7 @@ function renderObsidianMarkdown(
         const cleanLang = (lang || '').trim().split(/\s+/)[0].toLowerCase();
         if (cleanLang === 'mermaid') {
           hasMermaid = true;
-          return `<div class="mermaid-wrapper"><div class="mermaid-header"><span>❖ 流程图 · Mermaid</span></div><pre class="mermaid">${escapeHtml(codeText)}</pre></div>\n`;
+          return `<div class="mermaid-wrapper"><div class="mermaid-header"><span>❖ Mermaid diagram</span></div><pre class="mermaid">${escapeHtml(codeText)}</pre></div>\n`;
         }
 
         let highlighted = '';
@@ -479,7 +496,7 @@ function renderObsidianMarkdown(
           highlighted = escapeHtml(codeText);
         }
 
-        return `<div class="code-block-wrapper"><div class="code-block-header"><span class="code-lang">${escapeHtml(displayLang.toUpperCase())}</span><button type="button" class="code-copy-btn" aria-label="复制代码">复制</button></div><pre><code class="hljs language-${escapeHtml(displayLang)}">${highlighted}</code></pre></div>\n`;
+        return `<div class="code-block-wrapper"><div class="code-block-header"><span class="code-lang">${escapeHtml(displayLang.toUpperCase())}</span><button type="button" class="code-copy-btn" aria-label="Copy code">Copy</button></div><pre><code class="hljs language-${escapeHtml(displayLang)}">${highlighted}</code></pre></div>\n`;
       },
     },
   });
@@ -607,9 +624,10 @@ function main() {
     const dateObj = resolveFileDate(fullPath, item.relPath, parsed.data?.date);
     const noteRelDir = normalizeSlash(path.dirname(item.relPath));
     const outboundSlugs = new Set();
+    const markdownBody = normalizeObsidianArtifacts(parsed.content);
 
     const { html, headings, firstImageUrl, hasMermaid } = renderObsidianMarkdown(
-      parsed.content,
+      markdownBody,
       noteRelDir === '.' ? '' : noteRelDir,
       item.slug,
       imageIndex,
@@ -621,10 +639,10 @@ function main() {
     outboundLinksMap.set(item.slug, outboundSlugs);
 
     const { summary, searchText } = extractPlainAndSummary(
-      parsed.content,
+      markdownBody,
       parsed.data?.summary
     );
-    const { wordCount, readingMinutes } = computeWordStats(parsed.content);
+    const { wordCount, readingMinutes } = computeWordStats(markdownBody);
     totalWordCount += wordCount;
 
     let subFolder = '';
@@ -696,7 +714,7 @@ function main() {
           });
         }
         const group = groupMap.get(post.sourceLabel);
-        const folderKey = post.subFolder || '核心笔记';
+        const folderKey = post.subFolder || 'Core notes';
         if (!group.folders.has(folderKey)) {
           group.folders.set(folderKey, []);
         }

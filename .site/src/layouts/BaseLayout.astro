@@ -32,7 +32,7 @@ const searchIndex = siteData.searchIndex || [];
 ---
 
 <!doctype html>
-<html lang="zh-CN" data-theme={defaultTheme}>
+<html lang="en" data-theme={defaultTheme}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -73,10 +73,9 @@ const searchIndex = siteData.searchIndex || [];
               <span>{monogram}</span>
             )}
           </span>
-          <span class="brand-name">{siteData.site?.name || 'HuangYul'}</span>
         </a>
         <nav class="site-nav" aria-label="Main navigation">
-          <a href={withBase('')} aria-current={activeNav === 'about' ? 'page' : undefined}>关于</a>
+          <a href={withBase('')} aria-current={activeNav === 'about' ? 'page' : undefined}>About</a>
           {sections.map((sec) => (
             <a
               href={withBase(`${sec.id}/`)}
@@ -96,20 +95,20 @@ const searchIndex = siteData.searchIndex || [];
             type="button"
             class="search-trigger"
             id="open-search-btn"
-            title="全站搜索 (Ctrl + K)"
+            title="Search site (Ctrl + K)"
             aria-label="Open search"
           >
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <circle cx="11" cy="11" r="7" />
               <path d="m20 20-3.5-3.5" />
             </svg>
-            <span class="search-label">搜索</span>
+            <span class="search-label">Search</span>
             <span class="search-kbd">⌘K</span>
           </button>
           <button
             type="button"
             class="theme-toggle"
-            title="切换亮色 / 暗色主题"
+            title="Toggle light / dark theme"
             aria-label="Toggle dark / light theme"
           >
             <svg class="moon" viewBox="0 0 24 24" aria-hidden="true">
@@ -129,7 +128,7 @@ const searchIndex = siteData.searchIndex || [];
     </main>
 
     <!-- Full-Site Ctrl+K Search Modal -->
-    <div class="search-backdrop" id="search-backdrop" role="dialog" aria-modal="true" aria-label="全站搜索">
+    <div class="search-backdrop" id="search-backdrop" role="dialog" aria-modal="true" aria-label="Site search">
       <div class="search-modal" id="search-modal">
         <div class="search-input-row">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -140,7 +139,7 @@ const searchIndex = siteData.searchIndex || [];
             type="text"
             class="search-input"
             id="search-input"
-            placeholder="搜索文章标题、标签、算法或 AI 笔记内容..."
+            placeholder="Search titles, tags, algorithms, or AI notes..."
             autocomplete="off"
           />
           <button type="button" class="search-close-btn" id="close-search-btn">ESC</button>
@@ -150,14 +149,13 @@ const searchIndex = siteData.searchIndex || [];
     </div>
 
     <!-- Image Lightbox Overlay -->
-    <div class="lightbox-overlay" id="lightbox-overlay" role="dialog" aria-label="图片放大预览">
+    <div class="lightbox-overlay" id="lightbox-overlay" role="dialog" aria-label="Image preview">
       <img id="lightbox-img" src="" alt="" />
       <div class="lightbox-caption" id="lightbox-caption"></div>
     </div>
 
     <footer class="site-footer">
       <span>© {new Date().getFullYear()} {siteData.site?.name || 'HuangYul'} · {siteData.site?.motto}</span>
-      <span>Powered by Obsidian & Astro</span>
     </footer>
 
     <script is:inline define:vars={{ searchIndex, baseUrl }}>
@@ -196,7 +194,7 @@ const searchIndex = siteData.searchIndex || [];
         try {
           await navigator.clipboard.writeText(codeEl.textContent || '');
           const orig = btn.textContent;
-          btn.textContent = '✓ 已复制';
+          btn.textContent = '✓ Copied';
           btn.classList.add('copied');
           setTimeout(() => {
             btn.textContent = orig;
@@ -259,7 +257,7 @@ const searchIndex = siteData.searchIndex || [];
 
         selectedHitIndex = 0;
         if (items.length === 0) {
-          searchResults.innerHTML = `<div class="search-empty">未找到与 “${escapeHtmlStr(query)}” 相关的笔记</div>`;
+          searchResults.innerHTML = `<div class="search-empty">No notes matching “${escapeHtmlStr(query)}”</div>`;
           return;
         }
 
