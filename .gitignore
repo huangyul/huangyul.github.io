@@ -1,1 +1,7 @@
 tmp/
+世软相关/
+.site/node_modules/
+.site/dist/
+.site/.astro/
+.site/src/data/generated.json
+.site/public/obsidian-images/
