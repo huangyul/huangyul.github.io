@@ -1,0 +1,22 @@
+{
+  "name": "obsidian-polebug-site",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node ./scripts/dev-server.mjs",
+    "sync": "node ./scripts/prepare-data.mjs",
+    "prebuild": "node ./scripts/prepare-data.mjs",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^4.15.0",
+    "gray-matter": "^4.0.3",
+    "highlight.js": "^11.10.0",
+    "js-yaml": "^4.1.0",
+    "katex": "^0.16.11",
+    "marked": "^14.1.0",
+    "minimatch": "^9.0.5"
+  }
+}

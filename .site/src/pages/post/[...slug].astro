@@ -1,0 +1,286 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import siteData from '../../data/generated.json';
+
+export function getStaticPaths() {
+  const posts = siteData.posts || [];
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+const withBase = (p: string) => `${baseUrl}/${p.replace(/^\/+/, '')}`;
+
+const hasToc = Array.isArray(post.headings) && post.headings.length > 1;
+const hasSiblingTree = Boolean(post.siblingTree && post.siblingTree.folders?.length);
+const hasBacklinks = Array.isArray(post.backlinks) && post.backlinks.length > 0;
+
+const layoutClasses = [
+  'reader-layout',
+  hasSiblingTree ? 'three-col' : '',
+  !hasToc ? 'no-toc' : '',
+]
+  .filter(Boolean)
+  .join(' ');
+---
+
+<BaseLayout
+  title={post.title}
+  description={post.summary}
+  activeNav={post.sectionId}
+  wide={hasToc || hasSiblingTree}
+>
+  <!-- Top Reading Progress Bar -->
+  <div class="reading-progress" aria-hidden="true">
+    <div class="reading-progress-bar" id="reading-progress-bar"></div>
+  </div>
+
+  <div class={layoutClasses}>
+    {/* Left Sidebar: Sibling Chapter Tree (Knowledge Base E-Book Mode) */}
+    {hasSiblingTree && (
+      <aside class="chapter-sidebar" aria-label="专栏章节导航">
+        <div class="chapter-sidebar-head">
+          <span>📚 {post.siblingTree.label}</span>
+          <span>{post.siblingTree.totalCount} 篇</span>
+        </div>
+        {post.siblingTree.folders.map((folder: any) => (
+          <div class="chapter-folder">
+            <div class="chapter-folder-name">📂 {folder.folderName}</div>
+            <ul class="chapter-list">
+              {folder.items.map((item: any) => (
+                <li>
+                  <a
+                    href={withBase(`post/${item.slug}/`)}
+                    aria-current={item.slug === post.slug ? 'page' : undefined}
+                  >
+                    {item.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </aside>
+    )}
+
+    {/* Center Column: Article Content */}
+    <article class="reader-article">
+      <header class="reader-head">
+        <a class="back-link" href={withBase(`${post.sectionId}/`)}>
+          ← 返回 {post.sectionTitle}
+        </a>
+        <span>{siteData.site?.motto}</span>
+      </header>
+
+      <header class="article-header">
+        <h1 class="article-title">{post.title}</h1>
+        <div class="article-meta">
+          <time datetime={post.dateIso}>📅 {post.dateYMD}</time>
+          <span>
+            📂 {post.sourceLabel}
+            {post.subFolder ? ` / ${post.subFolder}` : ''}
+          </span>
+          <span>✍️ {post.wordCount?.toLocaleString() || 0} 字</span>
+          <span>⏱️ 预计阅读 {post.readingMinutes || 1} 分钟</span>
+          {post.tags && post.tags.length > 0 && (
+            <span>🏷️ {post.tags.join(' · ')}</span>
+          )}
+        </div>
+      </header>
+
+      <div class="article-body" id="article-body" set:html={post.html} />
+
+      {/* Backlinks Section */}
+      {hasBacklinks && (
+        <section class="backlinks-box" aria-label="反向链接">
+          <h3 class="backlinks-title">🔗 提及本文的笔记 · Backlinks ({post.backlinks.length})</h3>
+          <div class="backlinks-grid">
+            {post.backlinks.map((bl: any) => (
+              <a class="backlink-card" href={withBase(`post/${bl.slug}/`)}>
+                <h4>{bl.title}</h4>
+                <span>{bl.sectionTitle} · {bl.dateYMD}</span>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Prev / Next Navigation */}
+      {(post.prev || post.next) && (
+        <nav class="post-nav" aria-label="上下篇导航">
+          {post.prev ? (
+            <a class="prev" href={withBase(`post/${post.prev.slug}/`)}>
+              <span class="post-nav-label">← 上一篇</span>
+              <span class="post-nav-title">{post.prev.title}</span>
+            </a>
+          ) : (
+            <div />
+          )}
+          {post.next ? (
+            <a class="next" href={withBase(`post/${post.next.slug}/`)}>
+              <span class="post-nav-label">下一篇 →</span>
+              <span class="post-nav-title">{post.next.title}</span>
+            </a>
+          ) : (
+            <div />
+          )}
+        </nav>
+      )}
+    </article>
+
+    {/* Right Column: Sticky Table of Contents with ScrollSpy */}
+    {hasToc && (
+      <aside class="toc-aside" aria-label="文章目录">
+        <h2 class="toc-title">目录 · On this page</h2>
+        <ul class="toc-list" id="toc-list">
+          {post.headings.map((h: { depth: number; text: string; id: string }) => (
+            <li class={`depth-${h.depth}`}>
+              <a href={`#${h.id}`} data-toc-id={h.id}>
+                {h.text}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </aside>
+    )}
+  </div>
+
+  {/* Floating Action Buttons (Mobile Drawer Trigger & Back to Top) */}
+  <div class="fab-group">
+    {(hasToc || hasSiblingTree) && (
+      <button
+        type="button"
+        class="fab-btn mobile-only"
+        id="open-drawer-btn"
+        title="打开目录与章节抽屉"
+        aria-label="Open directory drawer"
+      >
+        ☰
+      </button>
+    )}
+    <button
+      type="button"
+      class="fab-btn"
+      id="scroll-top-btn"
+      title="回到顶部"
+      aria-label="Scroll to top"
+    >
+      ↑
+    </button>
+  </div>
+
+  {/* Mobile Drawer for TOC & Chapter Tree */}
+  {(hasToc || hasSiblingTree) && (
+    <div class="mobile-drawer-backdrop" id="mobile-drawer-backdrop">
+      <div class="mobile-drawer">
+        {hasToc && (
+          <div style="margin-bottom: 28px;">
+            <h3 class="toc-title">📑 本文目录</h3>
+            <ul class="toc-list">
+              {post.headings.map((h: { depth: number; text: string; id: string }) => (
+                <li class={`depth-${h.depth}`}>
+                  <a href={`#${h.id}`} class="mobile-toc-link">
+                    {h.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {hasSiblingTree && (
+          <div>
+            <h3 class="toc-title">📚 {post.siblingTree.label}</h3>
+            {post.siblingTree.folders.map((folder: any) => (
+              <div class="chapter-folder">
+                <div class="chapter-folder-name">📂 {folder.folderName}</div>
+                <ul class="chapter-list">
+                  {folder.items.map((item: any) => (
+                    <li>
+                      <a
+                        href={withBase(`post/${item.slug}/`)}
+                        aria-current={item.slug === post.slug ? 'page' : undefined}
+                      >
+                        {item.title}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  )}
+
+  <script is:inline define:vars={{ hasMermaid: post.hasMermaid }}>
+    // 1. Reading Progress Bar & ScrollSpy TOC
+    const progressBar = document.getElementById('reading-progress-bar');
+    const tocLinks = Array.from(document.querySelectorAll('#toc-list a[data-toc-id]'));
+    const headingElements = tocLinks
+      .map((a) => document.getElementById(a.getAttribute('data-toc-id')))
+      .filter(Boolean);
+
+    function onScrollUpdate() {
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (progressBar && docHeight > 0) {
+        const pct = Math.min(100, Math.max(0, (window.scrollY / docHeight) * 100));
+        progressBar.style.width = `${pct}%`;
+      }
+
+      if (headingElements.length > 0) {
+        let activeId = headingElements[0].id;
+        for (const h of headingElements) {
+          if (h.getBoundingClientRect().top <= 130) {
+            activeId = h.id;
+          } else {
+            break;
+          }
+        }
+        tocLinks.forEach((link) => {
+          link.classList.toggle('active', link.getAttribute('data-toc-id') === activeId);
+        });
+      }
+    }
+
+    window.addEventListener('scroll', onScrollUpdate, { passive: true });
+    onScrollUpdate();
+
+    // Auto-scroll active chapter into view inside left sidebar
+    const activeChapter = document.querySelector('.chapter-sidebar a[aria-current="page"]');
+    activeChapter?.scrollIntoView({ block: 'nearest' });
+
+    // 2. Back to Top & Mobile Drawer
+    document.getElementById('scroll-top-btn')?.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    const drawerBackdrop = document.getElementById('mobile-drawer-backdrop');
+    document.getElementById('open-drawer-btn')?.addEventListener('click', () => {
+      drawerBackdrop?.classList.add('open');
+    });
+    drawerBackdrop?.addEventListener('click', (e) => {
+      if (e.target === drawerBackdrop || e.target.closest('.mobile-toc-link')) {
+        drawerBackdrop.classList.remove('open');
+      }
+    });
+
+    // 3. On-demand Mermaid Diagram Rendering
+    if (hasMermaid) {
+      const script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js';
+      script.onload = () => {
+        const isLight = document.documentElement.dataset.theme === 'light';
+        window.mermaid.initialize({
+          startOnLoad: true,
+          theme: isLight ? 'neutral' : 'dark',
+        });
+        window.mermaid.run();
+      };
+      document.head.appendChild(script);
+    }
+  </script>
+</BaseLayout>

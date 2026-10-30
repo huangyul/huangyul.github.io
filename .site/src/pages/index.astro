@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import siteData from '../data/generated.json';
+
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+const withBase = (p: string) => `${baseUrl}/${p.replace(/^\/+/, '')}`;
+
+const { site, home, sections, posts } = siteData;
+const contentSections = (sections || []).filter((s) => s.type !== 'archive');
+const recentPosts = [...(posts || [])]
+  .sort((a, b) => b.timestamp - a.timestamp)
+  .slice(0, 8);
+
+const totalWords = siteData.totalWordCount || 0;
+const formattedWords =
+  totalWords >= 10000
+    ? `${(totalWords / 10000).toFixed(1)}w`
+    : totalWords.toLocaleString();
+
+const techStack = home?.techStack || [
+  'Python',
+  'FastAPI',
+  'LangGraph',
+  'PostgreSQL (pgvector)',
+  'Go',
+  'Docker',
+  'RAG & Agent',
+];
+---
+
+<BaseLayout activeNav="about" wide={true}>
+  <div class="intro-house">
+    <section class="intro" aria-label="About">
+      <h1 class="name">{site?.name || 'HuangYul'}</h1>
+      <p class="motto" lang="zh-CN">{site?.motto}</p>
+      {home?.hello && <p class="hello">{home.hello}</p>}
+
+      <div class="tech-badges" aria-label="Core Tech Stack">
+        {techStack.map((tag: string) => (
+          <span class="tech-badge">{tag}</span>
+        ))}
+      </div>
+
+      {(home?.paragraphs || []).map((para: string) => <p>{para}</p>)}
+
+      {home?.career && home.career.length > 0 && (
+        <>
+          {home.careerTitle && <p>{home.careerTitle}</p>}
+          <ul class="career">
+            {home.career.map((item: { title: string; detail: string }) => (
+              <li>
+                <strong>{item.title}</strong>：{item.detail}
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+
+      {home?.outro && <p>{home.outro}</p>}
+      {home?.signature && <p class="signature">{home.signature}</p>}
+    </section>
+
+    <section class="garden-showcase" aria-label="Digital Garden Overview">
+      <div class="bento-stats">
+        <div class="bento-stat-item">
+          <span class="bento-stat-num">{siteData.totalPostsCount || 0}</span>
+          <span class="bento-stat-label">公开笔记总数</span>
+        </div>
+        <div class="bento-stat-item">
+          <span class="bento-stat-num">{formattedWords}</span>
+          <span class="bento-stat-label">累计沉淀字数</span>
+        </div>
+        <div class="bento-stat-item">
+          <span class="bento-stat-num">{contentSections.length}</span>
+          <span class="bento-stat-label">内容专栏模块</span>
+        </div>
+      </div>
+
+      <div class="section-pills">
+        {contentSections.map((sec) => (
+          <a class="section-pill" href={withBase(`${sec.id}/`)}>
+            <div class="section-pill-top">
+              <span class="section-pill-title">{sec.title}</span>
+              <span class="section-pill-count">{sec.postCount} 篇</span>
+            </div>
+            <p class="section-pill-motto">{sec.motto || sec.navLabel}</p>
+          </a>
+        ))}
+      </div>
+
+      <h3 class="recent-updates-title">最近更新 · Recent Updates</h3>
+      <ul class="recent-list">
+        {recentPosts.map((post) => (
+          <li>
+            <time datetime={post.dateIso}>{post.monthDay}</time>
+            <span class="recent-badge">{post.sectionTitle}</span>
+            <a href={withBase(`post/${post.slug}/`)}>{post.title}</a>
+            <span class="recent-readtime">{post.readingMinutes || 1} min</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </div>
+</BaseLayout>

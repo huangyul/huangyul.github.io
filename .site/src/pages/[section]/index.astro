@@ -1,0 +1,177 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import siteData from '../../data/generated.json';
+
+export function getStaticPaths() {
+  const sections = siteData.sections || [];
+  return sections.map((section) => ({
+    params: { section: section.id },
+    props: { section },
+  }));
+}
+
+const { section } = Astro.props;
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+const withBase = (p: string) => `${baseUrl}/${p.replace(/^\/+/, '')}`;
+
+const isWide = section.type === 'knowledge' || section.type === 'cards';
+const archiveYears = siteData.archiveYears || [];
+---
+
+<BaseLayout title={section.title} activeNav={section.id} wide={isWide}>
+  <h1 class="page-title">{section.title}</h1>
+  <p class="motto">
+    {section.type === 'archive'
+      ? `${siteData.totalPostsCount || 0} posts · ${section.motto}`
+      : `${section.postCount || 0} 篇 · ${section.motto}`}
+  </p>
+
+  {/* 1. BLOG STREAM VIEW (Polebug Watercolor Brush Style) */}
+  {section.type === 'blog' && (
+    <div class="blog-stream">
+      {section.posts.length === 0 ? (
+        <p class="summary">暂无文章，在对应目录下新建 Markdown 笔记即可自动发布。</p>
+      ) : (
+        section.posts.map((post: any) => (
+          <article class="entry">
+            <div class="entry-meta-row">
+              <time datetime={post.dateIso}>{post.dateYMD}</time>
+              <span>·</span>
+              <span>{post.wordCount?.toLocaleString() || 0} 字</span>
+              <span>·</span>
+              <span>约 {post.readingMinutes || 1} 分钟阅读</span>
+            </div>
+            <h2>
+              <a href={withBase(`post/${post.slug}/`)}>{post.title}</a>
+            </h2>
+            {post.summary && (
+              <div class="summary">
+                <p>{post.summary}</p>
+              </div>
+            )}
+            <a class="more" href={withBase(`post/${post.slug}/`)}>
+              阅读全文 →
+            </a>
+          </article>
+        ))
+      )}
+    </div>
+  )}
+
+  {/* 2. KNOWLEDGE BASE VIEW (Multi-Domain Tabs + Folder Hierarchy) */}
+  {section.type === 'knowledge' && (
+    <div class="knowledge-container">
+      {section.knowledgeGroups.length > 1 && (
+        <div class="knowledge-tabs" role="tablist" aria-label="知识库分类过滤">
+          <button type="button" class="knowledge-tab active" data-domain-filter="all">
+            全部 ({section.postCount})
+          </button>
+          {section.knowledgeGroups.map((grp: any) => (
+            <button
+              type="button"
+              class="knowledge-tab"
+              data-domain-filter={grp.sourceRoot}
+            >
+              {grp.label} ({grp.totalCount})
+            </button>
+          ))}
+        </div>
+      )}
+
+      {section.knowledgeGroups.map((grp: any) => (
+        <section class="knowledge-domain" data-domain-section={grp.sourceRoot}>
+          <div class="knowledge-domain-header">
+            <h2>{grp.label}</h2>
+            <span>共 {grp.totalCount} 篇笔记</span>
+          </div>
+
+          {grp.folders.map((folder: any) => (
+            <div class="folder-group">
+              <h3 class="folder-title">
+                <span>📂 {folder.folderName}</span>
+              </h3>
+              <div class="note-grid">
+                {folder.items.map((item: any) => (
+                  <a class="note-card" href={withBase(`post/${item.slug}/`)}>
+                    <div>
+                      <h4>{item.title}</h4>
+                      {item.summary && <p>{item.summary}</p>}
+                    </div>
+                    <div class="note-card-meta">
+                      <span>{item.wordCount?.toLocaleString() || 0} 字 · {item.readingMinutes || 1} min</span>
+                      <span>阅读 →</span>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          ))}
+        </section>
+      ))}
+    </div>
+  )}
+
+  {/* 3. CARDS GALLERY VIEW */}
+  {section.type === 'cards' && (
+    <div class="slide-grid">
+      {section.posts.map((post: any) => (
+        <a class="slide-card" href={withBase(`post/${post.slug}/`)}>
+          <div class="slide-card-cover">
+            {post.coverImage ? (
+              <img src={post.coverImage} alt={post.title} loading="lazy" />
+            ) : (
+              <span class="slide-card-cover-title">{post.title}</span>
+            )}
+          </div>
+          <div class="slide-card-body">
+            <h3>{post.title}</h3>
+            {post.summary && <p>{post.summary}</p>}
+            <div class="slide-card-footer">
+              <span>{post.subFolder || post.sourceLabel}</span>
+              <span>{post.readingMinutes || 1} min · {post.dateYMD}</span>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  )}
+
+  {/* 4. ARCHIVE VIEW */}
+  {section.type === 'archive' && (
+    <div class="archive-container">
+      {archiveYears.map((yr: any) => (
+        <section>
+          <h2 class="archive-year">{yr.year}</h2>
+          <ul class="archive-list">
+            {yr.items.map((item: any) => (
+              <li>
+                <time datetime={item.dateIso}>{item.monthDay}</time>
+                <span class="archive-sec">{item.sectionTitle}</span>
+                <a href={withBase(`post/${item.slug}/`)}>{item.title}</a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+    </div>
+  )}
+
+  <script is:inline>
+    const tabs = document.querySelectorAll('[data-domain-filter]');
+    const domains = document.querySelectorAll('[data-domain-section]');
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const target = tab.getAttribute('data-domain-filter');
+        tabs.forEach((t) => t.classList.remove('active'));
+        tab.classList.add('active');
+        domains.forEach((sec) => {
+          if (target === 'all' || sec.getAttribute('data-domain-section') === target) {
+            sec.style.display = '';
+          } else {
+            sec.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</BaseLayout>
