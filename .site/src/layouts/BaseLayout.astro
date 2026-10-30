@@ -76,9 +76,7 @@ const searchIndex = siteData.searchIndex || [];
           <span class="brand-name">{siteData.site?.name || 'HuangYul'}</span>
         </a>
         <nav class="site-nav" aria-label="Main navigation">
-          <a href={withBase('')} aria-current={activeNav === 'about' ? 'page' : undefined}>
-            About
-          </a>
+          <a href={withBase('')} aria-current={activeNav === 'about' ? 'page' : undefined}>关于</a>
           {sections.map((sec) => (
             <a
               href={withBase(`${sec.id}/`)}

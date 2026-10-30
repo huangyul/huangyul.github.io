@@ -31,7 +31,7 @@ const techStack = home?.techStack || [
 <BaseLayout activeNav="about" wide={true}>
   <div class="intro-house">
     <section class="intro" aria-label="About">
-      <h1 class="name">{site?.name || 'HuangYul'}</h1>
+      <h1 class="name">关于我</h1>
       <p class="motto" lang="zh-CN">{site?.motto}</p>
       {home?.hello && <p class="hello">{home.hello}</p>}
 
@@ -88,7 +88,7 @@ const techStack = home?.techStack || [
         ))}
       </div>
 
-      <h3 class="recent-updates-title">最近更新 · Recent Updates</h3>
+      <h3 class="recent-updates-title">最近更新</h3>
       <ul class="recent-list">
         {recentPosts.map((post) => (
           <li>

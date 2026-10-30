@@ -48,7 +48,7 @@ const layoutClasses = [
         </div>
         {post.siblingTree.folders.map((folder: any) => (
           <div class="chapter-folder">
-            <div class="chapter-folder-name">📂 {folder.folderName}</div>
+            <div class="chapter-folder-name">{folder.folderName}</div>
             <ul class="chapter-list">
               {folder.items.map((item: any) => (
                 <li>
@@ -96,7 +96,7 @@ const layoutClasses = [
       {/* Backlinks Section */}
       {hasBacklinks && (
         <section class="backlinks-box" aria-label="反向链接">
-          <h3 class="backlinks-title">🔗 提及本文的笔记 · Backlinks ({post.backlinks.length})</h3>
+          <h3 class="backlinks-title">提及本文的笔记 ({post.backlinks.length})</h3>
           <div class="backlinks-grid">
             {post.backlinks.map((bl: any) => (
               <a class="backlink-card" href={withBase(`post/${bl.slug}/`)}>
@@ -195,7 +195,7 @@ const layoutClasses = [
             <h3 class="toc-title">📚 {post.siblingTree.label}</h3>
             {post.siblingTree.folders.map((folder: any) => (
               <div class="chapter-folder">
-                <div class="chapter-folder-name">📂 {folder.folderName}</div>
+                <div class="chapter-folder-name">{folder.folderName}</div>
                 <ul class="chapter-list">
                   {folder.items.map((item: any) => (
                     <li>

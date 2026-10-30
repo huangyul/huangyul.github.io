@@ -238,13 +238,36 @@ function createSlug(sectionId, relPath) {
 }
 
 /**
- * Clean title from filename
+ * Clean title from filename into a human-readable label
+ * (underscores → spaces, numbered prefixes, light English title-case / acronyms)
  */
 function cleanTitleFromFilename(filePath) {
-  return path
+  let name = path
     .basename(filePath, path.extname(filePath))
     .replace(/^[#\s]+/, '')
     .trim();
+
+  name = name.replace(/_/g, ' ');
+  // "1-基础知识" / "10-DFS" → "1 基础知识" / "10 DFS"
+  name = name.replace(/^(\d+)[-_.]+/, '$1 ');
+  // Collapse leftover multi-hyphens between latin tokens: "foo-bar" → "foo bar"
+  if (!/[\u4e00-\u9fa5]/.test(name)) {
+    name = name.replace(/-/g, ' ');
+  }
+
+  name = name
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((token) => {
+      if (/[\u4e00-\u9fa5]/.test(token)) return token;
+      if (/^[A-Z0-9]{2,}$/.test(token)) return token;
+      if (/^[a-z]{1,3}$/.test(token)) return token.toUpperCase(); // ai, llm, api, go
+      if (/^[a-z]/.test(token)) return token.charAt(0).toUpperCase() + token.slice(1);
+      return token;
+    })
+    .join(' ');
+
+  return name.replace(/\s+/g, ' ').trim();
 }
 
 /**
@@ -346,6 +369,21 @@ function renderObsidianMarkdown(
 
   // 4. Convert Obsidian ==highlight== syntax
   text = text.replace(/==([^=\n]+?)==/g, '<mark class="obsidian-mark">$1</mark>');
+
+  // 4b. Fix CommonMark flanking failures for **bold** next to CJK punctuation/quotes
+  //     e.g. **"遍历..."** would otherwise leak raw asterisks
+  text = text.replace(/\*\*((?:(?!\*\*)[^\n])+?)\*\*/g, '<strong>$1</strong>');
+  text = text.replace(/(?<!\*)\*([^*\n]+?)\*(?!\*)/g, '<em>$1</em>');
+
+  // 4c. Bare LaTeX arrows outside $...$ (and collapse →\\rightarrow→ artifacts)
+  text = text.replace(/→\s*\\rightarrow\s*→/g, '→');
+  text = text.replace(/←\s*\\leftarrow\s*←/g, '←');
+  text = text.replace(/⇒\s*\\Rightarrow\s*⇒/g, '⇒');
+  text = text.replace(/\\(rightarrow|to|longrightarrow)\b/g, '→');
+  text = text.replace(/\\(leftarrow|longleftarrow)\b/g, '←');
+  text = text.replace(/\\(Rightarrow|implies)\b/g, '⇒');
+  text = text.replace(/\\(Leftarrow)\b/g, '⇐');
+  text = text.replace(/\\(leftrightarrow|Leftrightarrow)\b/g, '↔');
 
   // 5. Convert Obsidian image embeds: ![[filename.png]] or ![[filename.png|400]]
   text = text.replace(/!\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (_, rawTarget, rawSize) => {

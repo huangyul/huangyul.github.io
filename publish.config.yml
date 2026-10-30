@@ -45,16 +45,16 @@ home:
 # ----------------------------------------------------------------------------
 sections:
   - id: "blog"
-    navLabel: "Blog"
-    title: "Blog"
+    navLabel: "博客"
+    title: "博客"
     motto: "思考 · 随笔 · 技术分享"
     type: "blog"
     sources:
       - "blog"
 
   - id: "notes"
-    navLabel: "Notes"
-    title: "知识归纳"
+    navLabel: "笔记"
+    title: "笔记"
     motto: "体系化学习笔记 · 先做出东西，再补理论"
     type: "knowledge"
     sources:
@@ -64,8 +64,8 @@ sections:
         label: "算法基础学习 (Go)"
 
   - id: "archive"
-    navLabel: "Archive"
-    title: "Archive"
+    navLabel: "归档"
+    title: "归档"
     motto: "时光留痕 · 历史归档"
     type: "archive"
 
