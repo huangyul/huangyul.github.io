@@ -204,6 +204,10 @@
   },
   "active": "6977ac4ad882d745",
   "lastOpenFiles": [
+    "tmp-fix-index.js",
+    "tmp-restore-about.js",
+    "tmp_fix_index.js",
+    "tmp_rewrite_about.py",
     "static/image/avatar.jpg",
     "ai-agents-from-zero/20-MCP模型上下文协议.md",
     "ai-agents-from-zero/23-LangGraphAPI：图与状态.md",
@@ -240,9 +244,6 @@
     "未命名",
     "未命名 1",
     "od",
-    "ai-agents-from-zero/案例与源码-3-LangGraph框架/07-senior/state_persistence/sqlite_checkpoints/sqlite_data.db",
-    "ai-agents-from-zero/案例与源码-3-LangGraph框架/07-senior/time_travel/TimeTravel.py",
-    "ai-agents-from-zero/案例与源码-3-LangGraph框架/07-senior/subgraph/SubGraphSimple.py",
     "ai-agents-from-zero/案例与源码-3-LangGraph框架/01-helloworld/beforeimg/langgraph7c7b3e11.png",
     "ai-agents-from-zero/案例与源码-3-LangGraph框架/01-helloworld/beforeimg/langgraph2cf5a7dc.png",
     "ai-agents-from-zero/案例与源码-1-Coze&Dify工作流智能体/3.2-Coze案例：复刻爆款视频/3.2-复刻爆款视频-图片集/分镜图片/8-12s.png",
@@ -251,7 +252,6 @@
     "ai-agents-from-zero/案例与源码-1-Coze&Dify工作流智能体/3.2-Coze案例：复刻爆款视频/3.2-复刻爆款视频-图片集/分镜图片/46-51s.png",
     "ai-agents-from-zero/案例与源码-1-Coze&Dify工作流智能体/3.2-Coze案例：复刻爆款视频/3.2-复刻爆款视频-图片集/分镜图片/42-46s.png",
     "ai-agents-from-zero/案例与源码-1-Coze&Dify工作流智能体/3.2-Coze案例：复刻爆款视频/3.2-复刻爆款视频-图片集/分镜图片/38-42s.png",
-    "ai-agents-from-zero/案例与源码-1-Coze&Dify工作流智能体/3.2-Coze案例：复刻爆款视频/3.2-复刻爆款视频-图片集/分镜图片/34-38s.png",
     "未命名 3.canvas",
     "未命名 2.canvas"
   ]

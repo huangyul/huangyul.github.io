@@ -63,7 +63,7 @@ const archiveYears = siteData.archiveYears || [];
     </div>
   )}
 
-  {/* 2. KNOWLEDGE BASE VIEW (Multi-Domain Tabs + Folder Hierarchy) */}
+  {/* 2. KNOWLEDGE BASE VIEW (Multi-Domain Tabs + Collapsible Folder Hierarchy) */}
   {section.type === 'knowledge' && (
     <div class="knowledge-container">
       {section.knowledgeGroups.length > 1 && (
@@ -91,10 +91,17 @@ const archiveYears = siteData.archiveYears || [];
           </div>
 
           {grp.folders.map((folder: any) => (
-            <div class="folder-group">
-              <h3 class="folder-title">
+            <div class="folder-group" data-folder-group>
+              <button
+                type="button"
+                class="folder-title"
+                data-folder-toggle
+                aria-expanded="true"
+              >
+                <span class="folder-chevron" aria-hidden="true">▾</span>
                 <span>{folder.folderName}</span>
-              </h3>
+                <span class="folder-count">{folder.items.length}</span>
+              </button>
               <div class="note-grid">
                 {folder.items.map((item: any) => (
                   <a class="note-card" href={withBase(`post/${item.slug}/`)}>
@@ -176,6 +183,16 @@ const archiveYears = siteData.archiveYears || [];
             sec.style.display = 'none';
           }
         });
+      });
+    });
+
+    const folderToggles = document.querySelectorAll('[data-folder-toggle]');
+    folderToggles.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const group = btn.closest('[data-folder-group]');
+        if (!group) return;
+        const isCollapsed = group.classList.toggle('collapsed');
+        btn.setAttribute('aria-expanded', String(!isCollapsed));
       });
     });
   </script>

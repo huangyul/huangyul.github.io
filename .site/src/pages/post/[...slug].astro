@@ -170,7 +170,7 @@ const layoutClasses = [
     )}
     <button
       type="button"
-      class="fab-btn"
+      class="fab-btn scroll-top-btn"
       id="scroll-top-btn"
       title="Back to top"
       aria-label="Scroll to top"
@@ -224,8 +224,9 @@ const layoutClasses = [
   )}
 
   <script is:inline define:vars={{ hasMermaid: post.hasMermaid }}>
-    // 1. Reading Progress Bar & ScrollSpy TOC
+    // 1. Reading Progress Bar, ScrollSpy TOC & Scroll-to-Top Visibility
     const progressBar = document.getElementById('reading-progress-bar');
+    const scrollTopBtn = document.getElementById('scroll-top-btn');
     const tocLinks = Array.from(document.querySelectorAll('#toc-list a[data-toc-id]'));
     const headingElements = tocLinks
       .map((a) => document.getElementById(a.getAttribute('data-toc-id')))
@@ -236,6 +237,10 @@ const layoutClasses = [
       if (progressBar && docHeight > 0) {
         const pct = Math.min(100, Math.max(0, (window.scrollY / docHeight) * 100));
         progressBar.style.width = `${pct}%`;
+      }
+
+      if (scrollTopBtn) {
+        scrollTopBtn.classList.toggle('visible', window.scrollY > 280);
       }
 
       if (headingElements.length > 0) {
@@ -261,7 +266,7 @@ const layoutClasses = [
     activeChapter?.scrollIntoView({ block: 'nearest' });
 
     // 2. Back to Top & Mobile Drawer
-    document.getElementById('scroll-top-btn')?.addEventListener('click', () => {
+    scrollTopBtn?.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
@@ -275,19 +280,37 @@ const layoutClasses = [
       }
     });
 
-    // 3. On-demand Mermaid Diagram Rendering
+    // 3. On-demand Mermaid Diagram Rendering (with live theme switching)
     if (hasMermaid) {
-      const script = document.createElement('script');
-      script.src = 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js';
-      script.onload = () => {
+      const mermaidBlocks = Array.from(document.querySelectorAll('pre.mermaid'));
+      mermaidBlocks.forEach((el) => {
+        if (!el.dataset.mermaidSrc) {
+          el.dataset.mermaidSrc = el.textContent || '';
+        }
+      });
+
+      function renderMermaidDiagrams() {
+        if (!window.mermaid) return;
         const isLight = document.documentElement.dataset.theme === 'light';
         window.mermaid.initialize({
-          startOnLoad: true,
+          startOnLoad: false,
           theme: isLight ? 'neutral' : 'dark',
         });
-        window.mermaid.run();
-      };
+        mermaidBlocks.forEach((el) => {
+          if (el.dataset.mermaidSrc) {
+            el.removeAttribute('data-processed');
+            el.textContent = el.dataset.mermaidSrc;
+          }
+        });
+        window.mermaid.run({ nodes: mermaidBlocks });
+      }
+
+      const script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js';
+      script.onload = renderMermaidDiagrams;
       document.head.appendChild(script);
+
+      window.addEventListener('theme-changed', renderMermaidDiagrams);
     }
   </script>
 </BaseLayout>

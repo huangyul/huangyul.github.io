@@ -1,77 +1,69 @@
-# ============================================================================
-# Obsidian publish config (HuangYul multi-section)
-# ============================================================================
-
 site:
-  title: "HuangYul · Blog & Notes"
-  name: "HuangYul"
-  motto: "Keep thinking · Keep doing"
-  description: "AI agent engineering, algorithms, and personal notes"
-  # Avatar path relative to vault root; monogram used if missing
-  avatar: "static/image/avatar.jpg"
-  # Default theme: "light" or "dark"
-  defaultTheme: "light"
-  github: "https://github.com/huangyul"
-
-# ----------------------------------------------------------------------------
-# Home (About)
-# ----------------------------------------------------------------------------
+  title: HuangYul · Blog & Notes
+  name: HuangYul
+  motto: Keep thinking · Keep doing
+  description: Frontend & Go developer (TypeScript, Vue, React, Go), exploring AI Agents and Algorithms
+  avatar: static/image/avatar.jpg
+  defaultTheme: light
+  github: https://github.com/huangyul
 home:
-  hello: "Hi, I'm HuangYul."
+  hello: Hi, I'm HuangYul.
+  techStack:
+    - TypeScript
+    - Vue
+    - React
+    - Go
+    - Node.js
+    - AI Agent
+    - Algorithms
   paragraphs:
-    - "I'm a developer focused on AI agent applications and engineering. My stack centers on Python, FastAPI, PostgreSQL (pgvector), LangGraph, and Docker."
-    - "Before AI application engineering, I worked on web full-stack and frontend architecture. This site is built automatically from my Obsidian vault — tech blog posts plus structured notes on AI and algorithms."
-  careerTitle: "Currently focused on:"
+    - >-
+      I'm a developer working primarily with TypeScript, Vue, React, and Go — building modern web applications,
+      frontend architecture, and clean backend services.
+    - >-
+      Lately, I've been diving deep into AI Agent engineering and sharpening my foundations in algorithms & data
+      structures. This site is generated from my Obsidian vault as a place to organize my tech essays and learning notes.
+  careerTitle: 'What I work with & what I’m exploring:'
   career:
-    - title: "AI agent engineering"
-      detail: "LLM APIs, tool calling, RAG, LangGraph state machines, and agent workflows"
-    - title: "Algorithms & data structures"
-      detail: "Core algorithm patterns in Go — intuition, derivation, and manual walkthroughs"
-    - title: "Vibe coding"
-      detail: "AI-assisted coding workflows and shipping practice"
-  outro: "Welcome to my digital garden — hope something here sparks an idea."
-  signature: "Bless,\nHuangYul"
-
-# ----------------------------------------------------------------------------
-# Sections (nav order)
-# Types: blog | knowledge | cards | archive
-# ----------------------------------------------------------------------------
+    - title: Web & Frontend Engineering
+      detail: Day-to-day craftsmanship with TypeScript, Vue, React, and Go
+    - title: AI Agent (Learning & Building)
+      detail: Exploring LLM APIs, tool calling, RAG, LangGraph workflows, and agent patterns
+    - title: Algorithms & Data Structures
+      detail: Systematic problem solving in Go — intuition, derivation, and step-by-step walkthroughs
+  outro: Welcome to my digital garden — hope something here sparks an idea.
+  signature: |-
+    Bless,
+    HuangYul
 sections:
-  - id: "blog"
-    navLabel: "Blog"
-    title: "Blog"
-    motto: "Thinking · Essays · Tech notes"
-    type: "blog"
+  - id: blog
+    navLabel: Blog
+    title: Blog
+    motto: Thinking · Essays · Tech notes
+    type: blog
     sources:
-      - "blog"
-
-  - id: "notes"
-    navLabel: "Notes"
-    title: "Notes"
-    motto: "Structured learning notes · Build first, theory second"
-    type: "knowledge"
+      - blog
+  - id: notes
+    navLabel: Notes
+    title: Notes
+    motto: Structured learning notes · Build first, theory second
+    type: knowledge
     sources:
-      - path: "ai"
-        label: "AI & Agent development"
-      - path: "od"
-        label: "Algorithms with Go"
-
-  - id: "archive"
-    navLabel: "Archive"
-    title: "Archive"
-    motto: "A trail through time"
-    type: "archive"
-
-# ----------------------------------------------------------------------------
-# Global exclude (paths / globs never published)
-# ----------------------------------------------------------------------------
+      - path: ai
+        label: AI & Agent development
+      - path: od
+        label: Algorithms with Go
+  - id: archive
+    navLabel: Archive
+    title: Archive
+    motto: A trail through time
+    type: archive
 exclude:
-  - "世软相关"
-  - "ai-agents-from-zero"
-  - ".obsidian"
-  - ".site"
-  - ".github"
-  - "tmp"
-  - "**/*密码*"
-  - "**/*secret*"
-  - "**/README.md"
+  - 世软相关
+  - .obsidian
+  - .site
+  - .github
+  - tmp
+  - '**/*密码*'
+  - '**/*secret*'
+  - '**/README.md'

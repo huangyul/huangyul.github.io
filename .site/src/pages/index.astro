@@ -3,16 +3,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import siteData from '../data/generated.json';
 
 const { site, home } = siteData;
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+const withBase = (p: string) => `${baseUrl}/${p.replace(/^\/+/, '')}`;
 
 const techStack = home?.techStack || [
-  'Python',
-  'FastAPI',
-  'LangGraph',
-  'PostgreSQL (pgvector)',
+  'TypeScript',
+  'Vue',
+  'React',
   'Go',
-  'Docker',
-  'RAG & Agent',
+  'Node.js',
+  'AI Agent',
+  'Algorithms',
 ];
+
+const recentPosts = (siteData.archiveYears || [])
+  .flatMap((yr: any) => yr.items || [])
+  .slice(0, 5);
 ---
 
 <BaseLayout activeNav="about">
@@ -46,5 +52,25 @@ const techStack = home?.techStack || [
       {home?.outro && <p>{home.outro}</p>}
       {home?.signature && <p class="signature">{home.signature}</p>}
     </section>
+
+    {recentPosts.length > 0 && (
+      <section class="home-recent" aria-label="Recent updates">
+        <div class="home-recent-head">
+          <h2 class="home-recent-title">Recent Writing & Notes</h2>
+          <a class="home-recent-all" href={withBase('archive/')}>
+            All {siteData.totalPostsCount || recentPosts.length} posts →
+          </a>
+        </div>
+        <ul class="archive-list">
+          {recentPosts.map((item: any) => (
+            <li>
+              <time class="home-recent-time" datetime={item.dateIso}>{item.dateYMD}</time>
+              <span class="archive-sec">{item.sectionTitle}</span>
+              <a href={withBase(`post/${item.slug}/`)}>{item.title}</a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
   </div>
 </BaseLayout>
