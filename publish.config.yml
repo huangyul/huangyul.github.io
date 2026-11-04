@@ -6,6 +6,7 @@ site:
   avatar: static/image/avatar.jpg
   defaultTheme: light
   github: https://github.com/huangyul
+  counterApiUrl: https://pageview-counter.huang-yul-coder.workers.dev
 home:
   hello: Hi, I'm HuangYul.
   techStack:

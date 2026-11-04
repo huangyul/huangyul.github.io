@@ -29,6 +29,7 @@ const avatarUrl = siteData.site?.avatarUrl;
 const monogram = (siteData.site?.name || 'H').slice(0, 1).toUpperCase();
 const sections = siteData.sections || [];
 const searchIndex = siteData.searchIndex || [];
+const counterApiUrl = siteData.site?.counterApiUrl || '';
 ---
 
 <!doctype html>
@@ -172,9 +173,16 @@ const searchIndex = siteData.searchIndex || [];
 
     <footer class={wide ? 'site-footer wide' : 'site-footer'}>
       <span>© {new Date().getFullYear()} {siteData.site?.name || 'HuangYul'} · {siteData.site?.motto}</span>
+      {counterApiUrl && (
+        <span class="site-stats" id="site-stats" style="display:none;">
+          <span class="site-stat-item">Visits: <strong id="site-pv">--</strong></span>
+          <span class="meta-sep" aria-hidden="true">·</span>
+          <span class="site-stat-item">Visitors: <strong id="site-uv">--</strong></span>
+        </span>
+      )}
     </footer>
 
-    <script is:inline define:vars={{ searchIndex, baseUrl }}>
+    <script is:inline define:vars={{ searchIndex, baseUrl, counterApiUrl }}>
       // 1. Sticky Header Scroll Border & Mobile Menu Toggle
       const headerWrap = document.getElementById('site-header-wrap');
       const navToggleBtn = document.getElementById('nav-toggle-btn');
@@ -204,10 +212,10 @@ const searchIndex = siteData.searchIndex || [];
         }
       }, { passive: true });
 
-      // 2. Theme Toggle
-      document.querySelector('.theme-toggle')?.addEventListener('click', () => {
-        const isLight = document.documentElement.dataset.theme === 'light';
-        const nextTheme = isLight ? 'dark' : 'light';
+      // 2. Theme Toggle (Instant & Clean)
+      const themeToggleBtn = document.querySelector('.theme-toggle');
+
+      function updateTheme(nextTheme) {
         if (nextTheme === 'light') {
           document.documentElement.dataset.theme = 'light';
         } else {
@@ -217,6 +225,12 @@ const searchIndex = siteData.searchIndex || [];
           localStorage.setItem('theme', nextTheme);
         } catch {}
         window.dispatchEvent(new CustomEvent('theme-changed', { detail: { theme: nextTheme } }));
+      }
+
+      themeToggleBtn?.addEventListener('click', () => {
+        const isLight = document.documentElement.dataset.theme === 'light';
+        const nextTheme = isLight ? 'dark' : 'light';
+        updateTheme(nextTheme);
       });
 
       // 3. Code Block Copy Button
@@ -371,6 +385,77 @@ const searchIndex = siteData.searchIndex || [];
           }
         }
       });
+
+      // 5. Cloudflare Workers Pageview & Site Stats Tracker
+      if (counterApiUrl) {
+        (function initStats() {
+          try {
+            const hostname = window.location.hostname;
+            const isLocal = Boolean(
+              hostname === 'localhost' ||
+              hostname === '127.0.0.1' ||
+              hostname === '[::1]' ||
+              hostname.endsWith('.local')
+            );
+
+            let normalizedPath = window.location.pathname.replace(/\/+$/, '') || '/';
+            if (baseUrl && normalizedPath.startsWith(baseUrl)) {
+              normalizedPath = normalizedPath.slice(baseUrl.length) || '/';
+            }
+
+            const uvKey = 'hy_visited_before';
+            let isUv = 0;
+            try {
+              // Never consume or set production UV flag in local environment
+              if (!isLocal && !localStorage.getItem(uvKey)) {
+                isUv = 1;
+                localStorage.setItem(uvKey, '1');
+              }
+            } catch {}
+
+            // In local dev, use readonly=1 to preview numbers without contaminating production counts
+            const apiUrl = `${counterApiUrl.replace(/\/+$/, '')}/api/stats?page=${encodeURIComponent(normalizedPath)}&is_uv=${isUv}${isLocal ? '&readonly=1' : ''}`;
+
+            fetch(apiUrl)
+              .then((res) => {
+                if (!res.ok) throw new Error('Stats request failed');
+                return res.json();
+              })
+              .then((data) => {
+                if (!data) return;
+
+                // 1. Update site total visits & visitors in footer
+                const sitePvEl = document.getElementById('site-pv');
+                const siteUvEl = document.getElementById('site-uv');
+                const siteStatsWrap = document.getElementById('site-stats');
+
+                if (sitePvEl && typeof data.siteViews === 'number') {
+                  sitePvEl.textContent = data.siteViews.toLocaleString();
+                }
+                if (siteUvEl && typeof data.siteVisitors === 'number') {
+                  siteUvEl.textContent = data.siteVisitors.toLocaleString();
+                }
+                if (siteStatsWrap) {
+                  siteStatsWrap.style.display = 'inline-flex';
+                }
+
+                // 2. Update article views if on a post page
+                const pagePvEl = document.getElementById('page-pv');
+                const pageViewsWrap = document.getElementById('page-views-wrap');
+
+                if (pagePvEl && typeof data.pageViews === 'number') {
+                  pagePvEl.textContent = data.pageViews.toLocaleString();
+                }
+                if (pageViewsWrap) {
+                  pageViewsWrap.style.display = 'inline-flex';
+                }
+              })
+              .catch(() => {
+                // Silently keep clean state on network error
+              });
+          } catch {}
+        })();
+      }
     </script>
   </body>
 </html>

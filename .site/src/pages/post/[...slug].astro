@@ -43,8 +43,8 @@ const layoutClasses = [
     {hasSiblingTree && (
       <aside class="chapter-sidebar" aria-label="Chapter navigation">
         <div class="chapter-sidebar-head">
-          <span>{post.siblingTree.label}</span>
-          <span>{post.siblingTree.totalCount} notes</span>
+          <span class="chapter-sidebar-title">{post.siblingTree.label}</span>
+          <span class="chapter-sidebar-count">{post.siblingTree.totalCount} {post.siblingTree.totalCount === 1 ? 'note' : 'notes'}</span>
         </div>
         {post.siblingTree.folders.map((folder: any) => (
           <div class="chapter-folder">
@@ -83,6 +83,18 @@ const layoutClasses = [
           <span>{post.wordCount?.toLocaleString() || 0} words</span>
           <span class="meta-sep" aria-hidden="true">·</span>
           <span>{post.readingMinutes || 1} min</span>
+          {siteData.site?.counterApiUrl && (
+            <span class="page-views-wrap" id="page-views-wrap" style="display:none;">
+              <span class="meta-sep" aria-hidden="true">·</span>
+              <span class="post-views" title="Article views">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7Z" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+                <span><strong id="page-pv">--</strong> views</span>
+              </span>
+            </span>
+          )}
           {(post.sourceLabel || (post.tags && post.tags.length > 0)) && (
             <>
               <span class="meta-sep" aria-hidden="true">·</span>
