@@ -20,6 +20,11 @@ const blogSection = (siteData.sections || []).find(
   (sec: any) => sec.type === 'blog' || sec.id === 'blog'
 );
 const recentBlogPosts = (blogSection?.posts || []).slice(0, 5);
+
+const notesSection = (siteData.sections || []).find(
+  (sec: any) => sec.type === 'knowledge' || sec.id === 'notes'
+);
+const knowledgeGroups = notesSection?.knowledgeGroups || [];
 ---
 
 <BaseLayout activeNav="about">
@@ -54,6 +59,34 @@ const recentBlogPosts = (blogSection?.posts || []).slice(0, 5);
       {home?.signature && <p class="signature">{home.signature}</p>}
     </section>
 
+    {knowledgeGroups.length > 0 && (
+      <section class="home-recent" aria-label="Knowledge notes">
+        <div class="home-recent-head">
+          <h2 class="home-recent-title">Notes</h2>
+          <a class="home-recent-all" href={withBase(`${notesSection.id}/`)}>
+            All {notesSection.postCount} notes →
+          </a>
+        </div>
+        <ul class="archive-list home-notes-list">
+          {knowledgeGroups.map((grp: any, idx: number) => (
+            <li>
+              <span class="home-domain-idx">{String(idx + 1).padStart(2, '0')}</span>
+              <a
+                class="home-domain-link"
+                href={withBase(`${notesSection.id}/?domain=${encodeURIComponent(grp.sourceRoot)}`)}
+              >
+                <span class="home-domain-name">{grp.label}</span>
+                <span class="home-domain-chapters">
+                  {grp.folders.map((f: any) => f.folderName).join(' · ')}
+                </span>
+              </a>
+              <span class="archive-time">{grp.totalCount} notes</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
     {recentBlogPosts.length > 0 && (
       <section class="home-recent" aria-label="Recent blog posts">
         <div class="home-recent-head">
@@ -67,6 +100,7 @@ const recentBlogPosts = (blogSection?.posts || []).slice(0, 5);
             <li>
               <time class="home-recent-time" datetime={item.dateIso}>{item.dateYMD}</time>
               <a href={withBase(`post/${item.slug}/`)}>{item.title}</a>
+              <span class="archive-time">{item.readingMinutes || 1} min</span>
             </li>
           ))}
         </ul>

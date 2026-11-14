@@ -8,6 +8,7 @@ interface Props {
   description?: string;
   activeNav?: string;
   wide?: boolean;
+  bodyClass?: string;
 }
 
 const {
@@ -15,6 +16,7 @@ const {
   description = siteData.site?.description || '',
   activeNav = 'about',
   wide = false,
+  bodyClass = '',
 } = Astro.props;
 
 const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
@@ -63,7 +65,7 @@ const counterApiUrl = siteData.site?.counterApiUrl || '';
       }
     </script>
   </head>
-  <body>
+  <body class={bodyClass || undefined}>
     <div class="site-header-wrap" id="site-header-wrap">
       <header class="site-header">
         <a class="brand-link" href={withBase('')} aria-label="Home">

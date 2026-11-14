@@ -310,29 +310,69 @@ function computeWordStats(markdownBody) {
  * Extract plain text summary & search text
  */
 function extractPlainAndSummary(markdownBody, frontmatterSummary) {
-  const stripped = markdownBody
+  const withoutBlocks = markdownBody
     .replace(/```[\s\S]*?```/g, ' ')
     .replace(/\$\$[\s\S]*?\$\$/g, ' ')
     .replace(/!\[\[[^\]]+\]\]/g, ' ')
-    .replace(/!\[[^\]]*\]\([^)]+\)/g, ' ')
-    .replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, '$2')
-    .replace(/\[\[([^\]]+)\]\]/g, '$1')
-    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
-    .replace(/^#+\s+/gm, '')
-    .replace(/^>\s*\[![^\]]+\]/gm, '')
-    .replace(/==([^=\n]+)==/g, '$1')
-    .replace(/[`*_~>-]/g, ' ')
-    .replace(/\s+/g, ' ')
+    .replace(/!\[[^\]]*\]\([^)]+\)/g, ' ');
+
+  const cleanInline = (s) =>
+    s
+      .replace(/(?<!\$)\$([^\$\n]+?)\$(?!\$)/g, '$1')
+      .replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, '$2')
+      .replace(/\[\[([^\]]+)\]\]/g, '$1')
+      .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+      .replace(/^>\s*\[![^\]]+\]\s*/gm, '')
+      .replace(/==([^=\n]+)==/g, '$1')
+      .replace(/[`*_~>|]/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+
+  const rawLines = withoutBlocks.split(/\r?\n/);
+  const proseSegments = [];
+  const headingSegments = [];
+
+  for (const rawLine of rawLines) {
+    const trimmed = rawLine.trim();
+    if (!trimmed) continue;
+    // Skip horizontal rules and markdown table alignment rows
+    if (/^([-*_]\s*){3,}$/.test(trimmed) || /^\|?[\s:|-]+\|[\s:|-]*$/.test(trimmed)) {
+      continue;
+    }
+    const headingMatch = trimmed.match(/^#+\s+(.*)$/);
+    if (headingMatch) {
+      const hText = cleanInline(headingMatch[1]);
+      if (hText) headingSegments.push(hText);
+      continue;
+    }
+    const lineText = cleanInline(trimmed.replace(/^[-*+]\s+|^\d+\.\s+/, ''));
+    if (lineText) {
+      proseSegments.push(lineText);
+    }
+  }
+
+  const proseJoined = proseSegments
+    .map((seg) => (/[。！？.!?；;：:]$/.test(seg) ? seg : `${seg} ·`))
+    .join(' ')
+    .replace(/\s*·$/, '')
+    .replace(/(·\s*){2,}/g, '· ')
     .trim();
+
+  const fallbackJoined = headingSegments.join(' · ').trim();
+  const baseSummaryText = proseJoined.length >= 16 ? proseJoined : (proseJoined || fallbackJoined);
 
   let summary = '';
   if (frontmatterSummary && String(frontmatterSummary).trim()) {
     summary = String(frontmatterSummary).trim();
   } else {
-    summary = stripped.length <= 150 ? stripped : `${stripped.slice(0, 148).trim()}…`;
+    summary =
+      baseSummaryText.length <= 130
+        ? baseSummaryText
+        : `${baseSummaryText.slice(0, 128).replace(/[\s·，,、：:；;]+$/, '')}…`;
   }
 
-  const searchText = stripped.slice(0, 2500);
+  const fullStripped = cleanInline(withoutBlocks.replace(/^#+\s+/gm, ' '));
+  const searchText = fullStripped.slice(0, 2500);
   return { summary, searchText };
 }
 

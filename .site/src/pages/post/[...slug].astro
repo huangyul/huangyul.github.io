@@ -32,6 +32,7 @@ const layoutClasses = [
   description={post.summary}
   activeNav={post.sectionId}
   wide={hasToc || hasSiblingTree}
+  bodyClass="post-detail-page"
 >
   <!-- Top Reading Progress Bar -->
   <div class="reading-progress" aria-hidden="true">
@@ -39,24 +40,41 @@ const layoutClasses = [
   </div>
 
   <div class={layoutClasses}>
-    {/* Left Sidebar: Sibling Chapter Tree (Knowledge Base E-Book Mode) */}
+    {/* Left Sidebar: Sibling Chapter Tree (Minimalist Editorial Index) */}
     {hasSiblingTree && (
       <aside class="chapter-sidebar" aria-label="Chapter navigation">
         <div class="chapter-sidebar-head">
-          <span class="chapter-sidebar-title">{post.siblingTree.label}</span>
-          <span class="chapter-sidebar-count">{post.siblingTree.totalCount} {post.siblingTree.totalCount === 1 ? 'note' : 'notes'}</span>
+          <a
+            class="chapter-sidebar-title"
+            href={withBase(`${post.sectionId}/?domain=${encodeURIComponent(post.sourceRoot || '')}`)}
+          >
+            {post.siblingTree.label}
+          </a>
+          <span class="chapter-sidebar-count">
+            {post.siblingTree.totalCount} {post.siblingTree.totalCount === 1 ? 'note' : 'notes'}
+          </span>
         </div>
         {post.siblingTree.folders.map((folder: any) => (
-          <div class="chapter-folder">
-            <div class="chapter-folder-name">{folder.folderName}</div>
+          <div class="chapter-folder" data-sidebar-folder>
+            <button
+              type="button"
+              class="chapter-folder-toggle"
+              data-sidebar-folder-toggle
+              aria-expanded="true"
+            >
+              <span class="folder-chevron" aria-hidden="true">▾</span>
+              <span class="chapter-folder-name">{folder.folderName}</span>
+              <span class="chapter-folder-count">{folder.items.length}</span>
+            </button>
             <ul class="chapter-list">
-              {folder.items.map((item: any) => (
+              {folder.items.map((item: any, idx: number) => (
                 <li>
                   <a
                     href={withBase(`post/${item.slug}/`)}
                     aria-current={item.slug === post.slug ? 'page' : undefined}
                   >
-                    {item.title}
+                    <span class="chapter-item-idx">{String(idx + 1).padStart(2, '0')}</span>
+                    <span class="chapter-item-text">{item.title}</span>
                   </a>
                 </li>
               ))}
@@ -68,12 +86,30 @@ const layoutClasses = [
 
     {/* Center Column: Article Content */}
     <article class="reader-article">
-      <header class="reader-head">
-        <a class="back-link" href={withBase(`${post.sectionId}/`)}>
-          ← Back to {post.sectionTitle}
-        </a>
-        <span>{siteData.site?.motto}</span>
-      </header>
+      <nav class="reader-head" aria-label="Breadcrumb">
+        <div class="reader-breadcrumb">
+          <a class="back-link" href={withBase(`${post.sectionId}/`)}>
+            ← {post.sectionTitle}
+          </a>
+          {post.sourceLabel && post.sectionId === 'notes' && (
+            <>
+              <span class="crumb-sep" aria-hidden="true">/</span>
+              <a
+                class="crumb-link"
+                href={withBase(`${post.sectionId}/?domain=${encodeURIComponent(post.sourceRoot || '')}`)}
+              >
+                {post.sourceLabel}
+              </a>
+            </>
+          )}
+          {post.subFolder && (
+            <>
+              <span class="crumb-sep" aria-hidden="true">/</span>
+              <span class="crumb-current">{post.subFolder}</span>
+            </>
+          )}
+        </div>
+      </nav>
 
       <header class="article-header">
         <h1 class="article-title">{post.title}</h1>
@@ -95,15 +131,13 @@ const layoutClasses = [
               </span>
             </span>
           )}
-          {(post.sourceLabel || (post.tags && post.tags.length > 0)) && (
+          {post.tags && post.tags.length > 0 && (
             <>
               <span class="meta-sep" aria-hidden="true">·</span>
-              <span>
-                {post.sourceLabel}
-                {post.subFolder ? ` / ${post.subFolder}` : ''}
-                {post.tags && post.tags.length > 0
-                  ? ` · ${post.tags.join(' · ')}`
-                  : ''}
+              <span class="article-tags">
+                {post.tags.map((t: string) => (
+                  <span class="article-tag">#{t}</span>
+                ))}
               </span>
             </>
           )}
@@ -193,44 +227,95 @@ const layoutClasses = [
 
   {/* Mobile Drawer for TOC & Chapter Tree */}
   {(hasToc || hasSiblingTree) && (
-    <div class="mobile-drawer-backdrop" id="mobile-drawer-backdrop">
+    <div class="mobile-drawer-backdrop" id="mobile-drawer-backdrop" role="dialog" aria-modal="true" aria-label="Contents navigation">
       <div class="mobile-drawer">
-        {hasToc && (
-          <div style="margin-bottom: 28px;">
-            <h3 class="toc-title">On this page</h3>
-            <ul class="toc-list">
-              {post.headings.map((h: { depth: number; text: string; id: string }) => (
-                <li class={`depth-${h.depth}`}>
-                  <a href={`#${h.id}`} class="mobile-toc-link">
-                    {h.text}
-                  </a>
-                </li>
+        <div class="mobile-drawer-head">
+          {hasToc && hasSiblingTree ? (
+            <div class="drawer-tabs" role="tablist">
+              <button
+                type="button"
+                class="drawer-tab active"
+                data-drawer-tab="toc"
+                role="tab"
+                aria-selected="true"
+              >
+                On this page
+              </button>
+              <button
+                type="button"
+                class="drawer-tab"
+                data-drawer-tab="chapters"
+                role="tab"
+                aria-selected="false"
+              >
+                Chapters ({post.siblingTree.totalCount})
+              </button>
+            </div>
+          ) : (
+            <span class="drawer-single-title">
+              {hasToc ? 'On this page' : post.siblingTree?.label}
+            </span>
+          )}
+          <button
+            type="button"
+            class="drawer-close-btn"
+            id="close-drawer-btn"
+            aria-label="Close drawer"
+          >
+            ×
+          </button>
+        </div>
+
+        <div class="mobile-drawer-body">
+          {hasToc && (
+            <div class="drawer-panel" data-drawer-panel="toc">
+              <ul class="toc-list">
+                {post.headings.map((h: { depth: number; text: string; id: string }) => (
+                  <li class={`depth-${h.depth}`}>
+                    <a href={`#${h.id}`} class="mobile-toc-link" data-toc-id={h.id}>
+                      {h.text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {hasSiblingTree && (
+            <div
+              class="drawer-panel"
+              data-drawer-panel="chapters"
+              hidden={hasToc ? true : undefined}
+            >
+              {post.siblingTree.folders.map((folder: any) => (
+                <div class="chapter-folder" data-sidebar-folder>
+                  <button
+                    type="button"
+                    class="chapter-folder-toggle"
+                    data-sidebar-folder-toggle
+                    aria-expanded="true"
+                  >
+                    <span class="folder-chevron" aria-hidden="true">▾</span>
+                    <span class="chapter-folder-name">{folder.folderName}</span>
+                    <span class="chapter-folder-count">{folder.items.length}</span>
+                  </button>
+                  <ul class="chapter-list">
+                    {folder.items.map((item: any, idx: number) => (
+                      <li>
+                        <a
+                          href={withBase(`post/${item.slug}/`)}
+                          aria-current={item.slug === post.slug ? 'page' : undefined}
+                        >
+                          <span class="chapter-item-idx">{String(idx + 1).padStart(2, '0')}</span>
+                          <span class="chapter-item-text">{item.title}</span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
-            </ul>
-          </div>
-        )}
-        {hasSiblingTree && (
-          <div>
-            <h3 class="toc-title">{post.siblingTree.label}</h3>
-            {post.siblingTree.folders.map((folder: any) => (
-              <div class="chapter-folder">
-                <div class="chapter-folder-name">{folder.folderName}</div>
-                <ul class="chapter-list">
-                  {folder.items.map((item: any) => (
-                    <li>
-                      <a
-                        href={withBase(`post/${item.slug}/`)}
-                        aria-current={item.slug === post.slug ? 'page' : undefined}
-                      >
-                        {item.title}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        )}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   )}
@@ -239,9 +324,10 @@ const layoutClasses = [
     // 1. Reading Progress Bar, ScrollSpy TOC & Scroll-to-Top Visibility
     const progressBar = document.getElementById('reading-progress-bar');
     const scrollTopBtn = document.getElementById('scroll-top-btn');
-    const tocLinks = Array.from(document.querySelectorAll('#toc-list a[data-toc-id]'));
-    const headingElements = tocLinks
-      .map((a) => document.getElementById(a.getAttribute('data-toc-id')))
+    const tocLinks = Array.from(document.querySelectorAll('#toc-list a[data-toc-id], .mobile-drawer a[data-toc-id]'));
+    const uniqueHeadingIds = Array.from(new Set(tocLinks.map((a) => a.getAttribute('data-toc-id'))));
+    const headingElements = uniqueHeadingIds
+      .map((id) => document.getElementById(id))
       .filter(Boolean);
 
     function onScrollUpdate() {
@@ -277,19 +363,52 @@ const layoutClasses = [
     const activeChapter = document.querySelector('.chapter-sidebar a[aria-current="page"]');
     activeChapter?.scrollIntoView({ block: 'nearest' });
 
+    // Collapsible folders in chapter sidebar & mobile drawer
+    document.querySelectorAll('[data-sidebar-folder-toggle]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const folder = btn.closest('[data-sidebar-folder]');
+        if (!folder) return;
+        const isCollapsed = folder.classList.toggle('collapsed');
+        btn.setAttribute('aria-expanded', String(!isCollapsed));
+      });
+    });
+
     // 2. Back to Top & Mobile Drawer
     scrollTopBtn?.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
     const drawerBackdrop = document.getElementById('mobile-drawer-backdrop');
+    const closeDrawerBtn = document.getElementById('close-drawer-btn');
+    const drawerTabs = Array.from(document.querySelectorAll('[data-drawer-tab]'));
+    const drawerPanels = Array.from(document.querySelectorAll('[data-drawer-panel]'));
+
+    function closeDrawer() {
+      drawerBackdrop?.classList.remove('open');
+    }
+
     document.getElementById('open-drawer-btn')?.addEventListener('click', () => {
       drawerBackdrop?.classList.add('open');
     });
+    closeDrawerBtn?.addEventListener('click', closeDrawer);
     drawerBackdrop?.addEventListener('click', (e) => {
       if (e.target === drawerBackdrop || e.target.closest('.mobile-toc-link')) {
-        drawerBackdrop.classList.remove('open');
+        closeDrawer();
       }
+    });
+
+    drawerTabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const target = tab.getAttribute('data-drawer-tab');
+        drawerTabs.forEach((t) => {
+          const isCurrent = t === tab;
+          t.classList.toggle('active', isCurrent);
+          t.setAttribute('aria-selected', String(isCurrent));
+        });
+        drawerPanels.forEach((panel) => {
+          panel.hidden = panel.getAttribute('data-drawer-panel') !== target;
+        });
+      });
     });
 
     // 3. On-demand Mermaid Diagram Rendering (with live theme switching)

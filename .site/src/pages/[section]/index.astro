@@ -63,63 +63,169 @@ const archiveYears = siteData.archiveYears || [];
     </div>
   )}
 
-  {/* 2. KNOWLEDGE BASE VIEW (Multi-Domain Tabs + Collapsible Folder Hierarchy) */}
+  {/* 2. KNOWLEDGE BASE VIEW (Editorial Compendium & Chapter Index) */}
   {section.type === 'knowledge' && (
-    <div class="knowledge-container">
-      {section.knowledgeGroups.length > 1 && (
-        <div class="knowledge-tabs" role="tablist" aria-label="Knowledge filters">
-          <button type="button" class="knowledge-tab active" data-domain-filter="all">
-            All ({section.postCount})
+    <div class="knowledge-layout" id="knowledge-root">
+      {/* Left Sticky Index Rail */}
+      <aside class="knowledge-rail" aria-label="Notes directory and filters">
+        <div class="knowledge-filter-box">
+          <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" />
+            <path d="m20 20-3.5-3.5" />
+          </svg>
+          <input
+            type="text"
+            class="knowledge-filter-input"
+            id="knowledge-filter-input"
+            placeholder="Filter notes..."
+            autocomplete="off"
+            aria-label="Filter notes by title or summary"
+          />
+          <button
+            type="button"
+            class="knowledge-filter-clear"
+            id="knowledge-filter-clear"
+            aria-label="Clear filter"
+            hidden
+          >
+            ×
           </button>
-          {section.knowledgeGroups.map((grp: any) => (
-            <button
-              type="button"
-              class="knowledge-tab"
-              data-domain-filter={grp.sourceRoot}
-            >
-              {grp.label} ({grp.totalCount})
-            </button>
-          ))}
         </div>
-      )}
 
-      {section.knowledgeGroups.map((grp: any) => (
-        <section class="knowledge-domain" data-domain-section={grp.sourceRoot}>
-          <div class="knowledge-domain-header">
-            <h2>{grp.label}</h2>
-            <span>{grp.totalCount} notes</span>
-          </div>
-
-          {grp.folders.map((folder: any) => (
-            <div class="folder-group" data-folder-group>
+        <div class="rail-section">
+          <div class="rail-section-label">Domains</div>
+          <div class="knowledge-tabs" role="tablist" aria-label="Knowledge domains">
+            <button type="button" class="knowledge-tab active" data-domain-filter="all">
+              <span>All Notes</span>
+              <span class="tab-count">{section.postCount}</span>
+            </button>
+            {section.knowledgeGroups.map((grp: any) => (
               <button
                 type="button"
-                class="folder-title"
-                data-folder-toggle
-                aria-expanded="true"
+                class="knowledge-tab"
+                data-domain-filter={grp.sourceRoot}
               >
-                <span class="folder-chevron" aria-hidden="true">▾</span>
-                <span>{folder.folderName}</span>
-                <span class="folder-count">{folder.items.length}</span>
+                <span>{grp.label}</span>
+                <span class="tab-count">{grp.totalCount}</span>
               </button>
-              <div class="note-grid">
-                {folder.items.map((item: any) => (
-                  <a class="note-card" href={withBase(`post/${item.slug}/`)}>
-                    <div>
-                      <h4>{item.title}</h4>
-                      {item.summary && <p>{item.summary}</p>}
-                    </div>
-                    <div class="note-card-meta">
-                      <span>{item.wordCount?.toLocaleString() || 0} words · {item.readingMinutes || 1} min</span>
-                      <span>Read →</span>
-                    </div>
-                  </a>
-                ))}
+            ))}
+          </div>
+        </div>
+
+        <nav class="rail-section rail-chapters" aria-label="Chapters">
+          <div class="rail-section-head">
+            <span class="rail-section-label">Chapters</span>
+            <button
+              type="button"
+              class="rail-action-btn"
+              id="toggle-all-chapters"
+              data-all-expanded="true"
+            >
+              Collapse all
+            </button>
+          </div>
+          <div class="rail-chapter-tree">
+            {section.knowledgeGroups.map((grp: any, gIdx: number) => (
+              <div class="rail-domain-group" data-rail-domain={grp.sourceRoot}>
+                <div class="rail-domain-title">{grp.label}</div>
+                <ul class="rail-chapter-list">
+                  {grp.folders.map((folder: any, fIdx: number) => (
+                    <li>
+                      <a
+                        class="rail-chapter-link"
+                        href={`#chapter-${gIdx}-${fIdx}`}
+                        data-chapter-jump={`chapter-${gIdx}-${fIdx}`}
+                        data-target-domain={grp.sourceRoot}
+                      >
+                        <span class="rail-chapter-name">{folder.folderName}</span>
+                        <span class="rail-chapter-count">{folder.items.length}</span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </div>
-          ))}
-        </section>
-      ))}
+            ))}
+          </div>
+        </nav>
+      </aside>
+
+      {/* Right Editorial Compendium Content */}
+      <div class="knowledge-content" id="knowledge-content">
+        <div class="knowledge-empty-state" id="knowledge-empty-state" hidden>
+          <p class="empty-title">No matching notes found</p>
+          <p class="empty-desc">Try another keyword or clear the current filter.</p>
+          <button type="button" class="empty-reset-btn" id="empty-reset-btn">
+            Reset filter
+          </button>
+        </div>
+
+        {section.knowledgeGroups.map((grp: any, gIdx: number) => (
+          <section
+            class="knowledge-domain"
+            id={`domain-${gIdx}`}
+            data-domain-section={grp.sourceRoot}
+          >
+            <header class="knowledge-domain-header">
+              <div class="domain-title-wrap">
+                <span class="domain-part-num">PART {String(gIdx + 1).padStart(2, '0')}</span>
+                <h2>{grp.label}</h2>
+              </div>
+              <div class="domain-stats">
+                <span>{grp.totalCount} notes</span>
+                <span aria-hidden="true">·</span>
+                <span>{grp.folders.length} {grp.folders.length === 1 ? 'chapter' : 'chapters'}</span>
+              </div>
+            </header>
+
+            {grp.folders.map((folder: any, fIdx: number) => (
+              <div
+                class="chapter-section"
+                id={`chapter-${gIdx}-${fIdx}`}
+                data-folder-group
+              >
+                <div class="chapter-header">
+                  <button
+                    type="button"
+                    class="folder-title"
+                    data-folder-toggle
+                    aria-expanded="true"
+                  >
+                    <span class="folder-chevron" aria-hidden="true">▾</span>
+                    <span class="folder-name">{folder.folderName}</span>
+                    <span class="folder-count">{folder.items.length}</span>
+                  </button>
+                </div>
+
+                <div class="compendium-list">
+                  {folder.items.map((item: any, iIdx: number) => (
+                    <a
+                      class="compendium-item"
+                      href={withBase(`post/${item.slug}/`)}
+                      data-note-item
+                      data-search-text={`${item.title} ${item.summary || ''} ${folder.folderName}`.toLowerCase()}
+                    >
+                      <span class="compendium-index" aria-hidden="true">
+                        {String(iIdx + 1).padStart(2, '0')}
+                      </span>
+                      <div class="compendium-main">
+                        <h4 class="compendium-title">{item.title}</h4>
+                      </div>
+                      <div class="compendium-meta">
+                        <span class="compendium-words">
+                          {item.wordCount?.toLocaleString() || 0} words
+                        </span>
+                        <span class="compendium-sep" aria-hidden="true">·</span>
+                        <span class="compendium-time">{item.readingMinutes || 1} min</span>
+                        <span class="compendium-arrow" aria-hidden="true">→</span>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </section>
+        ))}
+      </div>
     </div>
   )}
 
@@ -152,14 +258,18 @@ const archiveYears = siteData.archiveYears || [];
   {section.type === 'archive' && (
     <div class="archive-container">
       {archiveYears.map((yr: any) => (
-        <section>
-          <h2 class="archive-year">{yr.year}</h2>
+        <section class="archive-year-group">
+          <h2 class="archive-year">
+            <span>{yr.year}</span>
+            <span class="archive-year-count">{yr.items.length}</span>
+          </h2>
           <ul class="archive-list">
             {yr.items.map((item: any) => (
               <li>
                 <time datetime={item.dateIso}>{item.monthDay}</time>
                 <span class="archive-sec">{item.sectionTitle}</span>
                 <a href={withBase(`post/${item.slug}/`)}>{item.title}</a>
+                <span class="archive-time">{item.readingMinutes || 1} min</span>
               </li>
             ))}
           </ul>
@@ -169,31 +279,160 @@ const archiveYears = siteData.archiveYears || [];
   )}
 
   <script is:inline>
-    const tabs = document.querySelectorAll('[data-domain-filter]');
-    const domains = document.querySelectorAll('[data-domain-section]');
-    tabs.forEach((tab) => {
-      tab.addEventListener('click', () => {
-        const target = tab.getAttribute('data-domain-filter');
-        tabs.forEach((t) => t.classList.remove('active'));
-        tab.classList.add('active');
+    (() => {
+      const root = document.getElementById('knowledge-root');
+      if (!root) return;
+
+      const tabs = Array.from(root.querySelectorAll('[data-domain-filter]'));
+      const domains = Array.from(root.querySelectorAll('[data-domain-section]'));
+      const railDomains = Array.from(root.querySelectorAll('[data-rail-domain]'));
+      const folderGroups = Array.from(root.querySelectorAll('[data-folder-group]'));
+      const filterInput = document.getElementById('knowledge-filter-input');
+      const clearBtn = document.getElementById('knowledge-filter-clear');
+      const emptyState = document.getElementById('knowledge-empty-state');
+      const emptyResetBtn = document.getElementById('empty-reset-btn');
+      const toggleAllBtn = document.getElementById('toggle-all-chapters');
+
+      let activeDomain = 'all';
+      let searchQuery = '';
+
+      function applyFilters() {
+        const q = searchQuery.trim().toLowerCase();
+        let totalVisibleItems = 0;
+
         domains.forEach((sec) => {
-          if (target === 'all' || sec.getAttribute('data-domain-section') === target) {
-            sec.style.display = '';
-          } else {
+          const domainKey = sec.getAttribute('data-domain-section');
+          const domainMatch = activeDomain === 'all' || domainKey === activeDomain;
+
+          if (!domainMatch) {
             sec.style.display = 'none';
+            return;
           }
+
+          let domainVisibleItems = 0;
+          const groups = sec.querySelectorAll('[data-folder-group]');
+          groups.forEach((grp) => {
+            const items = grp.querySelectorAll('[data-note-item]');
+            let groupVisibleItems = 0;
+
+            items.forEach((item) => {
+              const text = item.getAttribute('data-search-text') || '';
+              const matched = !q || text.includes(q);
+              item.style.display = matched ? '' : 'none';
+              if (matched) groupVisibleItems++;
+            });
+
+            grp.style.display = groupVisibleItems > 0 ? '' : 'none';
+            if (q && groupVisibleItems > 0) {
+              grp.classList.remove('collapsed');
+              const btn = grp.querySelector('[data-folder-toggle]');
+              btn?.setAttribute('aria-expanded', 'true');
+            }
+            domainVisibleItems += groupVisibleItems;
+          });
+
+          sec.style.display = domainVisibleItems > 0 ? '' : 'none';
+          totalVisibleItems += domainVisibleItems;
+        });
+
+        railDomains.forEach((rDom) => {
+          const rKey = rDom.getAttribute('data-rail-domain');
+          rDom.style.display = activeDomain === 'all' || rKey === activeDomain ? '' : 'none';
+        });
+
+        if (emptyState) {
+          emptyState.hidden = totalVisibleItems > 0;
+        }
+        if (clearBtn) {
+          clearBtn.hidden = q.length === 0;
+        }
+      }
+
+      tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          activeDomain = tab.getAttribute('data-domain-filter') || 'all';
+          tabs.forEach((t) => t.classList.toggle('active', t === tab));
+          applyFilters();
         });
       });
-    });
 
-    const folderToggles = document.querySelectorAll('[data-folder-toggle]');
-    folderToggles.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const group = btn.closest('[data-folder-group]');
-        if (!group) return;
-        const isCollapsed = group.classList.toggle('collapsed');
-        btn.setAttribute('aria-expanded', String(!isCollapsed));
+      // Activate initial domain if specified via URL query (?domain=...)
+      try {
+        const urlDomain = new URLSearchParams(window.location.search).get('domain');
+        if (urlDomain) {
+          const matchedTab = tabs.find((t) => t.getAttribute('data-domain-filter') === urlDomain);
+          if (matchedTab) {
+            activeDomain = urlDomain;
+            tabs.forEach((t) => t.classList.toggle('active', t === matchedTab));
+            applyFilters();
+          }
+        }
+      } catch {}
+
+      filterInput?.addEventListener('input', (e) => {
+        searchQuery = e.target.value || '';
+        applyFilters();
       });
-    });
+
+      function resetFilter() {
+        searchQuery = '';
+        if (filterInput) filterInput.value = '';
+        applyFilters();
+        filterInput?.focus();
+      }
+
+      clearBtn?.addEventListener('click', resetFilter);
+      emptyResetBtn?.addEventListener('click', () => {
+        activeDomain = 'all';
+        tabs.forEach((t) =>
+          t.classList.toggle('active', t.getAttribute('data-domain-filter') === 'all')
+        );
+        resetFilter();
+      });
+
+      // Single folder collapse toggle
+      root.querySelectorAll('[data-folder-toggle]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const group = btn.closest('[data-folder-group]');
+          if (!group) return;
+          const isCollapsed = group.classList.toggle('collapsed');
+          btn.setAttribute('aria-expanded', String(!isCollapsed));
+        });
+      });
+
+      // Expand / Collapse all chapters
+      toggleAllBtn?.addEventListener('click', () => {
+        const isExpanded = toggleAllBtn.getAttribute('data-all-expanded') === 'true';
+        const nextExpanded = !isExpanded;
+        folderGroups.forEach((grp) => {
+          grp.classList.toggle('collapsed', !nextExpanded);
+          const btn = grp.querySelector('[data-folder-toggle]');
+          btn?.setAttribute('aria-expanded', String(nextExpanded));
+        });
+        toggleAllBtn.setAttribute('data-all-expanded', String(nextExpanded));
+        toggleAllBtn.textContent = nextExpanded ? 'Collapse all' : 'Expand all';
+      });
+
+      // Chapter jump links
+      root.querySelectorAll('[data-chapter-jump]').forEach((link) => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetId = link.getAttribute('data-chapter-jump');
+          const targetDomain = link.getAttribute('data-target-domain');
+          if (activeDomain !== 'all' && targetDomain && activeDomain !== targetDomain) {
+            activeDomain = 'all';
+            tabs.forEach((t) =>
+              t.classList.toggle('active', t.getAttribute('data-domain-filter') === 'all')
+            );
+            applyFilters();
+          }
+          const el = targetId ? document.getElementById(targetId) : null;
+          if (!el) return;
+          el.classList.remove('collapsed');
+          el.querySelector('[data-folder-toggle]')?.setAttribute('aria-expanded', 'true');
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+    })();
   </script>
 </BaseLayout>
